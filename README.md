@@ -1,7 +1,11 @@
-# Easydata
+# EasyD@ta
+
+Aplicação web para gerenciamento de inventários de dados pessoais à luz da LGPD (Lei Geral de Proteção de Dados). 
+
 ## Requisitos
 
 * NodeJS / Npm
+
 ### Passos
 
 1. Clone o repositório:
