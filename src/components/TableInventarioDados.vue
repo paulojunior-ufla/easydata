@@ -1,14 +1,11 @@
 <template>
   <div>
-    <b-table striped hover :items="items">
+    <b-table hover :items="items" :fields="fields">
       <template #cell(editar)="data">
-        <a v-bind:href="data.value"><b-icon icon="pencil"/></a>
+        <a v-bind:href="data.value"><b-icon icon="pencil" variant="success"/></a>
       </template>
-      <template #cell(excluir)="data">
-        <a v-bind:href="data.value"><b-icon icon="trash"/></a>
-      </template>
-      <template #cell(op\ç\ões)="data">
-        <a v-bind:href="data.value"><b-icon icon="menu-up"/></a>
+      <template #cell(opcoes)="data">
+        <a v-bind:href="data.value"><b-icon icon="three-dots-vertical" variant="success"/></a>
       </template>
     </b-table>
   </div>
@@ -22,8 +19,22 @@ export default {
   },
   data () {
     return {
+      fields: [
+        {
+          key: 'nome_inventario',
+          label: 'Inventário'
+        },
+        {
+          key: 'editar',
+          label: 'Editar'
+        },
+        {
+          key: 'opcoes',
+          label: 'Opções'
+        }
+      ],
       items: [
-        { nome_inventário: 'Cadastramento de usuários externos no SIG', editar: 'Link', excluir: 'Link', opções: 'Link' }
+        { nome_inventario: 'Cadastramento de usuários externos no SIG', editar: 'Link', opcoes: 'Link' }
       ]
     }
   }
@@ -42,8 +53,5 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>
