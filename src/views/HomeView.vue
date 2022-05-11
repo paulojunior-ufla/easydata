@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <b-row class="text-center">
+        <b-col>
+          <sidebar-inventario-dados/>
+        </b-col>
+        <b-col cols="10">
+          <table-inventario-dados msg="Welcome to Your Vue.js App"/>
+        </b-col>
+      </b-row>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TableInventarioDados from '@/components/TableInventarioDados.vue'
+import SidebarInventarioDados from '@/components/SidebarInventarioDados.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    TableInventarioDados,
+    SidebarInventarioDados
   }
 }
 </script>
