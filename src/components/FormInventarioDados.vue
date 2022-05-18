@@ -9,7 +9,7 @@
 
           <b-table-simple>
             <b-thead>
-              <b-tr>
+              <b-tr class="text-center">
                 <b-th></b-th>
                 <b-th>Descrição</b-th>
                 <b-th>Retenção</b-th>
@@ -18,7 +18,7 @@
               </b-tr>
             </b-thead>
             <b-tbody>
-            <b-tr>
+            <b-tr >
               <b-td>Dados pessoais</b-td>
               <b-td><b-form-input/></b-td>
               <b-td><b-form-input/></b-td>
@@ -47,7 +47,7 @@
 
           <b-table-simple>
             <b-thead>
-              <b-tr>
+              <b-tr class="text-center">
                 <b-th></b-th>
                 <b-th>Descrição</b-th>
                 <b-th>Retenção</b-th>
@@ -85,7 +85,7 @@
 
           <b-table-simple>
             <b-thead>
-              <b-tr>
+              <b-tr class="text-center">
                 <b-th></b-th>
                 <b-th>Descrição</b-th>
                 <b-th>Retenção</b-th>
