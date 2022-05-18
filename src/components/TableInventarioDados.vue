@@ -4,12 +4,12 @@
       <template #cell(editar)>
         <a href="cadastrarInventario/"><b-icon icon="pencil" variant="success"/></a>
       </template>
-      <template #cell(opcoes)="data">
+      <template #cell(opcoes)>
         <b-dropdown variant="outline" no-caret title="Opções">
           <template #button-content>
             <b-icon icon="three-dots-vertical" title="Opções" variant="success"/>
           </template>
-          <b-dropdown-item @click="showConfirmacaoDelete">Excluir item {{data.value}}</b-dropdown-item>
+          <b-dropdown-item @click="showConfirmacaoDelete">Excluir</b-dropdown-item>
         </b-dropdown>
       </template>
     </b-table>
