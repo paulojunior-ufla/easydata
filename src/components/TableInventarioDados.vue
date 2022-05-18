@@ -2,15 +2,15 @@
   <div>
     <b-table hover :items="items" :fields="fields">
       <template #cell(editar)>
-        <a href="cadastrarInventario/"><b-icon icon="pencil" variant="primary"/></a>
+          <a href="cadastrarInventario/"><b-icon icon="pencil" variant="primary"/></a>
       </template>
-      <template #cell(opcoes)>
+      <template #cell(opcoes)="data">
         <b-dropdown variant="outline" no-caret title="Opções" size="sm">
           <template #button-content>
             <b-icon icon="three-dots-vertical" title="Opções" variant="primary"/>
           </template>
           <b-dropdown-item><b-icon style="height:15px" icon="clipboard-check" variant="primary"/> Duplicar</b-dropdown-item>
-          <b-dropdown-item @click="showConfirmacaoDelete"><b-icon style="height:15px" icon="trash" variant="danger"/> Excluir</b-dropdown-item>
+          <b-dropdown-item @click="showConfirmacaoDelete(data.index)"><b-icon style="height:15px" icon="trash" variant="danger"/> Excluir</b-dropdown-item>
         </b-dropdown>
       </template>
     </b-table>
@@ -28,7 +28,7 @@ export default {
       fields: [
         {
           key: 'nome_inventario',
-          label: 'Inventário'
+          label: 'Inventários'
         },
         {
           key: 'editar',
@@ -36,7 +36,7 @@ export default {
         },
         {
           key: 'opcoes',
-          label: 'Opções'
+          label: 'Outras opções'
         }
       ],
       items: [
@@ -45,8 +45,10 @@ export default {
     }
   },
   methods: {
-    showConfirmacaoDelete () {
-      this.$bvModal.msgBoxConfirm('Tem certeza que deseja excluir?', {
+    showConfirmacaoDelete (index) {
+      const h = this.$createElement
+      const msg = h('div', { domProps: { innerHTML: `Deseja realmente excluir o inventário <b>${this.items[index].nome_inventario}</b>?` } })
+      this.$bvModal.msgBoxConfirm([msg], {
         title: 'Atenção!',
         size: 'sm',
         buttonSize: 'sm',
