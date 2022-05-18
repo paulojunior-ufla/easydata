@@ -1,15 +1,15 @@
 <template>
   <div>
     <b-table hover :items="items" :fields="fields">
-      <template #cell(editar)="data">
-        <a v-bind:href="data.value"><b-icon icon="pencil" variant="success"/></a>
+      <template #cell(editar)>
+        <a href="cadastrarInventario/"><b-icon icon="pencil" variant="success"/></a>
       </template>
       <template #cell(opcoes)="data">
         <b-dropdown variant="outline" no-caret title="Opções">
           <template #button-content>
             <b-icon icon="three-dots-vertical" title="Opções" variant="success"/>
           </template>
-          <b-dropdown-item v-bind:href="data.value">Excluir item</b-dropdown-item>
+          <b-dropdown-item @click="showConfirmacaoDelete">Excluir item {{data.value}}</b-dropdown-item>
         </b-dropdown>
       </template>
     </b-table>
@@ -41,6 +41,26 @@ export default {
       items: [
         { nome_inventario: 'Cadastramento de usuários externos no SIG', editar: 'Link', opcoes: 'Link' }
       ]
+    }
+  },
+  methods: {
+    showConfirmacaoDelete () {
+      this.$bvModal.msgBoxConfirm('Tem certeza que deseja excluir?', {
+        title: 'Atenção!',
+        size: 'sm',
+        buttonSize: 'sm',
+        okVariant: 'danger',
+        okTitle: 'Sim',
+        cancelTitle: 'Não',
+        footerClass: 'p-2',
+        // hideHeaderClose: false,
+        centered: true
+      })
+        .then(value => {
+        })
+        .catch(err => {
+          console.log('err', err)
+        })
     }
   }
 }

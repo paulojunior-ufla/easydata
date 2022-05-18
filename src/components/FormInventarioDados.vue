@@ -2,7 +2,7 @@
   <div class="accordion text-start" role="tablist">
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <h5 block v-b-toggle.accordion-1 class="m-2">Dados de Identificação Pessoal</h5>
+        <h5 block v-b-toggle.accordion-1 class="m-2"><b-icon style="height: 16px" icon="check-lg"/>  Dados de Identificação Pessoal</h5>
       </b-card-header>
       <b-collapse id="accordion-1" visible accordion="my-accordion" role="tabpanel">
         <b-card-body>
@@ -40,7 +40,7 @@
 
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <h5 block v-b-toggle.accordion-2 class="m-2">Dados Financeiros</h5>
+        <h5 block v-b-toggle.accordion-2 class="m-2"><b-icon style="height: 16px" icon="x-lg"/> Dados Financeiros</h5>
       </b-card-header>
       <b-collapse id="accordion-2" accordion="my-accordion" role="tabpanel">
         <b-card-body>
@@ -78,7 +78,7 @@
 
     <b-card no-body class="mb-1">
       <b-card-header header-tag="header" class="p-1" role="tab">
-        <h5 block v-b-toggle.accordion-3 class="m-2">Características Pessoais</h5>
+        <h5 block v-b-toggle.accordion-3 class="m-2"><b-icon style="height: 16px" icon="check-lg"/> Características Pessoais</h5>
       </b-card-header>
       <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
         <b-card-body>
