@@ -9,7 +9,8 @@
           <template #button-content>
             <b-icon icon="three-dots-vertical" title="Opções" variant="primary"/>
           </template>
-          <b-dropdown-item @click="showConfirmacaoDelete">Excluir</b-dropdown-item>
+          <b-dropdown-item><b-icon style="height:15px" icon="clipboard-check" variant="primary"/> Duplicar</b-dropdown-item>
+          <b-dropdown-item @click="showConfirmacaoDelete"><b-icon style="height:15px" icon="trash" variant="danger"/> Excluir</b-dropdown-item>
         </b-dropdown>
       </template>
     </b-table>
