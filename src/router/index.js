@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import CadastrarInventarioView from '../views/CadastrarInventarioView.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/cadastrarInventario',
+    name: 'cadastrarInventario',
+    component: CadastrarInventarioView
   },
   {
     path: '/about',

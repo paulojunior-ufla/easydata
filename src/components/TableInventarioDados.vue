@@ -5,7 +5,12 @@
         <a v-bind:href="data.value"><b-icon icon="pencil" variant="success"/></a>
       </template>
       <template #cell(opcoes)="data">
-        <a v-bind:href="data.value"><b-icon icon="three-dots-vertical" variant="success"/></a>
+        <b-dropdown variant="outline" no-caret title="Opções">
+          <template #button-content>
+            <b-icon icon="three-dots-vertical" title="Opções" variant="success"/>
+          </template>
+          <b-dropdown-item v-bind:href="data.value">Excluir item</b-dropdown-item>
+        </b-dropdown>
       </template>
     </b-table>
   </div>
