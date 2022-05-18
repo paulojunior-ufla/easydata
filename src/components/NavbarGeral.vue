@@ -7,7 +7,7 @@
 
       <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ms-auto">
-            <b-nav-item href="#">Novo</b-nav-item>
+            <b-link to="/cadastrarInventario" class="nav-link">Novo</b-link>
             <b-nav-item href="#">Importar</b-nav-item>
           </b-navbar-nav>
 
