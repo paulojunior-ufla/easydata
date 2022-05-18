@@ -12,8 +12,8 @@
           </b-navbar-nav>
 
           <b-navbar-nav class="ms-auto" v-else>
-            <b-link to="/cadastrarInventario" class="nav-link">Novo</b-link>
-            <b-nav-item href="#">Importar</b-nav-item>
+            <b-link to="/cadastrarInventario" class="nav-link"><b-icon style="height: 18px" icon="plus-circle"/> Novo</b-link>
+            <b-nav-item href="#"><b-icon style="height: 18px" icon="cloud-download"/> Importar</b-nav-item>
           </b-navbar-nav>
       </b-collapse>
     </b-navbar>

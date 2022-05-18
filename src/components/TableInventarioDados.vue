@@ -2,12 +2,12 @@
   <div>
     <b-table hover :items="items" :fields="fields">
       <template #cell(editar)>
-        <a href="cadastrarInventario/"><b-icon icon="pencil" variant="success"/></a>
+        <a href="cadastrarInventario/"><b-icon icon="pencil" variant="primary"/></a>
       </template>
       <template #cell(opcoes)>
-        <b-dropdown variant="outline" no-caret title="Opções">
+        <b-dropdown variant="outline" no-caret title="Opções" size="sm">
           <template #button-content>
-            <b-icon icon="three-dots-vertical" title="Opções" variant="success"/>
+            <b-icon icon="three-dots-vertical" title="Opções" variant="primary"/>
           </template>
           <b-dropdown-item @click="showConfirmacaoDelete">Excluir</b-dropdown-item>
         </b-dropdown>
