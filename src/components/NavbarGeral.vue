@@ -6,12 +6,12 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav class="ms-auto" v-if="this.$route.name == 'cadastrarInventario'">
+          <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario'">
             <b-link to="/cadastrarInventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
             <b-nav-item href="#"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-nav-item>
           </b-navbar-nav>
 
-          <b-navbar-nav class="ms-auto" v-else>
+          <b-navbar-nav class="ml-auto" v-else>
             <b-link to="/cadastrarInventario" class="nav-link"><b-icon style="height: 18px" icon="plus-circle"/> Novo</b-link>
             <b-nav-item href="#"><b-icon style="height: 18px" icon="cloud-download"/> Importar</b-nav-item>
           </b-navbar-nav>
@@ -28,3 +28,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.navbar-dark .navbar-nav .nav-link {
+  color: #FFF!important;
+}
+</style>
