@@ -19,7 +19,7 @@
             </b-thead>
             <b-tbody>
             <b-tr >
-              <b-td>Dados pessoais</b-td>
+              <b-td>Dados pessoais <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
               <b-td><b-form-input/></b-td>
               <b-td><b-form-input/></b-td>
               <b-td><b-form-select :options='["Fonte 1", "Fonte 2", "Fonte 3"]' plain value="Fonte 2"/></b-td>
@@ -113,6 +113,9 @@
         </b-card-body>
       </b-collapse>
     </b-card>
+    <b-modal id="modal-1" ok-only title="Dados pessoais">
+      <p class="my-4">Texto sobre como preencher os dados</p>
+    </b-modal>
   </div>
 </template>
 
