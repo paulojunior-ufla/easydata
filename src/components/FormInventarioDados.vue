@@ -7,7 +7,7 @@
         </b-card-header>
         <b-collapse id="accordion-0" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
-            <b-input name="titulo" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
+            <b-input name="titulo" v-model="titulo" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
           </b-card-body>
         </b-collapse>
       </b-card>
@@ -127,7 +127,7 @@
       </b-card>
     </div>
     <div class="d-flex">
-      <b-button variant="primary" class="mt-2 rounded-0">Salvar</b-button>
+      <b-button variant="primary" class="mt-2 rounded-0" v-on:click="salvar">Salvar</b-button>
     </div>
     <b-modal id="modal-1" ok-only title="Dados pessoais">
       <p class="my-4">Texto sobre como preencher os dados</p>
@@ -143,6 +143,7 @@ export default {
   },
   data () {
     return {
+      titulo: '',
       fields: [
         {
           key: 'nome_inventario',
@@ -160,6 +161,11 @@ export default {
       items: [
         { nome_inventario: 'Cadastramento de usuários externos no SIG', editar: 'Link', opcoes: 'Link' }
       ]
+    }
+  },
+  methods: {
+    salvar: function () {
+      this.$store.dispatch('inventarios/addInventario', { titulo: this.titulo })
     }
   }
 }
