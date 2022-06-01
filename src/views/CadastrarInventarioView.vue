@@ -2,7 +2,7 @@
   <div class="home">
       <b-row>
         <b-col>
-          <sidebar-inventario-dados/>
+          <sidebar-inventario-dados v-bind:template="template"/>
         </b-col>
         <b-col cols="10">
           <form-inventario-dados v-bind:template="template"/>
