@@ -1,0 +1,63 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "nome": "1 - Identificação dos serviços / processo de negócio de tratamento de dados pessoais",
+            "esconderColunas": true,
+            "colunas": [
+                {"id": 2, "nome": "Valor"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio"},
+                {"id": 2, "nome": "1.2 - Nº Referência  / ID"},
+                {"id": 3, "nome": "1.3 - Data de Criação do Inventário"},
+                {"id": 4, "nome": "1.4 - Data Atualização do Inventário"}
+            ]
+        },
+        {
+            "id": 2,
+            "nome": "2 - Agentes de  Tratamento e Encarregado",
+            "colunas": [
+                {"id": 1, "nome": "Nome"},
+                {"id": 2, "nome": "Endereço"},
+                {"id": 3, "nome": "CEP"},
+                {"id": 4, "nome": "Telefone"},
+                {"id": 5, "nome": "E-mail"}
+            ],
+            "classes": [
+                "",
+                "",
+                "cep",
+                "telefone",
+                "email"
+            ],
+            "linhas": [
+                {"id": 1, "nome": "2.1 - Controlador"},
+                {"id": 2, "nome": "2.2 - Encarregado"},
+                {"id": 3, "nome": "2.3 - Operador"}
+            ]
+        },
+        {
+            "id": 2,
+            "nome": "3 - Fases do Ciclo de Vida do Tratamento Dados Pessoais",
+            "colunas": [
+                {"id": 1, "nome": "Coleta"},
+                {"id": 2, "nome": "Retenção"},
+                {"id": 3, "nome": "Processamento"},
+                {"id": 4, "nome": "Compartilhamento"},
+                {"id": 5, "nome": "Eliminação"}
+            ],
+            "classes": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "linhas": [
+                {"id": 1, "nome": "3.1 - Em qual fase  do ciclo de vida o  Operador atua"}
+            ]
+        }
+        
+    ]
+}

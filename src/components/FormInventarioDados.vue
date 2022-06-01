@@ -12,6 +12,33 @@
         </b-collapse>
       </b-card>
 
+      <b-card no-body class="mb-1" v-for="categoria in categorias" :key="categoria.id">
+        <b-card-header header-tag="header" class="p-1" role="tab">
+          <h5 block v-b-toggle.accordion-1 class="m-2"><b-icon style="height: 16px" icon="check-lg"/> {{categoria.nome}}</h5>
+        </b-card-header>
+        <b-collapse id="accordion-1" visible accordion="my-accordion" role="tabpanel">
+          <b-card-body>
+
+            <b-table-simple>
+              <b-thead>
+                <b-tr class="text-center" v-if="!categoria.esconderColunas">
+                  <b-th v-if="categoria.linhas"></b-th>
+                  <b-th v-for="coluna in categoria.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
+                </b-tr>
+              </b-thead>
+              <b-tbody>
+                <b-tr v-for="linha in categoria.linhas" :key="linha.id">
+                  <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
+                  <b-td v-for="coluna in categoria.colunas" :key="coluna.id">
+                    <b-form-input/>
+                  </b-td>
+                </b-tr>
+              </b-tbody>
+            </b-table-simple>
+          </b-card-body>
+        </b-collapse>
+      </b-card>
+
       <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
           <h5 block v-b-toggle.accordion-1 class="m-2"><b-icon style="height: 16px" icon="check-lg"/>  Dados de Identificação Pessoal</h5>
@@ -139,10 +166,12 @@
 export default {
   name: 'FormInventarioDados',
   props: {
-    msg: String
+    msg: String,
+    template: Object
   },
   data () {
     return {
+      categorias: this.template.categorias,
       titulo: '',
       fields: [
         {
@@ -187,5 +216,8 @@ li {
 .accordion .card {
   border-radius: 0;
   margin-bottom: 0!important;
+}
+.card-body {
+  padding: 0;
 }
 </style>
