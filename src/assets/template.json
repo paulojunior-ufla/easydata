@@ -359,11 +359,11 @@
                 {"id": 3, "nome": "8.3 - Dados que revelam opinião política"},
                 {"id": 4, "nome": "8.4 - Dados que revelam filiação a sindicato"},
                 {"id": 5, "nome": "8.5 - Dados que revelam filiação a organização de caráter religioso"},
-                {"id": 5, "nome": "8.6 - Dados que revelam filiação ou crença filosófica"},
-                {"id": 5, "nome": "8.7 - Dados que revelam filiação ou preferências política"},
-                {"id": 5, "nome": "8.8 - Dados referentes à saúde ou à vida sexual"},
-                {"id": 5, "nome": "8.9 - Dados genéticos"},
-                {"id": 5, "nome": "8.10 - Dados biométricos"}
+                {"id": 6, "nome": "8.6 - Dados que revelam filiação ou crença filosófica"},
+                {"id": 7, "nome": "8.7 - Dados que revelam filiação ou preferências política"},
+                {"id": 8, "nome": "8.8 - Dados referentes à saúde ou à vida sexual"},
+                {"id": 9, "nome": "8.9 - Dados genéticos"},
+                {"id": 10, "nome": "8.10 - Dados biométricos"}
             ]
         },
         {
@@ -420,7 +420,7 @@
             "colunas": [
                 {"id": 1, "nome": "País"},
                 {"id": 2, "nome": "Dados pessoais transferidos"},
-                {"id": 2, "nome": "Tipo de garantia para transferência"}
+                {"id": 3, "nome": "Tipo de garantia para transferência"}
             ],
             "linhas": [
                 {"id": 1, "nome": "13.1 - Organização 1"}
@@ -432,7 +432,7 @@
             "colunas": [
                 {"id": 1, "nome": "Nº Processo Contratação"},
                 {"id": 2, "nome": "Objeto do Contrato"},
-                {"id": 2, "nome": "E-mail do Gestor do Contrato"}
+                {"id": 3, "nome": "E-mail do Gestor do Contrato"}
             ],
             "linhas": [
                 {"id": 1, "nome": "14.2 - Contrato nº 1"}

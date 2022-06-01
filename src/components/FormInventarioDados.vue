@@ -26,8 +26,8 @@
               <b-tbody>
                 <b-tr v-for="linha in categoria.linhas" :key="linha.id">
                   <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
-                  <b-td v-for="coluna in categoria.colunas" :key="coluna.id">
-                    <b-form-input/>
+                  <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
+                    <b-form-input :class="categoria.classes && typeof categoria.classes[index] != 'undefined' ? categoria.classes[index] : ''"/>
                   </b-td>
                 </b-tr>
               </b-tbody>
