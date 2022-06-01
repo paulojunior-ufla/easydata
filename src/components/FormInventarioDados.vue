@@ -3,22 +3,19 @@
     <div class="accordion text-start" role="tablist">
       <b-card no-body class="mb-1">
         <b-card-header header-tag="header" class="p-1" role="tab">
-          <h5 block v-b-toggle.accordion-0 class="m-2"><b-icon style="height: 16px" icon="check-lg"/>Título</h5>
+          <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/>Título</h5>
         </b-card-header>
-        <b-collapse id="accordion-0" visible accordion="my-accordion" role="tabpanel">
-          <b-card-body>
+          <b-card-body class="titulo">
             <b-input name="titulo" v-model="titulo" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
           </b-card-body>
-        </b-collapse>
       </b-card>
 
       <b-card no-body class="mb-1" v-for="categoria in categorias" :key="categoria.id">
         <b-card-header header-tag="header" class="p-1" role="tab">
-          <h5 block v-b-toggle.accordion-1 class="m-2"><b-icon style="height: 16px" icon="check-lg"/> {{categoria.nome}}</h5>
+          <h5 block v-b-toggle="'accordion-' + categoria.id" class="m-2"><b-icon style="height: 16px" icon="check-lg"/> {{categoria.nome}}</h5>
         </b-card-header>
-        <b-collapse id="accordion-1" visible accordion="my-accordion" role="tabpanel">
+        <b-collapse :id="'accordion-' + categoria.id" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
-
             <b-table-simple>
               <b-thead>
                 <b-tr class="text-center" v-if="!categoria.esconderColunas">
@@ -30,6 +27,22 @@
                 <b-tr v-for="linha in categoria.linhas" :key="linha.id">
                   <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
                   <b-td v-for="coluna in categoria.colunas" :key="coluna.id">
+                    <b-form-input/>
+                  </b-td>
+                </b-tr>
+              </b-tbody>
+            </b-table-simple>
+            <b-table-simple v-for="secao in categoria.secoes" :key="secao.id">
+              <b-thead>
+                <b-tr class="text-center" v-if="!secao.esconderColunas">
+                  <b-th>{{secao.nome}}</b-th>
+                  <b-th v-for="coluna in secao.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
+                </b-tr>
+              </b-thead>
+              <b-tbody>
+                <b-tr v-for="linha in secao.linhas" :key="linha.id">
+                  <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
+                  <b-td v-for="coluna in secao.colunas" :key="coluna.id">
                     <b-form-input/>
                   </b-td>
                 </b-tr>
@@ -219,5 +232,16 @@ li {
 }
 .card-body {
   padding: 0;
+  padding-bottom: 1rem ;
+}
+.table {
+  margin: 0;
+}
+.table td {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+.card-body.titulo {
+  padding: 1.2rem;
 }
 </style>

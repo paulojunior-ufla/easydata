@@ -38,7 +38,7 @@
             ]
         },
         {
-            "id": 2,
+            "id": 3,
             "nome": "3 - Fases do Ciclo de Vida do Tratamento Dados Pessoais",
             "colunas": [
                 {"id": 1, "nome": "Coleta"},
@@ -57,7 +57,386 @@
             "linhas": [
                 {"id": 1, "nome": "3.1 - Em qual fase  do ciclo de vida o  Operador atua"}
             ]
+        },
+        {
+            "id": 4,
+            "nome": "4 - De que forma (como) os dados  pessoais são coletados, retidos/armazenados, processados/usados, compartilhados e eliminados",
+            "esconderColunas": true,
+            "colunas": [
+                {"id": 1, "nome": "Valor"}
+            ],
+            "classes": [
+                "",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "linhas": [
+                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais"}
+            ]
+        },
+        {
+            "id": 5,
+            "nome": "5 - Escopo e Natureza dos Dados Pessoais",
+            "esconderColunas": true,
+            "colunas": [
+                {"id": 1, "nome": "Valor"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "5.1 - Abrangência da área geográfica do tratamento"},
+                {"id": 2, "nome": "5.2 - Fonte de dados utilizada para obtenção dos dados pessoais"}
+            ]
+        },
+        {
+            "id": 6,
+            "nome": "6 - Finalidade do Tratamento de Dados Pessoais",
+            "esconderColunas": true,
+            "colunas": [
+                {"id": 1, "nome": "Valor"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "6.1 - Hipótese de Tratamento"},
+                {"id": 2, "nome": "6.2 - Finalidade"},
+                {"id": 3, "nome": "6.3 - Previsão legal"},
+                {"id": 4, "nome": "6.4 - Resultados pretendidos para o titular de dados"},
+                {"id": 5, "nome": "6.5 - Benefícios esperados para o órgão, entidade ou para a sociedade como um todo"}
+            ]
+        },
+        {
+            "id": 7,
+            "nome": "7 - Categoria de Dados Pessoais",
+            "esconderColunas": true,
+            "secoes": [
+                {
+                    "id": 1,
+                    "nome": "7.1 -Dados de Identificação Pessoal",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal"},
+                        {"id": 2, "nome": "7.1.2 - Informações de identificação atribuídas por instituições governamentais"},
+                        {"id": 3, "nome": "7.1.3 - Dados de identificação eletrônica"},
+                        {"id": 4, "nome": "7.1.4 - Dados de localização  eletrônica"}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "nome": "7.2 -Dados Financeiros",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.2.1 - Dados de identificação financeira"},
+                        {"id": 2, "nome": "7.2.2 - Recursos financeiros"},
+                        {"id": 3, "nome": "7.2.3 - Dívidas e despesas"},
+                        {"id": 4, "nome": "7.2.4 - Situação financeira (Solvência)"},
+                        {"id": 5, "nome": "7.2.5 - Empréstimos, hipotecas, linhas de crédito"},
+                        {"id": 6, "nome": "7.2.6 - Assistência financeira"},
+                        {"id": 7, "nome": "7.2.7 - Detalhes da apólice de seguro"},
+                        {"id": 8, "nome": "7.2.8 - Detalhes do plano de pensão"},
+                        {"id": 9, "nome": "7.2.9 - Transações financeiras"},
+                        {"id": 10, "nome": "7.2.10 - Compensação"},
+                        {"id": 11, "nome": "7.2.11 - Atividades profissionais"},
+                        {"id": 12, "nome": "7.2.12 - Acordos e ajustes"},
+                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos"}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "nome": "7.3 - Características Pessoais",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.3.1 - Detalhes pessoais"},
+                        {"id": 2, "nome": "7.3.2 - Detalhes militares"},
+                        {"id": 3, "nome": "7.3.3 - Situação de Imigração"},
+                        {"id": 4, "nome": "7.3.4 - Descrição Física"}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "nome": "7.4 - Hábitos Pessoais",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.4.1 - Hábitos"},
+                        {"id": 2, "nome": "7.4.2 - Estilo de vida"},
+                        {"id": 3, "nome": "7.4.3 - Viagens e deslocamentos"},
+                        {"id": 4, "nome": "7.4.4 - Contatos sociais"},
+                        {"id": 5, "nome": "7.4.5 - Posses"},
+                        {"id": 6, "nome": "7.4.6 - Denúncias, incidentes ou acidentes"},
+                        {"id": 7, "nome": "7.4.7 - Distinções"},
+                        {"id": 8, "nome": "7.4.8 - Uso de mídia"}
+                    ]
+                },
+                {
+                    "id": 5,
+                    "nome": "7.5 - Características  Psicológicas",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.5.1 - Descrição Psicológica"}
+                    ]
+                },
+                {
+                    "id": 6,
+                    "nome": "7.6 - Composição Familiar",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação"},
+                        {"id": 2, "nome": "7.6.2 - Histórico conjugal"},
+                        {"id": 3, "nome": "7.6.3 - Familiares ou membros da família"}
+                    ]
+                },
+                {
+                    "id": 7,
+                    "nome": "7.7 - Interesses de lazer",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer"}
+                    ]
+                },
+                {
+                    "id": 8,
+                    "nome": "7.8 - Associações",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)"}
+                    ]
+                },
+                {
+                    "id": 9,
+                    "nome": "7.9 - Processo Judicial/Administrativo/Criminal",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.9.1 - Suspeitas"},
+                        {"id": 2, "nome": "7.9.2 - Condenações e sentenças"},
+                        {"id": 3, "nome": "7.9.3 - Ações judiciais"},
+                        {"id": 4, "nome": "7.9.4 - Penalidades Administrativas"}
+                    ]
+                },
+                {
+                    "id": 10,
+                    "nome": "7.10 - Hábitos de Consumo",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.10.1 - Dados de bens e serviços"}
+                    ]
+                },
+                {
+                    "id": 11,
+                    "nome": "7.11 - Dados Residenciais",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.11.1 - Residência"}
+                    ]
+                },
+                {
+                    "id": 12,
+                    "nome": "7.12 - Educação e Treinamento",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares"},
+                        {"id": 2, "nome": "7.12.2 Registros financeiros do curso/treinamento"},
+                        {"id": 3, "nome": "7.12.3 -  Qualificação e experiência profissional"}
+                    ]
+                },
+                {
+                    "id": 13,
+                    "nome": "7.13 - Profissão e emprego",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.13.1 - Emprego atual"},
+                        {"id": 2, "nome": "7.13.2 - Recrutamento"},
+                        {"id": 3, "nome": "7.13.3 - Rescisão de trabalho"},
+                        {"id": 4, "nome": "7.13.4 - Carreira"},
+                        {"id": 5, "nome": "7.13.5 - Absentismo e disciplina"},
+                        {"id": 6, "nome": "7.13.6 -Avaliação de Desempenho"}
+                    ]
+                },
+                {
+                    "id": 14,
+                    "nome": "7.14 -Registros/gravações de vídeo, imagem e voz",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.14.1 - Vídeo e imagem"},
+                        {"id": 2, "nome": "7.14.2 - Imagem de Vigilância"},
+                        {"id": 3, "nome": "7.14.3 - Voz"}
+                    ]
+                },
+                {
+                    "id": 15,
+                    "nome": "7.15 -Outros (Especificar)",
+                    "colunas": [
+                        {"id": 1, "nome": "Descrição"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                        {"id": 3, "nome": "Fonte Retenção"},
+                        {"id": 4, "nome": "Nome Base de Dados"}
+                    ],
+                    "linhas": [
+                        {"id": 1, "nome": "7.15.1 - Outros (Especificar)"}
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "nome": "8 - Categorias de Dados Pessoais Sensíveis",
+            "colunas": [
+                {"id": 1, "nome": "Descrição"},
+                {"id": 2, "nome": "Tempo Retenção dos Dados"},
+                {"id": 3, "nome": "Fonte Retenção"},
+                {"id": 4, "nome": "Nome Base de Dados"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "8.1 - Dados que revelam origem racial ou ética"},
+                {"id": 2, "nome": "8.2 - Dados que revelam convicção religiosa"},
+                {"id": 3, "nome": "8.3 - Dados que revelam opinião política"},
+                {"id": 4, "nome": "8.4 - Dados que revelam filiação a sindicato"},
+                {"id": 5, "nome": "8.5 - Dados que revelam filiação a organização de caráter religioso"},
+                {"id": 5, "nome": "8.6 - Dados que revelam filiação ou crença filosófica"},
+                {"id": 5, "nome": "8.7 - Dados que revelam filiação ou preferências política"},
+                {"id": 5, "nome": "8.8 - Dados referentes à saúde ou à vida sexual"},
+                {"id": 5, "nome": "8.9 - Dados genéticos"},
+                {"id": 5, "nome": "8.10 - Dados biométricos"}
+            ]
+        },
+        {
+            "id": 9,
+            "nome": "9 - Frequência e totalização das categorias de dados pessoais tratados",
+            "colunas": [
+                {"id": 1, "nome": "Valor"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "9.1 - Frequência de tratamento dos  dados pessoais"},
+                {"id": 2, "nome": "9.2 - Quantidade de dados pessoais e dados pessoais sensíveis tratados"}
+            ]
+        },
+        {
+            "id": 10,
+            "nome": "10 - Categorias dos titulares de dados pessoais",
+            "colunas": [
+                {"id": 1, "nome": "Tipo de Categoria"},
+                {"id": 2, "nome": "Descrição"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "10.1 - Categoria 1"},
+                {"id": 2, "nome": "10.3  - Trata dados de crianças e adolescentes"},
+                {"id": 3, "nome": "10.4 - Além de crianças e adolescente trata dados de outro grupo vulnerável"}
+            ]
+        },
+        {
+            "id": 11,
+            "nome": "11 - Compartilhamento de  Dados Pessoais",
+            "colunas": [
+                {"id": 1, "nome": "Dados pessoais compartilhados"},
+                {"id": 2, "nome": "Finalidade do compartilhamento"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "11.1 - Nome da Instituição 1"}
+            ]
+        },
+        {
+            "id": 12,
+            "nome": "12 - Medidas de Segurança/Privacidade",
+            "colunas": [
+                {"id": 1, "nome": "Tipo de medida de segurança e privacidade"},
+                {"id": 2, "nome": "Descrição do(s) Controle(s)"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "12.3 - Medida de Segurança/Privacidade 1"},
+                {"id": 2, "nome": "12.2 - Medida de Segurança/Privacidade 2"},
+                {"id": 3, "nome": "12.3 - Medida de Segurança/Privacidade 3"}
+            ]
+        },
+        {
+            "id": 13,
+            "nome": "13 - Transferência Internacional de Dados Pessoais",
+            "colunas": [
+                {"id": 1, "nome": "País"},
+                {"id": 2, "nome": "Dados pessoais transferidos"},
+                {"id": 2, "nome": "Tipo de garantia para transferência"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "13.1 - Organização 1"}
+            ]
+        },
+        {
+            "id": 14,
+            "nome": "14 - Contrato(s) de serviços e/ou soluções de TI que trata(m) dados pessoais do serviço/processo de negócio",
+            "colunas": [
+                {"id": 1, "nome": "Nº Processo Contratação"},
+                {"id": 2, "nome": "Objeto do Contrato"},
+                {"id": 2, "nome": "E-mail do Gestor do Contrato"}
+            ],
+            "linhas": [
+                {"id": 1, "nome": "14.2 - Contrato nº 1"}
+            ]
         }
-        
     ]
 }
