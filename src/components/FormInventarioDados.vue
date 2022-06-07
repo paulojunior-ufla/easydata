@@ -32,21 +32,23 @@
                 </b-tr>
               </b-tbody>
             </b-table-simple>
-            <b-table-simple v-for="secao in categoria.secoes" :key="secao.id">
-              <b-thead>
-                <b-tr class="text-center" v-if="!secao.esconderColunas">
-                  <b-th>{{secao.nome}}</b-th>
-                  <b-th v-for="coluna in secao.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
-                </b-tr>
-              </b-thead>
-              <b-tbody>
-                <b-tr v-for="linha in secao.linhas" :key="linha.id">
-                  <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
-                  <b-td v-for="coluna in secao.colunas" :key="coluna.id">
-                    <b-form-input/>
-                  </b-td>
-                </b-tr>
-              </b-tbody>
+            <b-table-simple>
+              <template v-for="secao in categoria.secoes">
+                <b-thead :key="secao.id">
+                  <b-tr class="text-center" v-if="!secao.esconderColunas">
+                    <b-th>{{secao.nome}}</b-th>
+                    <b-th v-for="coluna in secao.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
+                  </b-tr>
+                </b-thead>
+                <b-tbody :key="secao.id">
+                  <b-tr v-for="linha in secao.linhas" :key="linha.id">
+                    <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
+                    <b-td v-for="coluna in secao.colunas" :key="coluna.id">
+                      <b-form-input/>
+                    </b-td>
+                  </b-tr>
+                </b-tbody>
+                </template>
             </b-table-simple>
           </b-card-body>
         </b-collapse>
