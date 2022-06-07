@@ -2,16 +2,19 @@
   <div id="app">
     <navbar-geral/>
     <router-view/>
+    <footer-geral/>
   </div>
 </template>
 
 <script>
+import FooterGeral from './components/FooterGeral.vue'
 import NavbarGeral from './components/NavbarGeral.vue'
 
 export default {
   name: 'app',
   components: {
-    NavbarGeral
+    NavbarGeral,
+    FooterGeral
   }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="primary">
-      <b-navbar-brand to="/">EasyD@ta <b-icon icon="github"/> <b-icon icon="question-circle"/></b-navbar-brand>
+      <b-navbar-brand to="/">EasyD@ta</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
