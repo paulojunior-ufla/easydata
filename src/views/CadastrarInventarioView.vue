@@ -1,13 +1,7 @@
 <template>
   <div class="home">
-      <b-row>
-        <b-col>
-          <sidebar-inventario-dados v-bind:template="template"/>
-        </b-col>
-        <b-col cols="10">
-          <form-inventario-dados v-bind:template="template"/>
-        </b-col>
-      </b-row>
+    <sidebar-inventario-dados v-bind:template="template" v-model="menuAberto"/>
+    <form-inventario-dados v-bind:template="template" v-model="menuAberto" :class="menuAberto? 'formRestrito' : 'formExpandido'"/>
   </div>
 </template>
 
@@ -21,12 +15,31 @@ export default {
   name: 'HomeView',
   data () {
     return {
-      template
+      template,
+      menuAberto: true
     }
   },
   components: {
     FormInventarioDados,
     SidebarInventarioDados
+  },
+  methods: {
+    toggleMenu () {
+      console.log('Toggle')
+      this.menuAberto = !this.menuAberto
+    }
   }
 }
 </script>
+<style>
+.home {
+  display: flex;
+}
+.formExpandido {
+  margin-left: 70px;
+  width: 100%;
+}
+.formRestrito {
+  width: 100%;
+}
+</style>

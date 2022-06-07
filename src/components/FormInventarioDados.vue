@@ -34,7 +34,7 @@
             </b-table-simple>
             <b-table-simple>
               <template v-for="secao in categoria.secoes">
-                <b-thead :key="secao.id">
+                <b-thead :key="'header-' + secao.id">
                   <b-tr class="text-center" v-if="!secao.esconderColunas">
                     <b-th>{{secao.nome}}</b-th>
                     <b-th v-for="coluna in secao.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
