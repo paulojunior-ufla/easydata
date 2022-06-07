@@ -1,7 +1,12 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="primary">
-      <b-navbar-brand to="/">EasyD@ta</b-navbar-brand>
+      <span class="icon" role="button" v-if="this.$route.path != '/'" @click="$router.go(-1)">
+        <b-icon icon="arrow-left-short"/>
+      </span>
+      <b-navbar-brand to="/" style="flex-direction: row; display: flex;">
+        EasyD@ta
+      </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -30,6 +35,13 @@ export default {
 </script>
 
 <style>
+span.icon {
+  color: #FFF;
+  border: 1px solid #FFFFFF30;
+  margin-right: 5px;
+  display: flex;
+  font-size: 29px;
+}
 .navbar-dark .navbar-nav .nav-link {
   color: #FFF!important;
 }
