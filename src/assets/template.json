@@ -1,4 +1,80 @@
 {
+    "bancoDados": [
+        "Banco de dados do Campus Virtual",
+        "Nome da Base de Dados 2",
+        "Nome da Base de Dados 3",
+        "Nome da Base de Dados 4"
+    ],
+    "simNao": [
+        "Sim",
+        "Não",
+        "Não se Aplica"
+    ],
+    "fonteRetencao": [
+        "Base de dados",
+        "Blockchain",
+        "Doc. eletrônico DOCX e similares",
+        "Doc. eletrônico PDF e similares",
+        "Doc. em papel",
+        "Planilha eletrônica"
+    ],
+    "categoriaTitulares": [
+        "Beneficiários",
+        "Clientes",
+        "Contribuintes",
+        "Dependentes",
+        "Eleitores",
+        "Empregados",
+        "Estudantes",
+        "Motoristas",
+        "Pacientes",
+        "Pessoas",
+        "Servidores",
+        "Outros (Especificar)"
+    ],
+    "medidasSeguranca": [
+        "Abertura, Transparência e Notificação",
+        "Compliance com a Privacidade",
+        "Consentimento e Escolha",
+        "Continuidade de Negócio",
+        "Controles Criptográficos",
+        "Controles de Acesso Lógico",
+        "Controle de Acesso e Privacidade",
+        "Controles de Segurança em Redes, Proteção Física e do Ambiente",
+        "Cópia de Segurança",
+        "Desenvolvimento Seguro",
+        "Gestão de Capacidade e Redundância",
+        "Gestão de Mudanças",
+        "Gestão de Riscos",
+        "Legitimidade e Especificação de Propósito",
+        "Limitação de Coleta",
+        "Minimização de Dados",
+        "Participação Individual e Acesso",
+        "Precisão e qualidade",
+        "Registro de Eventos, Rastreabilidade e Salvaguarda de Logs",
+        "Responsabilização",
+        "Segurança Web",
+        "Uso, Retenção e Limitação de Divulgação",
+        "Resposta a Incidente"
+    ],
+    "tipoGarantiaTransferencia": [
+        "Acordo de cooperação internacional",
+        "Certificação regularmente emitida",
+        "Cláusulas contratuais específicas para determinada transferência",
+        "Cláusulas-padrão contratuais",
+        "Código de conduta regularmente emitido",
+        "Cooperação jurídica internacional entre órgãos públicos de inteligência, de investigação e de persecução, de acordo com os instrumentos de direito internacional",
+        "Cumprimento de obrigação legal ou regulatória pelo controlador",
+        "Execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular",
+        "Execução de política pública ou atribuição legal do serviço público",
+        "Exercício regular de direitos em processo judicial, administrativo ou arbitral",
+        "Fornecimento de consentimento específico pelo titular dos dados pessoais",
+        "Normas corporativas globais",
+        "País que fornece um nível adequado de proteção",
+        "Proteção da vida ou da incolumidade física do titular ou de terceiro",
+        "Selo regularmente emitido",
+        "Transferência autorizada pela ANPD"
+    ],
     "categorias": [
         {
             "id": 1,
@@ -41,11 +117,11 @@
             "id": 3,
             "nome": "3 - Fases do Ciclo de Vida do Tratamento Dados Pessoais",
             "colunas": [
-                {"id": 1, "nome": "Coleta"},
-                {"id": 2, "nome": "Retenção"},
-                {"id": 3, "nome": "Processamento"},
-                {"id": 4, "nome": "Compartilhamento"},
-                {"id": 5, "nome": "Eliminação"}
+                {"id": 1, "nome": "Coleta", "campoOpcoes": "simNao"},
+                {"id": 2, "nome": "Retenção", "campoOpcoes": "simNao"},
+                {"id": 3, "nome": "Processamento", "campoOpcoes": "simNao"},
+                {"id": 4, "nome": "Compartilhamento", "campoOpcoes": "simNao"},
+                {"id": 5, "nome": "Eliminação", "campoOpcoes": "simNao"}
             ],
             "classes": [
                 "",
@@ -96,7 +172,22 @@
                 {"id": 1, "nome": "Valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "6.1 - Hipótese de Tratamento"},
+                {
+                    "id": 1,
+                    "nome": "6.1 - Hipótese de Tratamento",
+                    "opcoes":[
+                        "Cumprimento de obrigação legal ou regulatória pelo controlador.",
+                        "Execução de políticas públicas.",
+                        "Alguma espécie de estudo realizado por órgão de pesquisa.",
+                        "Execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados.",
+                        "Exercício regular de direitos em processo judicial, administrativo ou arbitral.",
+                        "Proteção da vida ou da incolumidade física do titular ou de terceiro.",
+                        "Tutela da saúde.",
+                        "Atender aos interesses legítimos do controlador ou de terceiro.",
+                        "Proteção do crédito.",
+                        "Garantia da prevenção à fraude e à segurança do titular."
+                    ]
+                },
                 {"id": 2, "nome": "6.2 - Finalidade"},
                 {"id": 3, "nome": "6.3 - Previsão legal"},
                 {"id": 4, "nome": "6.4 - Resultados pretendidos para o titular de dados"},
@@ -114,8 +205,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal"},
@@ -130,8 +221,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.2.1 - Dados de identificação financeira"},
@@ -155,8 +246,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.3.1 - Detalhes pessoais"},
@@ -171,8 +262,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.4.1 - Hábitos"},
@@ -191,8 +282,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.5.1 - Descrição Psicológica"}
@@ -204,8 +295,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação"},
@@ -219,8 +310,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer"}
@@ -232,8 +323,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)"}
@@ -245,8 +336,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.9.1 - Suspeitas"},
@@ -261,8 +352,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.10.1 - Dados de bens e serviços"}
@@ -274,8 +365,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.11.1 - Residência"}
@@ -287,8 +378,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares"},
@@ -302,8 +393,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.13.1 - Emprego atual"},
@@ -320,8 +411,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.14.1 - Vídeo e imagem"},
@@ -335,8 +426,8 @@
                     "colunas": [
                         {"id": 1, "nome": "Descrição"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção"},
-                        {"id": 4, "nome": "Nome Base de Dados"}
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.15.1 - Outros (Especificar)"}
@@ -350,8 +441,8 @@
             "colunas": [
                 {"id": 1, "nome": "Descrição"},
                 {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                {"id": 3, "nome": "Fonte Retenção"},
-                {"id": 4, "nome": "Nome Base de Dados"}
+                {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
+                {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
             ],
             "linhas": [
                 {"id": 1, "nome": "8.1 - Dados que revelam origem racial ou ética"},
@@ -382,12 +473,12 @@
             "nome": "10 - Categorias dos titulares de dados pessoais",
             "colunas": [
                 {"id": 1, "nome": "Tipo de Categoria"},
-                {"id": 2, "nome": "Descrição"}
+                {"id": 2, "nome": "Descrição", "ignorarOpcoes": true}
             ],
             "linhas": [
-                {"id": 1, "nome": "10.1 - Categoria 1"},
-                {"id": 2, "nome": "10.3  - Trata dados de crianças e adolescentes"},
-                {"id": 3, "nome": "10.4 - Além de crianças e adolescente trata dados de outro grupo vulnerável"}
+                {"id": 1, "nome": "10.1 - Categoria 1", "campoOpcoes": "categoriaTitulares"},
+                {"id": 2, "nome": "10.3  - Trata dados de crianças e adolescentes", "campoOpcoes": "simNao"},
+                {"id": 3, "nome": "10.4 - Além de crianças e adolescente trata dados de outro grupo vulnerável", "campoOpcoes": "simNao"}
             ]
         },
         {
@@ -405,7 +496,7 @@
             "id": 12,
             "nome": "12 - Medidas de Segurança/Privacidade",
             "colunas": [
-                {"id": 1, "nome": "Tipo de medida de segurança e privacidade"},
+                {"id": 1, "nome": "Tipo de medida de segurança e privacidade", "campoOpcoes": "medidasSeguranca"},
                 {"id": 2, "nome": "Descrição do(s) Controle(s)"}
             ],
             "linhas": [
@@ -420,7 +511,7 @@
             "colunas": [
                 {"id": 1, "nome": "País"},
                 {"id": 2, "nome": "Dados pessoais transferidos"},
-                {"id": 3, "nome": "Tipo de garantia para transferência"}
+                {"id": 3, "nome": "Tipo de garantia para transferência", "campoOpcoes": "tipoGarantiaTransferencia"}
             ],
             "linhas": [
                 {"id": 1, "nome": "13.1 - Organização 1"}

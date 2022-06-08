@@ -20,14 +20,15 @@
               <b-thead>
                 <b-tr class="text-center" v-if="!categoria.esconderColunas">
                   <b-th v-if="categoria.linhas"></b-th>
-                  <b-th v-for="coluna in categoria.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
+                  <b-th v-for="coluna in categoria.colunas" :key="coluna.id" width="270">{{coluna.nome}}</b-th>
                 </b-tr>
               </b-thead>
               <b-tbody>
                 <b-tr v-for="linha in categoria.linhas" :key="linha.id">
                   <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
                   <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-                    <b-form-input :class="categoria.classes && typeof categoria.classes[index] != 'undefined' ? categoria.classes[index] : ''"/>
+                    <b-form-input v-if="(typeof coluna.campoOpcoes == 'undefined' && typeof linha.campoOpcoes == 'undefined') || coluna.ignorarOpcoes" :class="categoria.classes && typeof categoria.classes[index] != 'undefined' ? categoria.classes[index] : ''"/>
+                    <b-form-select v-else :class="categoria.classes && typeof categoria.classes[index] != 'undefined' ? categoria.classes[index] : ''" :options="typeof coluna.campoOpcoes != 'undefined' ? dadosTemplate[coluna.campoOpcoes] : dadosTemplate[linha.campoOpcoes]"/>
                   </b-td>
                 </b-tr>
               </b-tbody>
@@ -37,14 +38,15 @@
                 <b-thead :key="'header-' + secao.id">
                   <b-tr class="text-center" v-if="!secao.esconderColunas">
                     <b-th>{{secao.nome}}</b-th>
-                    <b-th v-for="coluna in secao.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
+                    <b-th v-for="coluna in secao.colunas" :key="coluna.id" width="270">{{coluna.nome}}</b-th>
                   </b-tr>
                 </b-thead>
                 <b-tbody :key="secao.id">
                   <b-tr v-for="linha in secao.linhas" :key="linha.id">
                     <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
                     <b-td v-for="coluna in secao.colunas" :key="coluna.id">
-                      <b-form-input/>
+                      <b-form-input v-if="(typeof coluna.campoOpcoes == 'undefined' && typeof linha.campoOpcoes == 'undefined') || coluna.ignorarOpcoes" :class="categoria.classes && typeof categoria.classes[index] != 'undefined' ? categoria.classes[index] : ''"/>
+                      <b-form-select v-else :class="categoria.classes && typeof categoria.classes[index] != 'undefined' ? categoria.classes[index] : ''" :options="typeof coluna.campoOpcoes != 'undefined' ? dadosTemplate[coluna.campoOpcoes] : dadosTemplate[linha.campoOpcoes]"/>
                     </b-td>
                   </b-tr>
                 </b-tbody>
@@ -72,6 +74,7 @@ export default {
   },
   data () {
     return {
+      dadosTemplate: this.template,
       categorias: this.template.categorias,
       titulo: '',
       fields: [
