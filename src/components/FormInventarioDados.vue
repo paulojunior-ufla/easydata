@@ -10,11 +10,11 @@
           </b-card-body>
       </b-card>
 
-      <b-card no-body class="mb-1" v-for="categoria in categorias" :key="categoria.id">
+      <b-card no-body class="mb-1 accordion-parent" v-for="categoria in categorias" :key="categoria.id">
         <b-card-header header-tag="header" class="p-1" role="tab">
           <h5 block v-b-toggle="'accordion-' + categoria.id" class="m-2"><b-icon style="height: 16px" icon="check-lg"/> {{categoria.nome}}</h5>
         </b-card-header>
-        <b-collapse :id="'accordion-' + categoria.id" visible accordion="my-accordion" role="tabpanel">
+        <b-collapse class="accordion-children" :id="'accordion-' + categoria.id" visible accordion="my-accordion" role="tabpanel">
           <b-card-body>
             <b-table-simple>
               <b-thead>
@@ -100,6 +100,21 @@ export default {
     salvar: function () {
       this.$store.dispatch('inventarios/addInventario', { titulo: this.titulo })
     }
+  },
+  mounted () {
+    this.$root.$on('bv::collapse::state', (collapseId, isJustShown) => {
+      if (isJustShown) {
+        document.querySelector('.accordion-children#' + collapseId + '').parentElement.style.display = 'block'
+        document.querySelectorAll('.accordion-children:not(#' + collapseId + ')').forEach((accordion) => {
+          accordion.parentElement.style.display = 'none'
+        })
+      }
+      // this.$root.$emit('bv::toggle::collapse', collapseId)
+      // console.log('this.$el.querySelector(#accordion-3)', document.querySelector('.accordion-parent >:not( #' + collapseId + ')'))
+      // this.$root.$emit('bv::toggle::collapse', collapseId)
+      console.log('collapseId:', collapseId)
+      console.log('isJustShown:', isJustShown)
+    })
   }
 }
 </script>
