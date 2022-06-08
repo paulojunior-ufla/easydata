@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
       <b-row class="justify-content-md-center">
         <b-col cols="10">
           <table-inventario-dados msg="Welcome to Your Vue.js App"/>

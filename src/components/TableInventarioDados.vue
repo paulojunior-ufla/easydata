@@ -2,7 +2,9 @@
   <div>
     <b-table hover :items="items" :fields="fields">
       <template #cell(editar)>
-          <a href="cadastrarInventario/"><b-icon icon="pencil" variant="primary"/></a>
+        <b-link to="/cadastrarInventario" class="nav-link">
+          <b-icon icon="pencil" variant="primary"/>
+        </b-link>
       </template>
       <template #cell(opcoes)="data">
         <b-dropdown variant="outline" no-caret title="Opções" size="sm">
