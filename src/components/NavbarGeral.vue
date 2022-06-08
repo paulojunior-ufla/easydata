@@ -37,7 +37,6 @@ export default {
 <style>
 span.icon {
   color: #FFF;
-  border: 1px solid #FFFFFF30;
   margin-right: 5px;
   display: flex;
   font-size: 29px;
