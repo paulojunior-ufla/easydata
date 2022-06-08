@@ -5,6 +5,7 @@
       @openMenu="handleOpenMenu"
       @closeMenu="handleCloseMenu"
       width="300"
+      disableOutsideClick
     >
       <b-navbar toggleable="lg" variant="light" class="p-1 py-2 ms-2">
         <b-nav vertical class="w-100 text-start">
