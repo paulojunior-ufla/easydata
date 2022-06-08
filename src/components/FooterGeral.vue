@@ -1,6 +1,10 @@
 <template>
   <div class="footer">
-    <p>Copyright EasyD@ta (C) 2022 -  <a href="https://github.com/paulojunior-ufla/easydata"><b-icon icon="github"/></a> <b-icon icon="question-circle" role="button"/></p>
+    <p>© Copyright {{currentYear}} EasyD@ta | <a href="https://github.com/paulojunior-ufla/easydata">
+        <b-icon icon="github" />
+      </a>
+      <b-icon icon="question-circle" role="button" />
+    </p>
   </div>
 </template>
 
@@ -9,6 +13,11 @@ export default {
   name: 'FooterGeral',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      currentYear: new Date().getFullYear()
+    }
   }
 }
 </script>
@@ -23,7 +32,9 @@ export default {
   line-height: 12px;
   text-align: center;
 }
+
 .footer a {
   color: initial;
+  padding: 5px;
 }
 </style>
