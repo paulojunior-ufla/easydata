@@ -113,4 +113,7 @@ export default {
   width: 280px;
   background: red;
 }
+div[isopen="true"] .bm-burger-button {
+  display: none;
+}
 </style>
