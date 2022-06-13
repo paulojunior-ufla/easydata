@@ -2,12 +2,12 @@
   <div>
     <b-table hover :items="items" :fields="fields">
       <template #cell(editar)>
-        <b-link to="/cadastrarInventario" class="nav-link">
+        <b-link to="/cadastrarInventario">
           <b-icon icon="pencil" variant="primary"/>
         </b-link>
       </template>
       <template #cell(opcoes)="data">
-        <b-dropdown variant="outline" no-caret title="Opções" size="sm">
+        <b-dropdown variant="outline" no-caret title="Opções" size="sm" class="dropdown-tabela">
           <template #button-content>
             <b-icon icon="three-dots-vertical" title="Opções" variant="primary"/>
           </template>
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 h3 {
   margin: 40px 0 0;
 }
@@ -83,5 +83,14 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
+}
+.nav-link {
+  padding: 0;
+}
+.dropdown-tabela {
+  display: block;
+}
+.dropdown-tabela .btn {
+  border: 0;
 }
 </style>
