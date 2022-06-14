@@ -247,7 +247,7 @@
                         {"id": 10, "nome": "7.2.10 - Compensação", "nome_impressao": "compensacao"},
                         {"id": 11, "nome": "7.2.11 - Atividades profissionais", "nome_impressao": "atividades_profissionais"},
                         {"id": 12, "nome": "7.2.12 - Acordos e ajustes", "nome_impressao": "acordos_ajustes"},
-                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos", "nome_impressao": "autorizações_consentimentos"}
+                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos", "nome_impressao": "autorizacoes_consentimentos"}
                     ]
                 },
                 {
@@ -359,7 +359,7 @@
                     "linhas": [
                         {"id": 1, "nome": "7.9.1 - Suspeitas", "nome_impressao": "suspeitas"},
                         {"id": 2, "nome": "7.9.2 - Condenações e sentenças", "nome_impressao": "condenacoes_sentencas"},
-                        {"id": 3, "nome": "7.9.3 - Ações judiciais", "nome_impressao": "ações_judiciais"},
+                        {"id": 3, "nome": "7.9.3 - Ações judiciais", "nome_impressao": "acoes_judiciais"},
                         {"id": 4, "nome": "7.9.4 - Penalidades Administrativas", "nome_impressao": "penalidades_administrativas"}
                     ]
                 },

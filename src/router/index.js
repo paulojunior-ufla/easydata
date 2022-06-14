@@ -17,6 +17,11 @@ const routes = [
     component: CadastrarInventarioView
   },
   {
+    path: '/editarInventario/:id',
+    name: 'editarInventario',
+    component: CadastrarInventarioView
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting

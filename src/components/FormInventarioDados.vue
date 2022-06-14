@@ -47,7 +47,7 @@
                     <b-tr v-for="linha in secao.linhas" :key="linha.id">
                       <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
                       <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
-                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)"/>
+                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
                         <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)"/>
                       </b-td>
                     </b-tr>
@@ -77,6 +77,7 @@ export default {
   },
   data () {
     return {
+      id: this.$route.params.id,
       dados: {
         identificacao: {
           nome_servico: { valor: 1 },
@@ -128,7 +129,7 @@ export default {
       // console.log('event', event.target.elements)
       // const inventarios = []
 
-      // this.$store.dispatch('inventarios/addInventario', { titulo: this.titulo })
+      this.$store.dispatch('inventarios/addInventario', inventario)
     },
     salvarElemento: function (elemento, inventario) {
       let caminhos = []
