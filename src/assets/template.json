@@ -79,26 +79,28 @@
         {
             "id": 1,
             "nome": "1 - Identificação dos serviços / processo de negócio de tratamento de dados pessoais",
+            "nome_impressao": "identificacao",
             "esconderColunas": true,
             "colunas": [
-                {"id": 2, "nome": "Valor"}
+                {"id": 2, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio"},
-                {"id": 2, "nome": "1.2 - Nº Referência  / ID"},
-                {"id": 3, "nome": "1.3 - Data de Criação do Inventário"},
-                {"id": 4, "nome": "1.4 - Data Atualização do Inventário"}
+                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio", "nome_impressao": "nome_servico"},
+                {"id": 2, "nome": "1.2 - Nº Referência  / ID", "nome_impressao": "n_referencia"},
+                {"id": 3, "nome": "1.3 - Data de Criação do Inventário", "nome_impressao": "data_criacao"},
+                {"id": 4, "nome": "1.4 - Data Atualização do Inventário", "nome_impressao": "data_atualizacao"}
             ]
         },
         {
             "id": 2,
             "nome": "2 - Agentes de  Tratamento e Encarregado",
+            "nome_impressao": "agentes",
             "colunas": [
-                {"id": 1, "nome": "Nome"},
-                {"id": 2, "nome": "Endereço"},
-                {"id": 3, "nome": "CEP"},
-                {"id": 4, "nome": "Telefone"},
-                {"id": 5, "nome": "E-mail"}
+                {"id": 1, "nome": "Nome", "nome_impressao": "nome"},
+                {"id": 2, "nome": "Endereço", "nome_impressao": "endereco"},
+                {"id": 3, "nome": "CEP", "nome_impressao": "cep"},
+                {"id": 4, "nome": "Telefone", "nome_impressao": "telefone"},
+                {"id": 5, "nome": "E-mail", "nome_impressao": "email"}
             ],
             "classes": [
                 "",
@@ -108,20 +110,21 @@
                 "email"
             ],
             "linhas": [
-                {"id": 1, "nome": "2.1 - Controlador"},
-                {"id": 2, "nome": "2.2 - Encarregado"},
-                {"id": 3, "nome": "2.3 - Operador"}
+                {"id": 1, "nome": "2.1 - Controlador", "nome_impressao": "controlador"},
+                {"id": 2, "nome": "2.2 - Encarregado", "nome_impressao": "encarregado"},
+                {"id": 3, "nome": "2.3 - Operador", "nome_impressao": "operador"}
             ]
         },
         {
             "id": 3,
             "nome": "3 - Fases do Ciclo de Vida do Tratamento Dados Pessoais",
+            "nome_impressao": "fase_ciclo_vida",
             "colunas": [
-                {"id": 1, "nome": "Coleta", "campoOpcoes": "simNao"},
-                {"id": 2, "nome": "Retenção", "campoOpcoes": "simNao"},
-                {"id": 3, "nome": "Processamento", "campoOpcoes": "simNao"},
-                {"id": 4, "nome": "Compartilhamento", "campoOpcoes": "simNao"},
-                {"id": 5, "nome": "Eliminação", "campoOpcoes": "simNao"}
+                {"id": 1, "nome": "Coleta", "campoOpcoes": "simNao", "nome_impresso": "coleta"},
+                {"id": 2, "nome": "Retenção", "campoOpcoes": "simNao", "nome_impresso": "retencao"},
+                {"id": 3, "nome": "Processamento", "campoOpcoes": "simNao", "nome_impresso": "processamento"},
+                {"id": 4, "nome": "Compartilhamento", "campoOpcoes": "simNao", "nome_impresso": "compartilhamento"},
+                {"id": 5, "nome": "Eliminação", "campoOpcoes": "simNao", "nome_impresso": "eliminacao"}
             ],
             "classes": [
                 "",
@@ -137,9 +140,10 @@
         {
             "id": 4,
             "nome": "4 - De que forma (como) os dados  pessoais são coletados, retidos/armazenados, processados/usados, compartilhados e eliminados",
+            "nome_impressao": "forma_coleta",
             "esconderColunas": true,
             "colunas": [
-                {"id": 1, "nome": "Valor"}
+                {"id": 1, "nome": "Valor", "nome_impresso": "valor"}
             ],
             "classes": [
                 "",
@@ -149,32 +153,35 @@
                 ""
             ],
             "linhas": [
-                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais"}
+                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais", "nome_impressao": "descricao_fluxo"}
             ]
         },
         {
             "id": 5,
             "nome": "5 - Escopo e Natureza dos Dados Pessoais",
+            "nome_impressao": "escopo_natureza_dados",
             "esconderColunas": true,
             "colunas": [
-                {"id": 1, "nome": "Valor"}
+                {"id": 1, "nome": "Valor", "nome_impresso": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "5.1 - Abrangência da área geográfica do tratamento"},
-                {"id": 2, "nome": "5.2 - Fonte de dados utilizada para obtenção dos dados pessoais"}
+                {"id": 1, "nome": "5.1 - Abrangência da área geográfica do tratamento", "nome_impressao": "abrangencia_geografia"},
+                {"id": 2, "nome": "5.2 - Fonte de dados utilizada para obtenção dos dados pessoais", "nome_impressao": "fonte_obtencao"}
             ]
         },
         {
             "id": 6,
             "nome": "6 - Finalidade do Tratamento de Dados Pessoais",
+            "nome_impressao": "finalidade_tratamento",
             "esconderColunas": true,
             "colunas": [
-                {"id": 1, "nome": "Valor"}
+                {"id": 1, "nome": "Valor", "nome_impresso": "valor"}
             ],
             "linhas": [
                 {
                     "id": 1,
                     "nome": "6.1 - Hipótese de Tratamento",
+                    "nome_impressao": "hipotese_tratamento",
                     "opcoes":[
                         "Cumprimento de obrigação legal ou regulatória pelo controlador.",
                         "Execução de políticas públicas.",
@@ -188,249 +195,251 @@
                         "Garantia da prevenção à fraude e à segurança do titular."
                     ]
                 },
-                {"id": 2, "nome": "6.2 - Finalidade"},
-                {"id": 3, "nome": "6.3 - Previsão legal"},
-                {"id": 4, "nome": "6.4 - Resultados pretendidos para o titular de dados"},
-                {"id": 5, "nome": "6.5 - Benefícios esperados para o órgão, entidade ou para a sociedade como um todo"}
+                {"id": 2, "nome": "6.2 - Finalidade", "nome_impressao": "finalidade"},
+                {"id": 3, "nome": "6.3 - Previsão legal", "nome_impressao": "previsao_legal"},
+                {"id": 4, "nome": "6.4 - Resultados pretendidos para o titular de dados", "nome_impressao": "resultados_pretendidos"},
+                {"id": 5, "nome": "6.5 - Benefícios esperados para o órgão, entidade ou para a sociedade como um todo", "nome_impressao": "beneficios_esperados"}
             ]
         },
         {
             "id": 7,
             "nome": "7 - Categoria de Dados Pessoais",
+            "nome_impressao": "dados_pessoais",
             "esconderColunas": true,
             "secoes": [
                 {
                     "id": 1,
                     "nome": "7.1 -Dados de Identificação Pessoal",
+                    "nome_impresso": "info_pessoal",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal"},
-                        {"id": 2, "nome": "7.1.2 - Informações de identificação atribuídas por instituições governamentais"},
-                        {"id": 3, "nome": "7.1.3 - Dados de identificação eletrônica"},
-                        {"id": 4, "nome": "7.1.4 - Dados de localização  eletrônica"}
+                        {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal", "nome_impressao": "info_identificacao"},
+                        {"id": 2, "nome": "7.1.2 - Informações de identificação atribuídas por instituições governamentais", "nome_impressao": "info_instituicoes_gov"},
+                        {"id": 3, "nome": "7.1.3 - Dados de identificação eletrônica", "nome_impressao": "ident_eletronica"},
+                        {"id": 4, "nome": "7.1.4 - Dados de localização eletrônica", "nome_impressao": "loc_eletronica"}
                     ]
                 },
                 {
                     "id": 2,
                     "nome": "7.2 -Dados Financeiros",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.2.1 - Dados de identificação financeira"},
-                        {"id": 2, "nome": "7.2.2 - Recursos financeiros"},
-                        {"id": 3, "nome": "7.2.3 - Dívidas e despesas"},
-                        {"id": 4, "nome": "7.2.4 - Situação financeira (Solvência)"},
-                        {"id": 5, "nome": "7.2.5 - Empréstimos, hipotecas, linhas de crédito"},
-                        {"id": 6, "nome": "7.2.6 - Assistência financeira"},
-                        {"id": 7, "nome": "7.2.7 - Detalhes da apólice de seguro"},
-                        {"id": 8, "nome": "7.2.8 - Detalhes do plano de pensão"},
-                        {"id": 9, "nome": "7.2.9 - Transações financeiras"},
-                        {"id": 10, "nome": "7.2.10 - Compensação"},
-                        {"id": 11, "nome": "7.2.11 - Atividades profissionais"},
-                        {"id": 12, "nome": "7.2.12 - Acordos e ajustes"},
-                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos"}
+                        {"id": 1, "nome": "7.2.1 - Dados de identificação financeira", "nome_impressao": "dados_id_financeira"},
+                        {"id": 2, "nome": "7.2.2 - Recursos financeiros", "nome_impressao": "recursos_financeiros"},
+                        {"id": 3, "nome": "7.2.3 - Dívidas e despesas", "nome_impressao": "dividas_despesas"},
+                        {"id": 4, "nome": "7.2.4 - Situação financeira (Solvência)", "nome_impressao": "situacao_financeira"},
+                        {"id": 5, "nome": "7.2.5 - Empréstimos, hipotecas, linhas de crédito", "nome_impressao": "emprestimos_hipotecas_credito"},
+                        {"id": 6, "nome": "7.2.6 - Assistência financeira", "nome_impressao": "assistencia_financeira"},
+                        {"id": 7, "nome": "7.2.7 - Detalhes da apólice de seguro", "nome_impressao": "detalhes_apolice"},
+                        {"id": 8, "nome": "7.2.8 - Detalhes do plano de pensão", "nome_impressao": "detalhes_pensao"},
+                        {"id": 9, "nome": "7.2.9 - Transações financeiras", "nome_impressao": "transacoes_financeiras"},
+                        {"id": 10, "nome": "7.2.10 - Compensação", "nome_impressao": "compensacao"},
+                        {"id": 11, "nome": "7.2.11 - Atividades profissionais", "nome_impressao": "atividades_profissionais"},
+                        {"id": 12, "nome": "7.2.12 - Acordos e ajustes", "nome_impressao": "acordos_ajustes"},
+                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos", "nome_impressao": "autorizações_consentimentos"}
                     ]
                 },
                 {
                     "id": 3,
                     "nome": "7.3 - Características Pessoais",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.3.1 - Detalhes pessoais"},
-                        {"id": 2, "nome": "7.3.2 - Detalhes militares"},
-                        {"id": 3, "nome": "7.3.3 - Situação de Imigração"},
-                        {"id": 4, "nome": "7.3.4 - Descrição Física"}
+                        {"id": 1, "nome": "7.3.1 - Detalhes pessoais", "nome_impressao": "detalhes_pessoais"},
+                        {"id": 2, "nome": "7.3.2 - Detalhes militares", "nome_impressao": "detalhes_militares"},
+                        {"id": 3, "nome": "7.3.3 - Situação de Imigração", "nome_impressao": "situacao_imigracao"},
+                        {"id": 4, "nome": "7.3.4 - Descrição Física", "nome_impressao": "descricao_fisica"}
                     ]
                 },
                 {
                     "id": 4,
                     "nome": "7.4 - Hábitos Pessoais",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.4.1 - Hábitos"},
-                        {"id": 2, "nome": "7.4.2 - Estilo de vida"},
-                        {"id": 3, "nome": "7.4.3 - Viagens e deslocamentos"},
-                        {"id": 4, "nome": "7.4.4 - Contatos sociais"},
-                        {"id": 5, "nome": "7.4.5 - Posses"},
-                        {"id": 6, "nome": "7.4.6 - Denúncias, incidentes ou acidentes"},
-                        {"id": 7, "nome": "7.4.7 - Distinções"},
-                        {"id": 8, "nome": "7.4.8 - Uso de mídia"}
+                        {"id": 1, "nome": "7.4.1 - Hábitos", "nome_impressao": "hhbitos"},
+                        {"id": 2, "nome": "7.4.2 - Estilo de vida", "nome_impressao": "estilo_vida"},
+                        {"id": 3, "nome": "7.4.3 - Viagens e deslocamentos", "nome_impressao": "viagens_deslocamentos"},
+                        {"id": 4, "nome": "7.4.4 - Contatos sociais", "nome_impressao": "contatos_sociais"},
+                        {"id": 5, "nome": "7.4.5 - Posses", "nome_impressao": "posses"},
+                        {"id": 6, "nome": "7.4.6 - Denúncias, incidentes ou acidentes", "nome_impressao": "denuncias"},
+                        {"id": 7, "nome": "7.4.7 - Distinções", "nome_impressao": "distincoes"},
+                        {"id": 8, "nome": "7.4.8 - Uso de mídia", "nome_impressao": "uso_midia"}
                     ]
                 },
                 {
                     "id": 5,
                     "nome": "7.5 - Características  Psicológicas",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.5.1 - Descrição Psicológica"}
+                        {"id": 1, "nome": "7.5.1 - Descrição Psicológica", "nome_impressao": "descricao_psicologica"}
                     ]
                 },
                 {
                     "id": 6,
                     "nome": "7.6 - Composição Familiar",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação"},
-                        {"id": 2, "nome": "7.6.2 - Histórico conjugal"},
-                        {"id": 3, "nome": "7.6.3 - Familiares ou membros da família"}
+                        {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação", "nome_impressao": "casamento_coabitacao"},
+                        {"id": 2, "nome": "7.6.2 - Histórico conjugal", "nome_impressao": "historico_conjugal"},
+                        {"id": 3, "nome": "7.6.3 - Familiares ou membros da família", "nome_impressao": "familiares_membros"}
                     ]
                 },
                 {
                     "id": 7,
                     "nome": "7.7 - Interesses de lazer",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer"}
+                        {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer", "nome_impressao": "atividades_lazer"}
                     ]
                 },
                 {
                     "id": 8,
                     "nome": "7.8 - Associações",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)"}
+                        {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)", "nome_impressao": "associacoes"}
                     ]
                 },
                 {
                     "id": 9,
                     "nome": "7.9 - Processo Judicial/Administrativo/Criminal",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.9.1 - Suspeitas"},
-                        {"id": 2, "nome": "7.9.2 - Condenações e sentenças"},
-                        {"id": 3, "nome": "7.9.3 - Ações judiciais"},
-                        {"id": 4, "nome": "7.9.4 - Penalidades Administrativas"}
+                        {"id": 1, "nome": "7.9.1 - Suspeitas", "nome_impressao": "suspeitas"},
+                        {"id": 2, "nome": "7.9.2 - Condenações e sentenças", "nome_impressao": "condenacoes_sentencas"},
+                        {"id": 3, "nome": "7.9.3 - Ações judiciais", "nome_impressao": "ações_judiciais"},
+                        {"id": 4, "nome": "7.9.4 - Penalidades Administrativas", "nome_impressao": "penalidades_administrativas"}
                     ]
                 },
                 {
                     "id": 10,
                     "nome": "7.10 - Hábitos de Consumo",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.10.1 - Dados de bens e serviços"}
+                        {"id": 1, "nome": "7.10.1 - Dados de bens e serviços", "nome_impressao": "dados_bens_servicos"}
                     ]
                 },
                 {
                     "id": 11,
                     "nome": "7.11 - Dados Residenciais",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.11.1 - Residência"}
+                        {"id": 1, "nome": "7.11.1 - Residência", "nome_impressao": "residencia"}
                     ]
                 },
                 {
                     "id": 12,
                     "nome": "7.12 - Educação e Treinamento",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares"},
-                        {"id": 2, "nome": "7.12.2 Registros financeiros do curso/treinamento"},
-                        {"id": 3, "nome": "7.12.3 -  Qualificação e experiência profissional"}
+                        {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares", "nome_impressao": "dados_academicos"},
+                        {"id": 2, "nome": "7.12.2 - Registros financeiros do curso/treinamento", "nome_impressao": "registros_financeiros"},
+                        {"id": 3, "nome": "7.12.3 - Qualificação e experiência profissional", "nome_impressao": "qualificacao_experiencia"}
                     ]
                 },
                 {
                     "id": 13,
                     "nome": "7.13 - Profissão e emprego",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.13.1 - Emprego atual"},
-                        {"id": 2, "nome": "7.13.2 - Recrutamento"},
-                        {"id": 3, "nome": "7.13.3 - Rescisão de trabalho"},
-                        {"id": 4, "nome": "7.13.4 - Carreira"},
-                        {"id": 5, "nome": "7.13.5 - Absentismo e disciplina"},
-                        {"id": 6, "nome": "7.13.6 -Avaliação de Desempenho"}
+                        {"id": 1, "nome": "7.13.1 - Emprego atual", "nome_impressao": "emprego"},
+                        {"id": 2, "nome": "7.13.2 - Recrutamento", "nome_impressao": "recrutamento"},
+                        {"id": 3, "nome": "7.13.3 - Rescisão de trabalho", "nome_impressao": "rescisao"},
+                        {"id": 4, "nome": "7.13.4 - Carreira", "nome_impressao": "carreira"},
+                        {"id": 5, "nome": "7.13.5 - Absentismo e disciplina", "nome_impressao": "absentismo_disciplina"},
+                        {"id": 6, "nome": "7.13.6 - Avaliação de Desempenho", "nome_impressao": "avaliacao_desempenho"}
                     ]
                 },
                 {
                     "id": 14,
                     "nome": "7.14 -Registros/gravações de vídeo, imagem e voz",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.14.1 - Vídeo e imagem"},
-                        {"id": 2, "nome": "7.14.2 - Imagem de Vigilância"},
-                        {"id": 3, "nome": "7.14.3 - Voz"}
+                        {"id": 1, "nome": "7.14.1 - Vídeo e imagem", "nome_impressao": "video_imagem"},
+                        {"id": 2, "nome": "7.14.2 - Imagem de Vigilância", "nome_impressao": "imagem_vigilancia"},
+                        {"id": 3, "nome": "7.14.3 - Voz", "nome_impressao": "voz"}
                     ]
                 },
                 {
                     "id": 15,
                     "nome": "7.15 -Outros (Especificar)",
                     "colunas": [
-                        {"id": 1, "nome": "Descrição"},
-                        {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                        {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                        {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                        {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.15.1 - Outros (Especificar)"}
+                        {"id": 1, "nome": "7.15.1 - Outros (Especificar)", "nome_impressao": "outros"}
                     ]
                 }
             ]
