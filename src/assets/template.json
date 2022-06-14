@@ -120,11 +120,11 @@
             "nome": "3 - Fases do Ciclo de Vida do Tratamento Dados Pessoais",
             "nome_impressao": "fase_ciclo_vida",
             "colunas": [
-                {"id": 1, "nome": "Coleta", "campoOpcoes": "simNao", "nome_impresso": "coleta"},
-                {"id": 2, "nome": "Retenção", "campoOpcoes": "simNao", "nome_impresso": "retencao"},
-                {"id": 3, "nome": "Processamento", "campoOpcoes": "simNao", "nome_impresso": "processamento"},
-                {"id": 4, "nome": "Compartilhamento", "campoOpcoes": "simNao", "nome_impresso": "compartilhamento"},
-                {"id": 5, "nome": "Eliminação", "campoOpcoes": "simNao", "nome_impresso": "eliminacao"}
+                {"id": 1, "nome": "Coleta", "campoOpcoes": "simNao", "nome_impressao": "coleta"},
+                {"id": 2, "nome": "Retenção", "campoOpcoes": "simNao", "nome_impressao": "retencao"},
+                {"id": 3, "nome": "Processamento", "campoOpcoes": "simNao", "nome_impressao": "processamento"},
+                {"id": 4, "nome": "Compartilhamento", "campoOpcoes": "simNao", "nome_impressao": "compartilhamento"},
+                {"id": 5, "nome": "Eliminação", "campoOpcoes": "simNao", "nome_impressao": "eliminacao"}
             ],
             "classes": [
                 "",
@@ -134,7 +134,7 @@
                 ""
             ],
             "linhas": [
-                {"id": 1, "nome": "3.1 - Em qual fase  do ciclo de vida o  Operador atua"}
+                {"id": 1, "nome": "3.1 - Em qual fase  do ciclo de vida o Operador atua", "nome_impressao": "ciclo_vida_operator_atua"}
             ]
         },
         {
@@ -143,7 +143,7 @@
             "nome_impressao": "forma_coleta",
             "esconderColunas": true,
             "colunas": [
-                {"id": 1, "nome": "Valor", "nome_impresso": "valor"}
+                {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "classes": [
                 "",
@@ -162,7 +162,7 @@
             "nome_impressao": "escopo_natureza_dados",
             "esconderColunas": true,
             "colunas": [
-                {"id": 1, "nome": "Valor", "nome_impresso": "valor"}
+                {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
                 {"id": 1, "nome": "5.1 - Abrangência da área geográfica do tratamento", "nome_impressao": "abrangencia_geografia"},
@@ -175,7 +175,7 @@
             "nome_impressao": "finalidade_tratamento",
             "esconderColunas": true,
             "colunas": [
-                {"id": 1, "nome": "Valor", "nome_impresso": "valor"}
+                {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
                 {
@@ -210,7 +210,7 @@
                 {
                     "id": 1,
                     "nome": "7.1 -Dados de Identificação Pessoal",
-                    "nome_impresso": "info_pessoal",
+                    "nome_impressao": "info_pessoal",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -227,6 +227,7 @@
                 {
                     "id": 2,
                     "nome": "7.2 -Dados Financeiros",
+                    "nome_impressao": "dados_financeiros",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -252,6 +253,7 @@
                 {
                     "id": 3,
                     "nome": "7.3 - Características Pessoais",
+                    "nome_impressao": "caracteristicas_pessoais",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -268,6 +270,7 @@
                 {
                     "id": 4,
                     "nome": "7.4 - Hábitos Pessoais",
+                    "nome_impressao": "habitos_pessoais",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -288,6 +291,7 @@
                 {
                     "id": 5,
                     "nome": "7.5 - Características  Psicológicas",
+                    "nome_impressao": "caracteristicas_psicologicas",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -301,6 +305,7 @@
                 {
                     "id": 6,
                     "nome": "7.6 - Composição Familiar",
+                    "nome_impressao": "composicao_familiar",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -316,6 +321,7 @@
                 {
                     "id": 7,
                     "nome": "7.7 - Interesses de lazer",
+                    "nome_impressao": "interesses_lazer",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -329,6 +335,7 @@
                 {
                     "id": 8,
                     "nome": "7.8 - Associações",
+                    "nome_impressao": "associacoes",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -342,6 +349,7 @@
                 {
                     "id": 9,
                     "nome": "7.9 - Processo Judicial/Administrativo/Criminal",
+                    "nome_impressao": "processo_judicial_administrativo_criminal",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -358,6 +366,7 @@
                 {
                     "id": 10,
                     "nome": "7.10 - Hábitos de Consumo",
+                    "nome_impressao": "habitos_consumo",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -371,6 +380,7 @@
                 {
                     "id": 11,
                     "nome": "7.11 - Dados Residenciais",
+                    "nome_impressao": "dados_residenciais",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -384,6 +394,7 @@
                 {
                     "id": 12,
                     "nome": "7.12 - Educação e Treinamento",
+                    "nome_impressao": "educacao_treinamento",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -399,6 +410,7 @@
                 {
                     "id": 13,
                     "nome": "7.13 - Profissão e emprego",
+                    "nome_impressao": "profissao_emprego",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -417,6 +429,7 @@
                 {
                     "id": 14,
                     "nome": "7.14 -Registros/gravações de vídeo, imagem e voz",
+                    "nome_impressao": "registros_video_imagem_voz",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -432,6 +445,7 @@
                 {
                     "id": 15,
                     "nome": "7.15 -Outros (Especificar)",
+                    "nome_impressao": "outros",
                     "colunas": [
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
@@ -447,95 +461,102 @@
         {
             "id": 8,
             "nome": "8 - Categorias de Dados Pessoais Sensíveis",
+            "nome_impressao": "dados_sensiveis",
             "colunas": [
-                {"id": 1, "nome": "Descrição"},
-                {"id": 2, "nome": "Tempo Retenção dos Dados"},
-                {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao"},
-                {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados"}
+                {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
+                {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
+                {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
+                {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
             ],
             "linhas": [
-                {"id": 1, "nome": "8.1 - Dados que revelam origem racial ou ética"},
-                {"id": 2, "nome": "8.2 - Dados que revelam convicção religiosa"},
-                {"id": 3, "nome": "8.3 - Dados que revelam opinião política"},
-                {"id": 4, "nome": "8.4 - Dados que revelam filiação a sindicato"},
-                {"id": 5, "nome": "8.5 - Dados que revelam filiação a organização de caráter religioso"},
-                {"id": 6, "nome": "8.6 - Dados que revelam filiação ou crença filosófica"},
-                {"id": 7, "nome": "8.7 - Dados que revelam filiação ou preferências política"},
-                {"id": 8, "nome": "8.8 - Dados referentes à saúde ou à vida sexual"},
-                {"id": 9, "nome": "8.9 - Dados genéticos"},
-                {"id": 10, "nome": "8.10 - Dados biométricos"}
+                {"id": 1, "nome": "8.1 - Dados que revelam origem racial ou ética", "nome_impressao": "racial_etica"},
+                {"id": 2, "nome": "8.2 - Dados que revelam convicção religiosa", "nome_impressao": "conviccao_religiosa"},
+                {"id": 3, "nome": "8.3 - Dados que revelam opinião política", "nome_impressao": "opiniao_politica"},
+                {"id": 4, "nome": "8.4 - Dados que revelam filiação a sindicato", "nome_impressao": "filiacao_sindicato"},
+                {"id": 5, "nome": "8.5 - Dados que revelam filiação a organização de caráter religioso", "nome_impressao": "filiacao_carater_religioso"},
+                {"id": 6, "nome": "8.6 - Dados que revelam filiação ou crença filosófica", "nome_impressao": "filiacao_filosofica"},
+                {"id": 7, "nome": "8.7 - Dados que revelam filiação ou preferências política", "nome_impressao": "filiacao_politica"},
+                {"id": 8, "nome": "8.8 - Dados referentes à saúde ou à vida sexual", "nome_impressao": "saude_vida_sexual"},
+                {"id": 9, "nome": "8.9 - Dados genéticos", "nome_impressao": "geneticos"},
+                {"id": 10, "nome": "8.10 - Dados biométricos", "nome_impressao": "biometricos"}
             ]
         },
         {
             "id": 9,
             "nome": "9 - Frequência e totalização das categorias de dados pessoais tratados",
+            "nome_impressao": "frequencia_totalizacao_categoria_dados",
             "colunas": [
-                {"id": 1, "nome": "Valor"}
+                {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "9.1 - Frequência de tratamento dos  dados pessoais"},
-                {"id": 2, "nome": "9.2 - Quantidade de dados pessoais e dados pessoais sensíveis tratados"}
+                {"id": 1, "nome": "9.1 - Frequência de tratamento dos  dados pessoais", "nome_impressao": "frequencia_tratamento"},
+                {"id": 2, "nome": "9.2 - Quantidade de dados pessoais e dados pessoais sensíveis tratados", "nome_impressao": "quantidade_dados_sensiveis"}
             ]
         },
         {
             "id": 10,
             "nome": "10 - Categorias dos titulares de dados pessoais",
+            "nome_impressao": "categoria_titulares_dados",
             "colunas": [
-                {"id": 1, "nome": "Tipo de Categoria"},
-                {"id": 2, "nome": "Descrição", "ignorarOpcoes": true}
+                {"id": 1, "nome": "Tipo de Categoria", "nome_impressao": "tipo_categoria"},
+                {"id": 2, "nome": "Descrição", "ignorarOpcoes": true, "nome_impressao": "descricao"}
             ],
             "linhas": [
-                {"id": 1, "nome": "10.1 - Categoria 1", "campoOpcoes": "categoriaTitulares"},
-                {"id": 2, "nome": "10.3  - Trata dados de crianças e adolescentes", "campoOpcoes": "simNao"},
-                {"id": 3, "nome": "10.4 - Além de crianças e adolescente trata dados de outro grupo vulnerável", "campoOpcoes": "simNao"}
+                {"id": 1, "nome": "10.1 - Categoria 1", "campoOpcoes": "categoriaTitulares", "nome_impressao": "categoria_1"},
+                {"id": 2, "nome": "10.3 - Trata dados de crianças e adolescentes", "campoOpcoes": "simNao", "nome_impressao": "trata_dados"},
+                {"id": 3, "nome": "10.4 - Além de crianças e adolescente trata dados de outro grupo vulnerável", "campoOpcoes": "simNao", "nome_impressao": "dados_vulneraveis_alem_crianca_adolescente"}
             ]
         },
         {
             "id": 11,
             "nome": "11 - Compartilhamento de  Dados Pessoais",
+            "nome_impressao": "compartilhamento_dados_pessoais",
             "colunas": [
-                {"id": 1, "nome": "Dados pessoais compartilhados"},
-                {"id": 2, "nome": "Finalidade do compartilhamento"}
+                {"id": 1, "nome": "Dados pessoais compartilhados", "nome_impressao": "dados_pessoais_compartilhados"},
+                {"id": 2, "nome": "Finalidade do compartilhamento", "nome_impressao": "finalidade_compartilhamento"}
             ],
             "linhas": [
-                {"id": 1, "nome": "11.1 - Nome da Instituição 1"}
+                {"id": 1, "nome": "11.1 - Nome da Instituição 1", "nome_impressao": "nome_instituicao_1"}
             ]
         },
         {
             "id": 12,
             "nome": "12 - Medidas de Segurança/Privacidade",
+            "nome_impressao": "medidas_seguranca_privacidade",
             "colunas": [
-                {"id": 1, "nome": "Tipo de medida de segurança e privacidade", "campoOpcoes": "medidasSeguranca"},
-                {"id": 2, "nome": "Descrição do(s) Controle(s)"}
+                {"id": 1, "nome": "Tipo de medida de segurança e privacidade", "campoOpcoes": "medidasSeguranca", "nome_impressao": "tipo_medida_seguranca"},
+                {"id": 2, "nome": "Descrição do(s) Controle(s)", "nome_impressao": "descricao_controle"}
             ],
             "linhas": [
-                {"id": 1, "nome": "12.3 - Medida de Segurança/Privacidade 1"},
-                {"id": 2, "nome": "12.2 - Medida de Segurança/Privacidade 2"},
-                {"id": 3, "nome": "12.3 - Medida de Segurança/Privacidade 3"}
+                {"id": 1, "nome": "12.3 - Medida de Segurança/Privacidade 1", "nome_impressao": "medida_seguranca_privacidade_1"},
+                {"id": 2, "nome": "12.2 - Medida de Segurança/Privacidade 2", "nome_impressao": "medida_seguranca_privacidade_2"},
+                {"id": 3, "nome": "12.3 - Medida de Segurança/Privacidade 3", "nome_impressao": "medida_seguranca_privacidade_3"}
             ]
         },
         {
             "id": 13,
             "nome": "13 - Transferência Internacional de Dados Pessoais",
+            "nome_impressao": "transferencia_internacional_dados_pessoais",
             "colunas": [
-                {"id": 1, "nome": "País"},
-                {"id": 2, "nome": "Dados pessoais transferidos"},
-                {"id": 3, "nome": "Tipo de garantia para transferência", "campoOpcoes": "tipoGarantiaTransferencia"}
+                {"id": 1, "nome": "País", "nome_impressao": "pais"},
+                {"id": 2, "nome": "Dados pessoais transferidos", "nome_impressao": "dados_pessoais_transferidos"},
+                {"id": 3, "nome": "Tipo de garantia para transferência", "campoOpcoes": "tipoGarantiaTransferencia", "nome_impressao": "tipo_garantia_transferencia"}
             ],
             "linhas": [
-                {"id": 1, "nome": "13.1 - Organização 1"}
+                {"id": 1, "nome": "13.1 - Organização 1", "nome_impressao": "organizacao_1"}
             ]
         },
         {
             "id": 14,
             "nome": "14 - Contrato(s) de serviços e/ou soluções de TI que trata(m) dados pessoais do serviço/processo de negócio",
+            "nome_impressao": "contratos_servicos_tratam_dados_processo",
             "colunas": [
-                {"id": 1, "nome": "Nº Processo Contratação"},
-                {"id": 2, "nome": "Objeto do Contrato"},
-                {"id": 3, "nome": "E-mail do Gestor do Contrato"}
+                {"id": 1, "nome": "Nº Processo Contratação", "nome_impressao": "n_processo_contratacao"},
+                {"id": 2, "nome": "Objeto do Contrato", "nome_impressao": "objeto_contrato"},
+                {"id": 3, "nome": "E-mail do Gestor do Contrato", "nome_impressao": "email_gestor_contrato"}
             ],
             "linhas": [
-                {"id": 1, "nome": "14.2 - Contrato nº 1"}
+                {"id": 1, "nome": "14.2 - Contrato nº 1", "nome_impressao": "contrato_n1"}
             ]
         }
     ]
