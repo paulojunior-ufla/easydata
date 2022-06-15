@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-table hover :items="items" :fields="fields">
-      <template #cell(editar)>
-        <b-link to="/cadastrarInventario">
+    <b-table hover :items="inventarios" :fields="fields">
+      <template #cell(editar)="data">
+        <b-link :to="'/editarInventario/' + data.item.id">
           <b-icon icon="pencil" variant="primary"/>
         </b-link>
       </template>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'TableInventarioDados',
   props: {
@@ -29,8 +30,8 @@ export default {
     return {
       fields: [
         {
-          key: 'nome_inventario',
-          label: 'Inventários'
+          key: 'titulo',
+          label: 'Título'
         },
         {
           key: 'editar',
@@ -40,11 +41,13 @@ export default {
           key: 'opcoes',
           label: 'Outras opções'
         }
-      ],
-      items: [
-        { nome_inventario: 'Cadastramento de usuários externos no SIG', editar: 'Link', opcoes: 'Link' }
       ]
     }
+  },
+  computed: {
+    ...mapGetters('inventarios', {
+      inventarios: 'getTitulosInventarios'
+    })
   },
   methods: {
     showConfirmacaoDelete (index) {

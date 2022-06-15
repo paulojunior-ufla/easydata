@@ -5,7 +5,19 @@ const state = () => ({
 })
 
 // getters
-const getters = {}
+const getters = {
+  getInventarios: state => {
+    return state.inventarios
+  },
+  getTitulosInventarios: state => {
+    return state.inventarios.map((inventario, index) => {
+      return {
+        id: index,
+        titulo: inventario.titulo
+      }
+    })
+  }
+}
 
 // actions
 const actions = {
