@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import inventarios from './modules/inventarios'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
@@ -10,5 +11,6 @@ export default new Vuex.Store({
   modules: {
     inventarios
   },
-  strict: debug
+  strict: debug,
+  plugins: [createPersistedState()]
 })
