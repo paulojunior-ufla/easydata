@@ -9,6 +9,9 @@ const getters = {
   getInventarios: state => {
     return state.inventarios
   },
+  getInventarioByIndex: (state) => (index) => {
+    return state.inventarios[index]
+  },
   getTitulosInventarios: state => {
     return state.inventarios.map((inventario, index) => {
       return {

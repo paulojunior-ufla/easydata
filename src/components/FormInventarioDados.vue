@@ -1,13 +1,14 @@
 <template>
   <div>
     <form @submit.prevent="salvar" id="cadastrar_inventario">
+      {{inventario}}
       <div class="accordion text-start" role="tablist">
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/>Título</h5>
           </b-card-header>
             <b-card-body class="titulo">
-              <b-input name="titulo" data-caminho="titulo" v-model="titulo" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
+              <b-input name="titulo" data-caminho="titulo" v-model="inventario.titulo" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
             </b-card-body>
         </b-card>
 
@@ -69,6 +70,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'FormInventarioDados',
   props: {
@@ -78,43 +80,14 @@ export default {
   data () {
     return {
       id: this.$route.params.id,
-      dados: {
-        identificacao: {
-          nome_servico: { valor: 1 },
-          n_referencia: { valor: 2 },
-          data_criacao: { valor: 3 },
-          data_atualizacao: { valor: 4 }
-        },
-        agentes: {
-          controlador: { nome: 'Teste n1' },
-          operador: { nome: 'Teste n2' }
-        },
-        dados_pessoais: {
-          identificacao_pessoal: {
-            info_pessoal: { descricao: 'teste', tempo_retencao: 192 }
-          }
-        }
-      },
       dadosTemplate: this.template,
-      categorias: this.template.categorias,
-      titulo: '',
-      fields: [
-        {
-          key: 'nome_inventario',
-          label: 'Inventário'
-        },
-        {
-          key: 'editar',
-          label: 'Editar'
-        },
-        {
-          key: 'opcoes',
-          label: 'Opções'
-        }
-      ],
-      items: [
-        { nome_inventario: 'Cadastramento de usuários externos no SIG', editar: 'Link', opcoes: 'Link' }
-      ]
+      categorias: this.template.categorias
+    }
+  },
+  computed: {
+    ...mapGetters({ getInventarioByIndex: 'inventarios/getInventarioByIndex' }),
+    inventario () {
+      return this.getInventarioByIndex(this.id)
     }
   },
   methods: {
@@ -159,17 +132,9 @@ export default {
     },
     getValor: function (categoria, linha, coluna, index) {
       if (categoria.nome_impressao === undefined || coluna.nome_impressao === undefined || linha.nome_impressao === undefined ||
-        this.dados[categoria.nome_impressao] === undefined || typeof this.dados[categoria.nome_impressao][linha.nome_impressao] === 'undefined' ||
-        typeof this.dados[categoria.nome_impressao][linha.nome_impressao] === 'undefined') { return null }
-      // console.log('this.dados[categoria.nome_impressao]', this.dados[categoria.nome_impressao],
-      //   this.dados[categoria.nome_impressao][linha.nome_impressao],
-      //   this.dados[categoria.nome_impressao][linha.nome_impressao][coluna.nome_impressao],
-      //   categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao, index)
-      return this.dados[categoria.nome_impressao][linha.nome_impressao][coluna.nome_impressao]
-      // console.log('categoria', categoria)
-      // console.log('linha', linha)
-      // console.log('coluna', coluna)
-      // console.log('index', index)
+        this.inventario[categoria.nome_impressao] === undefined || typeof this.inventario[categoria.nome_impressao][linha.nome_impressao] === 'undefined' ||
+        typeof this.inventario[categoria.nome_impressao][linha.nome_impressao] === 'undefined') { return null }
+      return this.inventario[categoria.nome_impressao][linha.nome_impressao][coluna.nome_impressao]
     }
   }
 }
