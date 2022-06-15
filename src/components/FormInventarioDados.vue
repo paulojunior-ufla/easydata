@@ -1,14 +1,16 @@
 <template>
   <div>
+    <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide>
+      Hello, world! This is a toast message.
+    </b-toast>
     <form @submit.prevent="salvar" id="cadastrar_inventario">
-      {{inventario}}
       <div class="accordion text-start" role="tablist">
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/>Título</h5>
           </b-card-header>
             <b-card-body class="titulo">
-              <b-input name="titulo" data-caminho="titulo" v-model="inventario.titulo" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
+              <b-input name="titulo" data-caminho="titulo" :value="inventario ? inventario.titulo : ''" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
             </b-card-body>
         </b-card>
 
@@ -31,7 +33,8 @@
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
                       <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
-                      <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)"/>
+                      <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
+                        :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
                     </b-td>
                   </b-tr>
                 </b-tbody>
@@ -48,8 +51,10 @@
                     <b-tr v-for="linha in secao.linhas" :key="linha.id">
                       <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
                       <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
-                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
-                        <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)"/>
+                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
+                          :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
+                        <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
+                          :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
                       </b-td>
                     </b-tr>
                   </b-tbody>
@@ -81,7 +86,16 @@ export default {
     return {
       id: this.$route.params.id,
       dadosTemplate: this.template,
-      categorias: this.template.categorias
+      categorias: this.template.categorias,
+      titulo: 'teste'
+    }
+  },
+  watch: {
+    inventario: {
+      handler () {
+        if (typeof this.inventario === 'undefined') { this.$router.push('/') }
+      },
+      immediate: true
     }
   },
   computed: {
@@ -91,6 +105,13 @@ export default {
     }
   },
   methods: {
+    makeToast (variant = null) {
+      this.$bvToast.toast('Salvo com sucesso', {
+        title: 'Sucesso',
+        variant: variant,
+        solid: true
+      })
+    },
     salvar: function (event) {
       const inventario = {}
       const elementos = event.target.elements
@@ -98,17 +119,19 @@ export default {
         const elemento = elementos[i]
         this.salvarElemento(elemento, inventario)
       }
-      console.log('inventario', inventario)
-      // console.log('event', event.target.elements)
-      // const inventarios = []
-
-      this.$store.dispatch('inventarios/addInventario', inventario)
+      if (typeof this.id !== 'undefined') {
+        this.$store.dispatch('inventarios/updateInventario', { inventario, index: this.id })
+      } else {
+        this.$store.dispatch('inventarios/addInventario', inventario)
+      }
+      this.makeToast('sucesso')
+      setTimeout(() => this.$router.push('/'), 500)
     },
-    salvarElemento: function (elemento, inventario) {
+    salvarElemento: function (elemento, inventarioSalvar) {
       let caminhos = []
       let inventarioPosAtual = {}
       if (typeof elemento.dataset.caminho !== 'undefined') {
-        inventarioPosAtual = inventario
+        inventarioPosAtual = inventarioSalvar
         caminhos = elemento.dataset.caminho.split(',')
         caminhos.forEach((caminho, index) => {
           if (inventarioPosAtual[caminho] === undefined) {
@@ -131,7 +154,7 @@ export default {
       return typeof coluna.campoOpcoes !== 'undefined' ? this.dadosTemplate[coluna.campoOpcoes] : this.dadosTemplate[linha.campoOpcoes]
     },
     getValor: function (categoria, linha, coluna, index) {
-      if (categoria.nome_impressao === undefined || coluna.nome_impressao === undefined || linha.nome_impressao === undefined ||
+      if (this.inventario == null || categoria.nome_impressao === undefined || coluna.nome_impressao === undefined || linha.nome_impressao === undefined ||
         this.inventario[categoria.nome_impressao] === undefined || typeof this.inventario[categoria.nome_impressao][linha.nome_impressao] === 'undefined' ||
         typeof this.inventario[categoria.nome_impressao][linha.nome_impressao] === 'undefined') { return null }
       return this.inventario[categoria.nome_impressao][linha.nome_impressao][coluna.nome_impressao]

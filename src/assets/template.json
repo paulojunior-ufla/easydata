@@ -278,7 +278,7 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.4.1 - Hábitos", "nome_impressao": "hhbitos"},
+                        {"id": 1, "nome": "7.4.1 - Hábitos", "nome_impressao": "habitos"},
                         {"id": 2, "nome": "7.4.2 - Estilo de vida", "nome_impressao": "estilo_vida"},
                         {"id": 3, "nome": "7.4.3 - Viagens e deslocamentos", "nome_impressao": "viagens_deslocamentos"},
                         {"id": 4, "nome": "7.4.4 - Contatos sociais", "nome_impressao": "contatos_sociais"},

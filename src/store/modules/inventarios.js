@@ -10,6 +10,7 @@ const getters = {
     return state.inventarios
   },
   getInventarioByIndex: (state) => (index) => {
+    if (typeof index === 'undefined') return null
     return state.inventarios[index]
   },
   getTitulosInventarios: state => {
@@ -29,6 +30,9 @@ const actions = {
   },
   addInventario ({ commit }, inventario) {
     commit('addInventario', inventario)
+  },
+  updateInventario ({ commit }, { inventario, index }) {
+    commit('updateInventario', { inventario, index })
   }
 }
 
@@ -39,6 +43,9 @@ const mutations = {
   },
   addInventario (state, inventario) {
     state.inventarios.push(inventario)
+  },
+  updateInventario (state, { inventario, index }) {
+    state.inventarios[index] = inventario
   }
 }
 
