@@ -11,7 +11,9 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario'">
+          <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario' || this.$route.name == 'editarInventario'">
+
+            <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
             <b-link to="/cadastrarInventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
             <b-nav-item href="#"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-nav-item>
           </b-navbar-nav>
@@ -43,5 +45,12 @@ span.icon {
 }
 .navbar-dark .navbar-nav .nav-link {
   color: #FFF!important;
+}
+
+button.nav-link {
+  background: #FFFFFF30;
+  margin-right: 10px;
+  border: 0;
+  font-weight: 700;
 }
 </style>
