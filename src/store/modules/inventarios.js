@@ -1,3 +1,4 @@
+import Vue from 'vue'
 
 // initial state
 const state = () => ({
@@ -51,7 +52,7 @@ const mutations = {
     state.inventarios.push(inventario)
   },
   updateInventario (state, { inventario, index }) {
-    state.inventarios[index] = inventario
+    Vue.set(state.inventarios, index, inventario)
   },
   deleteInventario (state, index) {
     state.inventarios.splice(index, 1)
