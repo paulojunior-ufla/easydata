@@ -1,8 +1,6 @@
 <template>
   <div>
-    <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide>
-      Hello, world! This is a toast message.
-    </b-toast>
+    <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide></b-toast>
     <form @submit.prevent="salvar" id="cadastrar_inventario">
       <div class="accordion text-start" role="tablist">
         <b-card no-body class="mb-1">
@@ -105,7 +103,7 @@ export default {
     }
   },
   methods: {
-    makeToast (variant = null) {
+    chamarToast (variant = null) {
       this.$bvToast.toast('Salvo com sucesso', {
         title: 'Sucesso',
         variant: variant,
@@ -124,7 +122,7 @@ export default {
       } else {
         this.$store.dispatch('inventarios/addInventario', inventario)
       }
-      this.makeToast('sucesso')
+      this.chamarToast('sucesso')
       setTimeout(() => this.$router.push('/'), 500)
     },
     salvarElemento: function (elemento, inventarioSalvar) {

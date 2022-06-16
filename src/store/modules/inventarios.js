@@ -33,6 +33,12 @@ const actions = {
   },
   updateInventario ({ commit }, { inventario, index }) {
     commit('updateInventario', { inventario, index })
+  },
+  deleteInventario ({ commit }, index) {
+    commit('deleteInventario', index)
+  },
+  copyInventario ({ commit }, index) {
+    commit('copyInventario', index)
   }
 }
 
@@ -46,6 +52,14 @@ const mutations = {
   },
   updateInventario (state, { inventario, index }) {
     state.inventarios[index] = inventario
+  },
+  deleteInventario (state, index) {
+    state.inventarios.splice(index, 1)
+  },
+  copyInventario (state, index) {
+    const copia = JSON.parse(JSON.stringify(state.inventarios[index]))
+    copia.titulo = copia.titulo + ' - cópia'
+    state.inventarios.push(copia)
   }
 }
 

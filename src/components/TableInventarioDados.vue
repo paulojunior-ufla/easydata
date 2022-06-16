@@ -1,5 +1,6 @@
 <template>
   <div>
+    <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide></b-toast>
     <b-table hover :items="inventarios" :fields="fields">
       <template #cell(editar)="data">
         <b-link :to="'/editarInventario/' + data.item.id">
@@ -11,7 +12,7 @@
           <template #button-content>
             <b-icon icon="three-dots-vertical" title="Opções" variant="primary"/>
           </template>
-          <b-dropdown-item><b-icon style="height:15px" icon="clipboard-check" variant="primary"/> Duplicar</b-dropdown-item>
+          <b-dropdown-item @click="duplicarInventario(data.index)"><b-icon style="height:15px" icon="clipboard-check" variant="primary"/> Duplicar</b-dropdown-item>
           <b-dropdown-item @click="showConfirmacaoDelete(data.index)"><b-icon style="height:15px" icon="trash" variant="danger"/> Excluir</b-dropdown-item>
         </b-dropdown>
       </template>
@@ -50,9 +51,17 @@ export default {
     })
   },
   methods: {
+    chamarToast (variant = 'success') {
+      this.$bvToast.toast(variant === 'success' ? 'Realizado com sucesso.' : 'Erro ao realizar ação.', {
+        title: variant === 'success' ? 'Sucesso' : 'Erro',
+        variant: variant,
+        solid: true
+      })
+    },
     showConfirmacaoDelete (index) {
       const h = this.$createElement
-      const msg = h('div', { domProps: { innerHTML: `Deseja realmente excluir o inventário <b>${this.items[index].nome_inventario}</b>?` } })
+      const inventario = this.inventarios[index]
+      const msg = h('div', { domProps: { innerHTML: `Deseja realmente excluir o inventário <b>${inventario.titulo}</b>?` } })
       this.$bvModal.msgBoxConfirm([msg], {
         title: 'Atenção!',
         size: 'sm',
@@ -64,11 +73,28 @@ export default {
         // hideHeaderClose: false,
         centered: true
       })
-        .then(value => {
+        .then(confirmado => {
+          if (confirmado) {
+            try {
+              this.$store.dispatch('inventarios/deleteInventario', inventario.id)
+              this.chamarToast()
+            } catch (error) {
+              this.chamarToast('danger')
+            }
+          }
         })
         .catch(err => {
           console.log('err', err)
         })
+    },
+    duplicarInventario (index) {
+      const inventario = this.inventarios[index]
+      try {
+        this.$store.dispatch('inventarios/copyInventario', inventario.id)
+        this.chamarToast()
+      } catch (error) {
+        this.chamarToast('danger')
+      }
     }
   }
 }
