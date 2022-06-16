@@ -32,7 +32,8 @@ export default {
       fields: [
         {
           key: 'titulo',
-          label: 'Título'
+          label: 'Título',
+          thStyle: { width: '60%' }
         },
         {
           key: 'editar',
@@ -121,5 +122,15 @@ li {
 }
 .dropdown-tabela .btn {
   border: 0;
+}
+.dropdown .dropdown-item {
+  padding: 0.25rem 0.5rem;
+  display: block;
+}
+.dropdown .dropdown-menu {
+  min-width: auto;
+}
+.dropdown li {
+  display: block;
 }
 </style>
