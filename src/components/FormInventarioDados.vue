@@ -27,7 +27,7 @@
                 </b-thead>
                 <b-tbody>
                   <b-tr v-for="linha in categoria.linhas" :key="linha.id">
-                    <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
+                    <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
                       <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
@@ -47,7 +47,7 @@
                   </b-thead>
                   <b-tbody :key="secao.id">
                     <b-tr v-for="linha in secao.linhas" :key="linha.id">
-                      <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-b-modal.modal-1/></b-td>
+                      <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle"  v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
                       <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
                         <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                           :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
@@ -64,8 +64,8 @@
       </div>
       <div class="d-flex">
         </div>
-      <b-modal id="modal-1" ok-only title="Dados pessoais">
-        <p class="my-4">Texto sobre como preencher os dados</p>
+      <b-modal id="modal-1" ok-only v-bind:title="tituloModal">
+        <p class="my-4" v-html="textoModal"></p>
       </b-modal>
     </form>
   </div>
@@ -84,7 +84,9 @@ export default {
       id: this.$route.params.id,
       dadosTemplate: this.template,
       categorias: this.template.categorias,
-      titulo: 'teste'
+      titulo: 'teste',
+      tituloModal: '',
+      textoModal: ''
     }
   },
   watch: {
@@ -102,6 +104,11 @@ export default {
     }
   },
   methods: {
+    chamarModal (titulo, texto) {
+      this.$bvModal.show('modal-1')
+      this.tituloModal = titulo
+      this.textoModal = texto
+    },
     chamarToast (variant = null) {
       this.$bvToast.toast('Salvo com sucesso', {
         title: 'Sucesso',

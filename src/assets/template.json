@@ -85,10 +85,10 @@
                 {"id": 2, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio", "nome_impressao": "nome_servico"},
-                {"id": 2, "nome": "1.2 - Nº Referência  / ID", "nome_impressao": "n_referencia"},
-                {"id": 3, "nome": "1.3 - Data de Criação do Inventário", "nome_impressao": "data_criacao"},
-                {"id": 4, "nome": "1.4 - Data Atualização do Inventário", "nome_impressao": "data_atualizacao"}
+                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio", "nome_impressao": "nome_servico", "ajuda": "Informar se a abrangência do dados tratados é nacional, estadual, distrital, municipal ou regional."},
+                {"id": 2, "nome": "1.2 - Nº Referência  / ID", "nome_impressao": "n_referencia", "ajuda": "Digite o Número ou um ID para identificação da atividade de tratamento de dados pessoais relacionada ao serviço / processo de negócio.<br>Exemplo de Número de Referência: 0001. 0002 e etc.<br>Exemplo de ID adotando Sigla do Serviço informado no campo 'Nome do serviço/ Processo de Negócio': AVA, CRRA e etc."},
+                {"id": 3, "nome": "1.3 - Data de Criação do Inventário", "nome_impressao": "data_criacao", "ajuda": "Informar data de criação do inventário de dados pessoais."},
+                {"id": 4, "nome": "1.4 - Data Atualização do Inventário", "nome_impressao": "data_atualizacao", "ajuda": "Informar data da última atualização do inventário."}
             ]
         },
         {
@@ -110,9 +110,9 @@
                 "email"
             ],
             "linhas": [
-                {"id": 1, "nome": "2.1 - Controlador", "nome_impressao": "controlador"},
-                {"id": 2, "nome": "2.2 - Encarregado", "nome_impressao": "encarregado"},
-                {"id": 3, "nome": "2.3 - Operador", "nome_impressao": "operador"}
+                {"id": 1, "nome": "2.1 - Controlador", "nome_impressao": "controlador", "ajuda": "Pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais (LGPD, art. 5º, IV).<br>Informar o nome do órgão ou entidade."},
+                {"id": 2, "nome": "2.2 - Encarregado", "nome_impressao": "encarregado", "ajuda": "Pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados - ANPD (LGPD, art. 5º, VIII)"},
+                {"id": 3, "nome": "2.3 - Operador", "nome_impressao": "operador", "ajuda": "Pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador; (LGPD, art. 5º, VII)"}
             ]
         },
         {
@@ -134,7 +134,7 @@
                 ""
             ],
             "linhas": [
-                {"id": 1, "nome": "3.1 - Em qual fase  do ciclo de vida o Operador atua", "nome_impressao": "ciclo_vida_operator_atua"}
+                {"id": 1, "nome": "3.1 - Em qual fase  do ciclo de vida o Operador atua", "nome_impressao": "ciclo_vida_operator_atua", "ajuda": "Informações sobre o ciclo de vida do tratamento de dados pessoais podem ser observadas no capítulo 3 do Guia de Boas Práticas LGPD, disponível em << https://www.gov.br/governodigital/pt-br/governanca-de-dados/guia-de-boas-praticas-lei-geral-de-protecao-de-dados-lgpd >>"}
             ]
         },
         {
@@ -153,7 +153,7 @@
                 ""
             ],
             "linhas": [
-                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais", "nome_impressao": "descricao_fluxo"}
+                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais", "nome_impressao": "descricao_fluxo", "ajuda": "Descrever como (de que forma) os dados pessoais são coletados, retidos/armazenados, processados/ usados e eliminados.<br>Nessa seção, pode até ser colocado um desenho com um fluxo de dados. Abaixo, segue exemplo de descrição do fluxo de dados.<br>Exemplo descrição do fluxo de tratamento de dados pessoais do programa fictício de localização de desaparecidos do Departamento de Segurança Púbica - DSP.<br>1. Os dados pessoais são coletados mediante preenchimento formulário eletrônico do Sistema Nacional pelo titular dos dados pessoais.<br>2. Os dados são transferidos armazenados nas instalações físicas da Empresa de Processamento e Tecnologia Fictum.<br>3. A empresa Fictum realiza processamento sobre os dados pessoais e disponibiliza para uso do DSP. O DSP disponibiliza os dados pessoais para utilização e consumo do comunicante.<br>4. O DSP transfere dados de comunicantes e pessoas desaparecidas para a SDH desenvolver as ações de apoio psicológico para as famílias do desaparecidos.<br>5. Os dados pessoais podem ser eliminados à pedido do titular. Nesse caso, o DSP encaminha essa solicitação para a empresa Fictum executar a eliminação dos dados pessoais da base de dados do SND."}
             ]
         },
         {
@@ -165,8 +165,8 @@
                 {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "5.1 - Abrangência da área geográfica do tratamento", "nome_impressao": "abrangencia_geografia"},
-                {"id": 2, "nome": "5.2 - Fonte de dados utilizada para obtenção dos dados pessoais", "nome_impressao": "fonte_obtencao"}
+                {"id": 1, "nome": "5.1 - Abrangência da área geográfica do tratamento", "nome_impressao": "abrangencia_geografia", "ajuda": "Informar se a abrangência do dados tratados é nacional, estadual, distrital, municipal ou regional."},
+                {"id": 2, "nome": "5.2 - Fonte de dados utilizada para obtenção dos dados pessoais", "nome_impressao": "fonte_obtencao", "ajuda": "Informar de qual fonte dos dados pessoais: Titular dos dados pessoais, XML, API, etc.<br>Exemplo 1: Se os dados pessoais são obtidos por meio de preenchimento de formulário eletrônico, então a fonte de dados é o titular dos dados<br>Exemplo 2: Fonte de dados que não seja o titular de dados, é importante detalhar a fonte, como por exemplo, API CONSULTA CPF."}
             ]
         },
         {
@@ -193,10 +193,11 @@
                         "Atender aos interesses legítimos do controlador ou de terceiro.",
                         "Proteção do crédito.",
                         "Garantia da prevenção à fraude e à segurança do titular."
-                    ]
+                    ],
+                    "ajuda": "As hipóteses de tratamento estão descritas nos arts. 7º e 11 da LGPD.<br>Os órgãos e entidades da administração pública tem a prerrogativa de tratar os dados pessoais para o exercício de suas competências legais ou execução de políticas públicas sem a necessidade de obter consentimento do titular dos dados pessoais."
                 },
-                {"id": 2, "nome": "6.2 - Finalidade", "nome_impressao": "finalidade"},
-                {"id": 3, "nome": "6.3 - Previsão legal", "nome_impressao": "previsao_legal"},
+                {"id": 2, "nome": "6.2 - Finalidade", "nome_impressao": "finalidade", "ajuda": "Razão ou motivo pela qual se deseja tratar os dados pessoais. É importantíssimo estabelecer claramente a finalidade, pois é ela que justifica o tratamento de dados pessoais e fornece os elementos para informar o titular dos dados."},
+                {"id": 3, "nome": "6.3 - Previsão legal", "nome_impressao": "previsao_legal", "ajuda": "Informar Lei, Decreto, normativo ou regulamento que respalda a finalidade do tratamento de dados pessoais realizado.<br>Exemplo fícitício de previsão legal considerando o Programa de Localização de Desaparecidos:<br>• Decreto nº 8.956, de 25 de janeiro de 2218, institui o Programa de Localização de Desaparecidos."},
                 {"id": 4, "nome": "6.4 - Resultados pretendidos para o titular de dados", "nome_impressao": "resultados_pretendidos"},
                 {"id": 5, "nome": "6.5 - Benefícios esperados para o órgão, entidade ou para a sociedade como um todo", "nome_impressao": "beneficios_esperados"}
             ]
@@ -218,10 +219,10 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal", "nome_impressao": "info_identificacao"},
-                        {"id": 2, "nome": "7.1.2 - Informações de identificação atribuídas por instituições governamentais", "nome_impressao": "info_instituicoes_gov"},
-                        {"id": 3, "nome": "7.1.3 - Dados de identificação eletrônica", "nome_impressao": "ident_eletronica"},
-                        {"id": 4, "nome": "7.1.4 - Dados de localização eletrônica", "nome_impressao": "loc_eletronica"}
+                        {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal", "nome_impressao": "info_identificacao", "ajuda": "Descrever se são tratados dados: Nome, endereço residencia, histórico de endereços anteriores, número de telefone fixo residencial, número celular pessoal, e-mail pessoal, etc)"},
+                        {"id": 2, "nome": "7.1.2 - Informações de identificação atribuídas por instituições governamentais", "nome_impressao": "info_instituicoes_gov", "ajuda": "Descrever se são tratados dados: CPF, RG, número do passaporte, número da carteira de motorista, número da placa, número de registro em conselho profissional, etc."},
+                        {"id": 3, "nome": "7.1.3 - Dados de identificação eletrônica", "nome_impressao": "ident_eletronica", "ajuda": "Descrever se são tratados dados: Endereços IP, cookies, momentos de conexão etc."},
+                        {"id": 4, "nome": "7.1.4 - Dados de localização eletrônica", "nome_impressao": "loc_eletronica", "ajuda": "Informar se são tratados dados: dados de comunicação de torres de celulares (ex: GSM), dados de GPS etc."}
                     ]
                 },
                 {
@@ -235,19 +236,19 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.2.1 - Dados de identificação financeira", "nome_impressao": "dados_id_financeira"},
-                        {"id": 2, "nome": "7.2.2 - Recursos financeiros", "nome_impressao": "recursos_financeiros"},
-                        {"id": 3, "nome": "7.2.3 - Dívidas e despesas", "nome_impressao": "dividas_despesas"},
-                        {"id": 4, "nome": "7.2.4 - Situação financeira (Solvência)", "nome_impressao": "situacao_financeira"},
-                        {"id": 5, "nome": "7.2.5 - Empréstimos, hipotecas, linhas de crédito", "nome_impressao": "emprestimos_hipotecas_credito"},
-                        {"id": 6, "nome": "7.2.6 - Assistência financeira", "nome_impressao": "assistencia_financeira"},
-                        {"id": 7, "nome": "7.2.7 - Detalhes da apólice de seguro", "nome_impressao": "detalhes_apolice"},
-                        {"id": 8, "nome": "7.2.8 - Detalhes do plano de pensão", "nome_impressao": "detalhes_pensao"},
-                        {"id": 9, "nome": "7.2.9 - Transações financeiras", "nome_impressao": "transacoes_financeiras"},
-                        {"id": 10, "nome": "7.2.10 - Compensação", "nome_impressao": "compensacao"},
-                        {"id": 11, "nome": "7.2.11 - Atividades profissionais", "nome_impressao": "atividades_profissionais"},
-                        {"id": 12, "nome": "7.2.12 - Acordos e ajustes", "nome_impressao": "acordos_ajustes"},
-                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos", "nome_impressao": "autorizacoes_consentimentos"}
+                        {"id": 1, "nome": "7.2.1 - Dados de identificação financeira", "nome_impressao": "dados_id_financeira", "ajuda": "Descrever se são tratados dados: Números de identificação, números de contas bancárias, números de cartões de crédito ou débito, códigos secretos."},
+                        {"id": 2, "nome": "7.2.2 - Recursos financeiros", "nome_impressao": "recursos_financeiros", "ajuda": "Descrever se são tratados dados: Renda, posses, investimentos, renda total, renda profissional, poupança, datas de início e término dos investimentos, receita de investimento, dívidas sobre ativos."},
+                        {"id": 3, "nome": "7.2.3 - Dívidas e despesas", "nome_impressao": "dividas_despesas", "ajuda": "Descrever se são tratados dados: Total de despesas, aluguel, empréstimos, hipotecas e outras formas de crédito."},
+                        {"id": 4, "nome": "7.2.4 - Situação financeira (Solvência)", "nome_impressao": "situacao_financeira", "ajuda": "Descrever se são tratados dados: Avaliação do rendimento e avaliação de capacidade de pagamento."},
+                        {"id": 5, "nome": "7.2.5 - Empréstimos, hipotecas, linhas de crédito", "nome_impressao": "emprestimos_hipotecas_credito", "ajuda": "Descrever se são tratados dados: Natureza do empréstimo, valor emprestado, saldo remanescente, data de início, período do empréstimo, taxa de juros, visão geral do pagamento, detalhes sobre as garantias."},
+                        {"id": 6, "nome": "7.2.6 - Assistência financeira", "nome_impressao": "assistencia_financeira", "ajuda": "Descrever se são tratados dados: Benefícios, assistência, bonificações, subsídios, etc."},
+                        {"id": 7, "nome": "7.2.7 - Detalhes da apólice de seguro", "nome_impressao": "detalhes_apolice", "ajuda": "Descrever se são tratados dados: Natureza da apólice de seguro, detalhes sobre os riscos cobertos, valores segurados, período segurado, data de rescisão, pagamentos feitos, recebidos ou perdidos, situação do contrato, etc."},
+                        {"id": 8, "nome": "7.2.8 - Detalhes do plano de pensão", "nome_impressao": "detalhes_pensao", "ajuda": "Descrever se são tratados dados: Data efetiva do plano de pensão, natureza do plano, data de término do plano, pagamentos recebidos e efetuados, opções, beneficiários, etc."},
+                        {"id": 9, "nome": "7.2.9 - Transações financeiras", "nome_impressao": "transacoes_financeiras", "ajuda": "Descrever se são tratados dados: Valores pagos e a pagar pelo titular dos dados, linhas de crédito concedidas, avais, forma de pagamento, visão geral do pagamento, depósitos e outras garantias, etc."},
+                        {"id": 10, "nome": "7.2.10 - Compensação", "nome_impressao": "compensacao", "ajuda": "Descrever se são tratados dados: Detalhes sobre compensações reivindicadas, valores pagos ou outros tipos de compensação, etc."},
+                        {"id": 11, "nome": "7.2.11 - Atividades profissionais", "nome_impressao": "atividades_profissionais", "ajuda": "Descrever se são tratados dado de atividades profissionais executadas pelo titular dos dados: natureza da atividade, natureza dos bens ou serviços utilizados ou entregues pela pessoa no registro, relações comerciais, etc."},
+                        {"id": 12, "nome": "7.2.12 - Acordos e ajustes", "nome_impressao": "acordos_ajustes", "ajuda": "Descrever se são tratados dados: Detalhes sobre acordos ou ajustes comerciais; acordos sobre representação ou acordos legais, etc."},
+                        {"id": 13, "nome": "7.2.13 - Autorizações ou consentimentos", "nome_impressao": "autorizacoes_consentimentos", "ajuda": "Descrever se são tratados dados de: Autorizações ou consentimentos realizados pelo titular de dados, etc."}
                     ]
                 },
                 {
@@ -261,10 +262,10 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.3.1 - Detalhes pessoais", "nome_impressao": "detalhes_pessoais"},
-                        {"id": 2, "nome": "7.3.2 - Detalhes militares", "nome_impressao": "detalhes_militares"},
-                        {"id": 3, "nome": "7.3.3 - Situação de Imigração", "nome_impressao": "situacao_imigracao"},
-                        {"id": 4, "nome": "7.3.4 - Descrição Física", "nome_impressao": "descricao_fisica"}
+                        {"id": 1, "nome": "7.3.1 - Detalhes pessoais", "nome_impressao": "detalhes_pessoais", "ajuda": "Descrever se são tratados dados: Idade, sexo, data de nascimento, local de nascimento, estado civil, nacionalidade."},
+                        {"id": 2, "nome": "7.3.2 - Detalhes militares", "nome_impressao": "detalhes_militares", "ajuda": "Descrever se são tratados dados: Situação militar, patente militar, distinções militares, etc."},
+                        {"id": 3, "nome": "7.3.3 - Situação de Imigração", "nome_impressao": "situacao_imigracao", "ajuda": "Descrever se são tratados dados: Detalhes sobre o visto, autorização de trabalho, limitações de residência ou movimentação, condições especiais relacionadas à autorização de residência, etc."},
+                        {"id": 4, "nome": "7.3.4 - Descrição Física", "nome_impressao": "descricao_fisica", "ajuda": "Dados de descrição física são informações físicas de uma pessoa com possibilidade de serem visivelmente indetificadas.<br>Descrever se são tratados: Altura, peso, cor do cabelo, cor dos olhos, características distintivas, etc."}
                     ]
                 },
                 {
@@ -278,14 +279,14 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.4.1 - Hábitos", "nome_impressao": "habitos"},
-                        {"id": 2, "nome": "7.4.2 - Estilo de vida", "nome_impressao": "estilo_vida"},
-                        {"id": 3, "nome": "7.4.3 - Viagens e deslocamentos", "nome_impressao": "viagens_deslocamentos"},
-                        {"id": 4, "nome": "7.4.4 - Contatos sociais", "nome_impressao": "contatos_sociais"},
-                        {"id": 5, "nome": "7.4.5 - Posses", "nome_impressao": "posses"},
-                        {"id": 6, "nome": "7.4.6 - Denúncias, incidentes ou acidentes", "nome_impressao": "denuncias"},
-                        {"id": 7, "nome": "7.4.7 - Distinções", "nome_impressao": "distincoes"},
-                        {"id": 8, "nome": "7.4.8 - Uso de mídia", "nome_impressao": "uso_midia"}
+                        {"id": 1, "nome": "7.4.1 - Hábitos", "nome_impressao": "habitos", "ajuda": "Descrever se são tratados dados: Uso de tabaco, uso de álcool , hábito alimentar, dieta alimentar etc."},
+                        {"id": 2, "nome": "7.4.2 - Estilo de vida", "nome_impressao": "estilo_vida", "ajuda": "Descrever se são tratados dados: Informações sobre o uso de bens ou serviços, comportamento dos titulares dos dados, etc."},
+                        {"id": 3, "nome": "7.4.3 - Viagens e deslocamentos", "nome_impressao": "viagens_deslocamentos", "ajuda": "Descrever se são tratados dados: sobre antigas residências e deslocamentos, visto de viagem, autorizações de trabalho, etc."},
+                        {"id": 4, "nome": "7.4.4 - Contatos sociais", "nome_impressao": "contatos_sociais", "ajuda": "Descrever se são tratados dados: Amigos, parceiros de negócios, relacionamentos com pessoas que não sejam familiares próximos; etc."},
+                        {"id": 5, "nome": "7.4.5 - Posses", "nome_impressao": "posses", "ajuda": "Descrever se são tratados dados: Terra, propriedade ou outros bens."},
+                        {"id": 6, "nome": "7.4.6 - Denúncias, incidentes ou acidentes", "nome_impressao": "denuncias", "ajuda": "Descrever se são tratados dados: Informações sobre um acidente, incidente ou denúncia na qual o titular dos dados está envolvido, a natureza dos danos ou ferimentos, pessoas envolvidas, testemunhas, etc."},
+                        {"id": 7, "nome": "7.4.7 - Distinções", "nome_impressao": "distincoes", "ajuda": "Descrever se são tratados dados: Distinções civis, administrativas ou militares."},
+                        {"id": 8, "nome": "7.4.8 - Uso de mídia", "nome_impressao": "uso_midia", "ajuda": "Descrever se são tratados dados: que definem o comportamento de uso de mídias e meios de comunicação."}
                     ]
                 },
                 {
@@ -299,7 +300,7 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.5.1 - Descrição Psicológica", "nome_impressao": "descricao_psicologica"}
+                        {"id": 1, "nome": "7.5.1 - Descrição Psicológica", "nome_impressao": "descricao_psicologica", "ajuda": "Descrever se são tratados dados sobre personalidade ou caráter."}
                     ]
                 },
                 {
@@ -313,9 +314,9 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação", "nome_impressao": "casamento_coabitacao"},
-                        {"id": 2, "nome": "7.6.2 - Histórico conjugal", "nome_impressao": "historico_conjugal"},
-                        {"id": 3, "nome": "7.6.3 - Familiares ou membros da família", "nome_impressao": "familiares_membros"}
+                        {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação", "nome_impressao": "casamento_coabitacao", "ajuda": "Descrever se são tratados dados: Nome do cônjuge ou companheiro(a), nome de solteira do cônjuge ou companheira, data do casamento, data do contrato de coabitação, número de filhos, etc."},
+                        {"id": 2, "nome": "7.6.2 - Histórico conjugal", "nome_impressao": "historico_conjugal", "ajuda": "Descrever se são tratados dados sobre casamentos ou parcerias anteriores, divórcios, separações, nomes de parceiros anteriores."},
+                        {"id": 3, "nome": "7.6.3 - Familiares ou membros da família", "nome_impressao": "familiares_membros", "ajuda": "Descrever se são tratados dados sobre Detalhes de outros familiares ou membros da família do titular de dados."}
                     ]
                 },
                 {
@@ -329,7 +330,7 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer", "nome_impressao": "atividades_lazer"}
+                        {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer", "nome_impressao": "atividades_lazer", "ajuda": "Descrever se são tratados dados sobre hobbies, esportes, outros interesses."}
                     ]
                 },
                 {
@@ -343,7 +344,7 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)", "nome_impressao": "associacoes"}
+                        {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)", "nome_impressao": "associacoes", "ajuda": "Descrever se são tratados dados sobre participação em organizações de caridade ou benevolentes, clubes, parcerias, organizações, grupos, etc."}
                     ]
                 },
                 {
@@ -357,10 +358,10 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.9.1 - Suspeitas", "nome_impressao": "suspeitas"},
-                        {"id": 2, "nome": "7.9.2 - Condenações e sentenças", "nome_impressao": "condenacoes_sentencas"},
-                        {"id": 3, "nome": "7.9.3 - Ações judiciais", "nome_impressao": "acoes_judiciais"},
-                        {"id": 4, "nome": "7.9.4 - Penalidades Administrativas", "nome_impressao": "penalidades_administrativas"}
+                        {"id": 1, "nome": "7.9.1 - Suspeitas", "nome_impressao": "suspeitas", "ajuda": "Descrever se são tratados dados sobre suspeitas de violações, conexões conspiratórias com criminosos conhecidos. Inquéritos ou ações judiciais (civis ou criminais) empreendidas por ou contra o titular dos dados, etc."},
+                        {"id": 2, "nome": "7.9.2 - Condenações e sentenças", "nome_impressao": "condenacoes_sentencas", "ajuda": "Descrever se são tratados dados sobre condenações e sentenças, etc."},
+                        {"id": 3, "nome": "7.9.3 - Ações judiciais", "nome_impressao": "acoes_judiciais", "ajuda": "Descrever se são tratados dados sobre tutela, guarda temporária ou definitiva, interdição, adoção, etc."},
+                        {"id": 4, "nome": "7.9.4 - Penalidades Administrativas", "nome_impressao": "penalidades_administrativas", "ajuda": "Descrever se são tratados dados sobre multas, processo disciplinar, advertências, bem como qualquer outro tipo de penalidade ou sanção administrativa prevista em leis, normas e regulamentos."}
                     ]
                 },
                 {
@@ -374,7 +375,7 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.10.1 - Dados de bens e serviços", "nome_impressao": "dados_bens_servicos"}
+                        {"id": 1, "nome": "7.10.1 - Dados de bens e serviços", "nome_impressao": "dados_bens_servicos", "ajuda": "Descrever se são tratados dados sobre bens e serviços vendidos, alugados ou emprestados ao titular dos dados."}
                     ]
                 },
                 {
@@ -388,7 +389,7 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.11.1 - Residência", "nome_impressao": "residencia"}
+                        {"id": 1, "nome": "7.11.1 - Residência", "nome_impressao": "residencia", "ajuda": "Descrever se são tratados dados sobre natureza da residência, propriedade própria ou alugada, duração da residência nesse endereço, aluguel, custos, classificação da residência, detalhes sobre a avaliação, nomes das pessoas que possuem as chaves."}
                     ]
                 },
                 {
@@ -402,9 +403,9 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares", "nome_impressao": "dados_academicos"},
-                        {"id": 2, "nome": "7.12.2 - Registros financeiros do curso/treinamento", "nome_impressao": "registros_financeiros"},
-                        {"id": 3, "nome": "7.12.3 - Qualificação e experiência profissional", "nome_impressao": "qualificacao_experiencia"}
+                        {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares", "nome_impressao": "dados_academicos", "ajuda": "Descrever se são tratados dados sobre diplomas, certificados obtidos, resultados de exames, avaliação do progresso dos estudos, histórico escolar, grau de formação, etc."},
+                        {"id": 2, "nome": "7.12.2 - Registros financeiros do curso/treinamento", "nome_impressao": "registros_financeiros", "ajuda": "Descrever se são tratados dados sobre taxas de inscrição e custos pagos, financiamento, formas de pagamento, registros de pagamento, etc."},
+                        {"id": 3, "nome": "7.12.3 - Qualificação e experiência profissional", "nome_impressao": "qualificacao_experiencia", "ajuda": "Descrever se são tratados dados sobre certificações profissionais, interesses profissionais, interesses acadêmicos, interesses de pesquisam experiência de ensino, etc."}
                     ]
                 },
                 {
@@ -418,12 +419,12 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.13.1 - Emprego atual", "nome_impressao": "emprego"},
-                        {"id": 2, "nome": "7.13.2 - Recrutamento", "nome_impressao": "recrutamento"},
-                        {"id": 3, "nome": "7.13.3 - Rescisão de trabalho", "nome_impressao": "rescisao"},
-                        {"id": 4, "nome": "7.13.4 - Carreira", "nome_impressao": "carreira"},
-                        {"id": 5, "nome": "7.13.5 - Absentismo e disciplina", "nome_impressao": "absentismo_disciplina"},
-                        {"id": 6, "nome": "7.13.6 - Avaliação de Desempenho", "nome_impressao": "avaliacao_desempenho"}
+                        {"id": 1, "nome": "7.13.1 - Emprego atual", "nome_impressao": "emprego", "ajuda": "Descrever se são tratados dados sobre empregador, descrição do cargo e função, antiguidade, data de recrutamento, local de trabalho, especialização ou tipo de empresa, modos e condições de trabalho, cargos anteriores e experiência anterior de trabalho no mesmo empregador, etc."},
+                        {"id": 2, "nome": "7.13.2 - Recrutamento", "nome_impressao": "recrutamento", "ajuda": "Descrever se são tratados dados sobre data de recrutamento, método de recrutamento, fonte de recrutamento, referências, detalhes relacionados com o período de estágio, etc."},
+                        {"id": 3, "nome": "7.13.3 - Rescisão de trabalho", "nome_impressao": "rescisao", "ajuda": "Descrever se são tratados dados sobre data de rescisão, motivo, período de notificação, condições de rescisão, etc."},
+                        {"id": 4, "nome": "7.13.4 - Carreira", "nome_impressao": "carreira", "ajuda": "Descrever se são tratados dados sobre emprego anterior e empregadores, períodos sem emprego, serviço militar, etc."},
+                        {"id": 5, "nome": "7.13.5 - Absentismo e disciplina", "nome_impressao": "absentismo_disciplina", "ajuda": "Descrever se são tratados dados sobre registos de absentismo, motivos de ausência, medidas disciplinares, etc."},
+                        {"id": 6, "nome": "7.13.6 - Avaliação de Desempenho", "nome_impressao": "avaliacao_desempenho", "ajuda": "Descrever se são tratados dados sobre avaliação de desempenho ou qualquer outro tipo de análise de qualificação ou habilidades profissionais, etc."}
                     ]
                 },
                 {
@@ -437,9 +438,9 @@
                         {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
-                        {"id": 1, "nome": "7.14.1 - Vídeo e imagem", "nome_impressao": "video_imagem"},
-                        {"id": 2, "nome": "7.14.2 - Imagem de Vigilância", "nome_impressao": "imagem_vigilancia"},
-                        {"id": 3, "nome": "7.14.3 - Voz", "nome_impressao": "voz"}
+                        {"id": 1, "nome": "7.14.1 - Vídeo e imagem", "nome_impressao": "video_imagem", "ajuda": "Descrever se são tratados arquivos de vídeos, fotos digitais, fitas de vídeo, etc."},
+                        {"id": 2, "nome": "7.14.2 - Imagem de Vigilância", "nome_impressao": "imagem_vigilancia", "ajuda": "Descrever se são tratadas imagens e/ou vídeos de câmeras de segurança/vigilância (ex: CFTV), etc."},
+                        {"id": 3, "nome": "7.14.3 - Voz", "nome_impressao": "voz", "ajuda": "Descrever se são tratadas fitas e arquivos digitais de voz, bem como outros registros de gravações de voz , etc"}
                     ]
                 },
                 {
@@ -478,7 +479,7 @@
                 {"id": 7, "nome": "8.7 - Dados que revelam filiação ou preferências política", "nome_impressao": "filiacao_politica"},
                 {"id": 8, "nome": "8.8 - Dados referentes à saúde ou à vida sexual", "nome_impressao": "saude_vida_sexual"},
                 {"id": 9, "nome": "8.9 - Dados genéticos", "nome_impressao": "geneticos"},
-                {"id": 10, "nome": "8.10 - Dados biométricos", "nome_impressao": "biometricos"}
+                {"id": 10, "nome": "8.10 - Dados biométricos", "nome_impressao": "biometricos", "ajuda": "Dados de impressões digitais e de voz, digitalizações de íris, reconhecimento facial, reconhecimento de formato de dedo ou mão, assinaturas dinâmicas etc."}
             ]
         },
         {
@@ -489,8 +490,8 @@
                 {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "9.1 - Frequência de tratamento dos  dados pessoais", "nome_impressao": "frequencia_tratamento"},
-                {"id": 2, "nome": "9.2 - Quantidade de dados pessoais e dados pessoais sensíveis tratados", "nome_impressao": "quantidade_dados_sensiveis"}
+                {"id": 1, "nome": "9.1 - Frequência de tratamento dos  dados pessoais", "nome_impressao": "frequencia_tratamento", "ajuda": "Descrever em que frequência os dados são tratados. Isso representa a disponibilidade e horário de funcionamento do sistema automatizado ou processo manual que trata os dados pessoais. Abaixo segue exemplo fictício de descrição do Sistema Nacional de Desaparecidos -SND a ser preenchido no inventário.<br><br>Exemplo: O SND está disponível no regime 24x7 (24 horas por dia nos 7 dias da semana) para comunicação (coleta) dos dados do desaparecimentos e as demais fases e operações de tratamento são realizadas no horário comercial em dias úteis."},
+                {"id": 2, "nome": "9.2 - Quantidade de dados pessoais e dados pessoais sensíveis tratados", "nome_impressao": "quantidade_dados_sensiveis", "ajuda": "Informar a quantidade total de dados pessoais e dados pessoais sensíveis descritos no invetário.<br>Exemplo:<br>Tratamento de dados pessoais de detalhes pessoais como Idade, sexo, data de nascimento, local de nascimento, estado civil, nacionalidade.<br>Tratamento de dados pessoais de saúde como CID10 e data de último exame médico<br>A informação que deve ser preenchida no inventário é:<br>São tratados 6 dados pessoais e 2 dados pessoais sensíveis, totalizando 8 dados pessoais tratados pelo serviço."}
             ]
         },
         {
