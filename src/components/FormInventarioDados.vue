@@ -68,7 +68,6 @@
         <p class="my-4">Texto sobre como preencher os dados</p>
       </b-modal>
     </form>
-    <b-button variant="primary" class="mt-2 rounded-0" form="cadastrar_inventario" type="submit">Salvar</b-button>
   </div>
 </template>
 
