@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="primary">
+    <b-navbar toggleable="lg" type="dark" variant="primary" fixed="top">
       <span class="icon" role="button" v-if="this.$route.path != '/'" @click="$router.go(-1)">
         <b-icon icon="arrow-left-short"/>
       </span>
