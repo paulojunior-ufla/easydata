@@ -9,6 +9,8 @@
     >
       <b-navbar toggleable="lg" variant="light" class="p-1 py-2 ms-2">
         <b-nav vertical class="w-100 text-start">
+          <b-nav-item class="toggleAll" @click="exibirTodos()" v-if="!isCollapsed">Expandir todos</b-nav-item>
+          <b-nav-item class="toggleAll" @click="ocultarTodos()" v-else>Ocultar todos</b-nav-item>
           <sidebar-inventario-dados-link v-for="categoria in categorias" :key="categoria.id" v-b-toggle="'accordion-' + categoria.id" v-bind:completo="true" :texto="categoria.nome"/>
         </b-nav>
       </b-navbar>
@@ -31,7 +33,8 @@ export default {
   },
   data () {
     return {
-      categorias: this.template.categorias
+      categorias: this.template.categorias,
+      isCollapsed: false
     }
   },
   methods: {
@@ -40,6 +43,22 @@ export default {
     },
     handleCloseMenu () {
       this.$emit('input', false)
+    },
+    exibirTodos () {
+      const collapses = document.getElementsByClassName('collapse')
+      for (const collapse of collapses) {
+        collapse.classList.add('show')
+        collapse.style.display = 'block'
+        this.isCollapsed = true
+      }
+    },
+    ocultarTodos () {
+      const collapses = document.getElementsByClassName('collapse')
+      for (const collapse of collapses) {
+        collapse.classList.remove('show')
+        collapse.style.display = 'none'
+        this.isCollapsed = false
+      }
     }
   }
 }
@@ -115,5 +134,10 @@ export default {
 }
 div[isopen="true"] .bm-burger-button {
   display: none;
+}
+.toggleAll{
+  font-size:12px;
+  color: #999;
+  margin-top: -15px;
 }
 </style>
