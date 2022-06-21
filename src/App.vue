@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <navbar-geral/>
-    <div style="margin-top: 60px;">
-      <router-view/>
+    <div id="container">
+      <navbar-geral/>
+      <div style="margin-top: 60px;">
+        <router-view/>
+      </div>
     </div>
     <footer-geral/>
   </div>
@@ -27,6 +29,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+#container {
+  min-height: calc(100vh - 150px);
 }
 
 nav {
