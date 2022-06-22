@@ -21,7 +21,9 @@
               <b-table-simple>
                 <b-thead>
                   <b-tr class="text-center" v-if="!categoria.esconderColunas">
-                    <b-th v-if="categoria.linhas"></b-th>
+                    <b-th v-if="categoria.linhas" style="text-align:left">
+                      <b-icon role="button" icon="plus-lg" v-if="categoria.linha_adicional" @click="adicionarLinha(categoria)"></b-icon>
+                    </b-th>
                     <b-th v-for="coluna in categoria.colunas" :key="coluna.id" width="270">{{coluna.nome}}</b-th>
                   </b-tr>
                 </b-thead>
@@ -30,9 +32,9 @@
                     <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
                       <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
+                        :data-caminho="getCaminho(categoria, linha, coluna)"/>
                       <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
+                        :data-caminho="getCaminho(categoria, linha, coluna)"/>
                     </b-td>
                   </b-tr>
                 </b-tbody>
@@ -50,9 +52,9 @@
                       <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle"  v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
                       <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
                         <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                          :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
+                          :data-caminho="getCaminho(categoria, linha, coluna)"/>
                         <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
-                          :data-caminho="[categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]"/>
+                          :data-caminho="getCaminho(categoria, linha, coluna)"/>
                       </b-td>
                     </b-tr>
                   </b-tbody>
@@ -73,6 +75,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { getCategoriaByNomeImpressao } from '../util/template'
 export default {
   name: 'FormInventarioDados',
   props: {
@@ -89,18 +92,26 @@ export default {
       textoModal: ''
     }
   },
-  watch: {
-    inventario: {
-      handler () {
-        if (typeof this.inventario === 'undefined') { this.$router.push('/') }
-      },
-      immediate: true
-    }
-  },
   computed: {
     ...mapGetters({ getInventarioByIndex: 'inventarios/getInventarioByIndex' }),
     inventario () {
       return this.getInventarioByIndex(this.id)
+    }
+  },
+  watch: {
+    inventario: {
+      handler () {
+        if (typeof this.inventario === 'undefined') { this.$router.push('/') }
+        this.categorias = JSON.parse(JSON.stringify(this.dadosTemplate.categorias))
+        const linhasAdicionaisCategoriaTitularesDados = this.inventario.categoria_titulares_dados.linhas_adicionais
+        if (typeof linhasAdicionaisCategoriaTitularesDados === 'object') {
+          const categoriaAtual = getCategoriaByNomeImpressao(this.categorias, 'categoria_titulares_dados')
+          Object.entries(linhasAdicionaisCategoriaTitularesDados).forEach((linha) => {
+            this.adicionarLinha(categoriaAtual)
+          })
+        }
+      },
+      immediate: true
     }
   },
   methods: {
@@ -158,10 +169,28 @@ export default {
       return typeof coluna.campoOpcoes !== 'undefined' ? this.dadosTemplate[coluna.campoOpcoes] : this.dadosTemplate[linha.campoOpcoes]
     },
     getValor: function (categoria, linha, coluna, index) {
-      if (this.inventario == null || categoria.nome_impressao === undefined || coluna.nome_impressao === undefined || linha.nome_impressao === undefined ||
-        this.inventario[categoria.nome_impressao] === undefined || typeof this.inventario[categoria.nome_impressao][linha.nome_impressao] === 'undefined' ||
-        typeof this.inventario[categoria.nome_impressao][linha.nome_impressao] === 'undefined') { return null }
-      return this.inventario[categoria.nome_impressao][linha.nome_impressao][coluna.nome_impressao]
+      try {
+        if (linha.isAdicional) {
+          return this.inventario[categoria.nome_impressao].linhas_adicionais[linha.nome_impressao][coluna.nome_impressao]
+        } else {
+          return this.inventario[categoria.nome_impressao][linha.nome_impressao][coluna.nome_impressao]
+        }
+      } catch (error) {
+        return null
+      }
+    },
+    getCaminho: function (categoria, linha, coluna) {
+      if (linha.isAdicional) { return [categoria.nome_impressao, 'linhas_adicionais', linha.nome_impressao, coluna.nome_impressao] } else { return [categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao] }
+    },
+    adicionarLinha: function (categoria) {
+      const novaLinha = JSON.parse(JSON.stringify(categoria.linha_adicional))
+      const indiceGeral = parseInt(categoria.indice_geral) + 1
+      const indiceAdicionavel = parseInt(categoria.indice_adicionavel) + 1
+      novaLinha.nome = novaLinha.nome.replaceAll('%indiceGeral%', indiceGeral).replaceAll('%indiceAdicionavel%', indiceAdicionavel)
+      novaLinha.nome_impressao = novaLinha.nome_impressao.replaceAll('%indiceAdicionavel%', indiceAdicionavel)
+      categoria.indice_geral = indiceGeral
+      categoria.indice_adicionavel = indiceAdicionavel
+      categoria.linhas.push(novaLinha)
     }
   }
 }

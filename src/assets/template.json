@@ -504,9 +504,12 @@
             ],
             "linhas": [
                 {"id": 1, "nome": "10.1 - Categoria 1", "campoOpcoes": "categoriaTitulares", "nome_impressao": "categoria_1"},
-                {"id": 2, "nome": "10.3 - Trata dados de crianças e adolescentes", "campoOpcoes": "simNao", "nome_impressao": "trata_dados"},
-                {"id": 3, "nome": "10.4 - Além de crianças e adolescente trata dados de outro grupo vulnerável", "campoOpcoes": "simNao", "nome_impressao": "dados_vulneraveis_alem_crianca_adolescente"}
-            ]
+                {"id": 2, "nome": "10.2 - Trata dados de crianças e adolescentes", "campoOpcoes": "simNao", "nome_impressao": "trata_dados"},
+                {"id": 3, "nome": "10.3 - Além de crianças e adolescente trata dados de outro grupo vulnerável", "campoOpcoes": "simNao", "nome_impressao": "dados_vulneraveis_alem_crianca_adolescente"}
+            ],
+            "linha_adicional": {"nome": "10.%indiceGeral% - Categoria %indiceAdicionavel%", "campoOpcoes": "categoriaTitulares", "nome_impressao": "categoria_%indiceAdicionavel%", "isAdicional": true},
+            "indice_geral": 3,
+            "indice_adicionavel": 1
         },
         {
             "id": 11,
