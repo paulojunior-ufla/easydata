@@ -16,6 +16,19 @@ export default {
   name: 'HomeView',
   components: {
     TableInventarioDados
+  },
+  watch: {
+    $route: {
+      handler (route) {
+        console.log('ttesteeee', route)
+        if (route.hash === '#salvo') {
+          this.$router.push({
+            hash: ''
+          })
+        }
+      },
+      immediate: true
+    }
   }
 }
 </script>
