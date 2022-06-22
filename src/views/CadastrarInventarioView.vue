@@ -19,6 +19,18 @@ export default {
       menuAberto: true
     }
   },
+  beforeRouteLeave (to, from, next) {
+    if (to.hash === '#salvo') {
+      next()
+    } else {
+      const answer = window.confirm('Você realmente deseja sair? Todas as alterações serão perdidas!')
+      if (answer) {
+        next()
+      } else {
+        next(false)
+      }
+    }
+  },
   components: {
     FormInventarioDados,
     SidebarInventarioDados

@@ -129,7 +129,7 @@ export default {
         this.$store.dispatch('inventarios/addInventario', inventario)
       }
       this.chamarToast('sucesso')
-      setTimeout(() => this.$router.push('/'), 500)
+      setTimeout(() => this.$router.push('/#salvo'), 500)
     },
     salvarElemento: function (elemento, inventarioSalvar) {
       let caminhos = []
