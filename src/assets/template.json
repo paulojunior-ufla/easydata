@@ -508,6 +508,7 @@
                 {"id": 3, "nome": "10.3 - Além de crianças e adolescente trata dados de outro grupo vulnerável", "campoOpcoes": "simNao", "nome_impressao": "dados_vulneraveis_alem_crianca_adolescente"}
             ],
             "linha_adicional": {"nome": "10.%indiceGeral% - Categoria %indiceAdicionavel%", "campoOpcoes": "categoriaTitulares", "nome_impressao": "categoria_%indiceAdicionavel%", "isAdicional": true},
+            "primeiro_indice_adicionavel": 2,
             "indice_geral": 3,
             "indice_adicionavel": 1
         },
@@ -521,7 +522,11 @@
             ],
             "linhas": [
                 {"id": 1, "nome": "11.1 - Nome da Instituição 1", "nome_impressao": "nome_instituicao_1"}
-            ]
+            ],
+            "linha_adicional": {"id": 1, "nome": "11.%indiceGeral% - Nome da Instituição %indiceAdicionavel%", "nome_impressao": "nome_instituicao_%indiceAdicionavel%", "isAdicional": true},
+            "primeiro_indice_adicionavel": 2,
+            "indice_geral": 1,
+            "indice_adicionavel": 1
         },
         {
             "id": 12,
