@@ -14,7 +14,7 @@
           <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario' || this.$route.name == 'editarInventario'">
 
             <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
-            <b-link to="/cadastrarInventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
+            <b-link @click="baixarPdf()" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
             <b-nav-item href="#"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-nav-item>
           </b-navbar-nav>
 
@@ -28,10 +28,28 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import download from 'downloadjs'
 export default {
   name: 'NavbarGeral',
   props: {
     msg: String
+  },
+  data () {
+    return {
+      id: this.$route.params.id
+    }
+  },
+  computed: {
+    ...mapGetters({ getInventarioByIndex: 'inventarios/getInventarioByIndex' }),
+    inventario () {
+      return this.getInventarioByIndex(this.id)
+    }
+  },
+  methods: {
+    baixarPdf () {
+      download(JSON.stringify(this.inventario), 'inventario_' + this.id + '.json', 'text/plain')
+    }
   }
 }
 </script>
