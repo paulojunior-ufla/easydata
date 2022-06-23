@@ -14,8 +14,8 @@
           <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario' || this.$route.name == 'editarInventario'">
 
             <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
-            <b-link @click="baixarPdf()" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
-            <b-nav-item href="#"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-nav-item>
+            <b-link @click="baixarPdf()" v-if="this.inventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
+            <!-- <b-nav-item href="#"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-nav-item> -->
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto" v-else>
