@@ -93,7 +93,7 @@ export default {
       titulo: 'teste',
       tituloModal: '',
       textoModal: '',
-      arrayCategoriasLinhasAdicionais: ['categoria_titulares_dados', 'compartilhamento_dados_pessoais']
+      arrayCategoriasLinhasAdicionais: ['categoria_titulares_dados', 'compartilhamento_dados_pessoais', 'medidas_seguranca_privacidade', 'transferencia_internacional_dados_pessoais', 'contratos_servicos_tratam_dados_processo']
     }
   },
   computed: {

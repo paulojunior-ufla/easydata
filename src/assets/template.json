@@ -537,10 +537,12 @@
                 {"id": 2, "nome": "Descrição do(s) Controle(s)", "nome_impressao": "descricao_controle"}
             ],
             "linhas": [
-                {"id": 1, "nome": "12.3 - Medida de Segurança/Privacidade 1", "nome_impressao": "medida_seguranca_privacidade_1"},
-                {"id": 2, "nome": "12.2 - Medida de Segurança/Privacidade 2", "nome_impressao": "medida_seguranca_privacidade_2"},
-                {"id": 3, "nome": "12.3 - Medida de Segurança/Privacidade 3", "nome_impressao": "medida_seguranca_privacidade_3"}
-            ]
+                {"id": 1, "nome": "12.1 - Medida de Segurança/Privacidade 1", "nome_impressao": "medida_seguranca_privacidade_1"}
+            ],
+            "linha_adicional": {"id": 1, "nome": "12.%indiceGeral% - Medida de Segurança/Privacidade %indiceAdicionavel%", "nome_impressao": "medida_seguranca_privacidade_%indiceAdicionavel%", "isAdicional": true},
+            "primeiro_indice_adicionavel": 2,
+            "indice_geral": 1,
+            "indice_adicionavel": 1
         },
         {
             "id": 13,
@@ -553,7 +555,11 @@
             ],
             "linhas": [
                 {"id": 1, "nome": "13.1 - Organização 1", "nome_impressao": "organizacao_1"}
-            ]
+            ],
+            "linha_adicional": {"id": 1, "nome": "13.%indiceGeral% - Organização %indiceAdicionavel%", "nome_impressao": "organizacao_%indiceAdicionavel%", "isAdicional": true},
+            "primeiro_indice_adicionavel": 2,
+            "indice_geral": 1,
+            "indice_adicionavel": 1
         },
         {
             "id": 14,
@@ -566,7 +572,11 @@
             ],
             "linhas": [
                 {"id": 1, "nome": "14.2 - Contrato nº 1", "nome_impressao": "contrato_n1"}
-            ]
+            ],
+            "linha_adicional": {"id": 1, "nome": "14.%indiceGeral% - Contrato nº %indiceAdicionavel%", "nome_impressao": "contrato_n%indiceAdicionavel%", "isAdicional": true},
+            "primeiro_indice_adicionavel": 2,
+            "indice_geral": 1,
+            "indice_adicionavel": 1
         }
     ]
 }
