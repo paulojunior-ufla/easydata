@@ -276,4 +276,8 @@ li {
 .form-control {
   font-size: .8rem;
 }
+
+.custom-select {
+  font-size: .8rem;
+}
 </style>
