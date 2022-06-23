@@ -22,14 +22,17 @@
                 <b-thead>
                   <b-tr class="text-center" v-if="!categoria.esconderColunas">
                     <b-th v-if="categoria.linhas" style="text-align:left">
-                      <b-icon role="button" icon="plus-lg" v-if="categoria.linha_adicional" @click="adicionarLinha(categoria)"></b-icon>
+                      <b-icon role="button" class="text-primary" alt="Adicionar linha" icon="plus-lg" v-if="categoria.linha_adicional" @click="adicionarLinha(categoria)"></b-icon>
                     </b-th>
                     <b-th v-for="coluna in categoria.colunas" :key="coluna.id" width="270">{{coluna.nome}}</b-th>
                   </b-tr>
                 </b-thead>
                 <b-tbody>
                   <b-tr v-for="linha in categoria.linhas" :key="linha.id">
-                    <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle" v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
+                    <b-td>
+                      {{linha.nome}} <b-icon role="button" alt="Ajuda" icon="question-circle" v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/>
+                      <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
+                    </b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
                       <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)"/>
@@ -89,7 +92,8 @@ export default {
       categorias: this.template.categorias,
       titulo: 'teste',
       tituloModal: '',
-      textoModal: ''
+      textoModal: '',
+      arrayCategoriasLinhasAdicionais: ['categoria_titulares_dados', 'compartilhamento_dados_pessoais']
     }
   },
   computed: {
@@ -103,13 +107,17 @@ export default {
       handler () {
         if (typeof this.inventario === 'undefined') { this.$router.push('/') }
         this.categorias = JSON.parse(JSON.stringify(this.dadosTemplate.categorias))
-        const linhasAdicionaisCategoriaTitularesDados = this.inventario.categoria_titulares_dados.linhas_adicionais
-        if (typeof linhasAdicionaisCategoriaTitularesDados === 'object') {
-          const categoriaAtual = getCategoriaByNomeImpressao(this.categorias, 'categoria_titulares_dados')
-          Object.entries(linhasAdicionaisCategoriaTitularesDados).forEach((linha) => {
-            this.adicionarLinha(categoriaAtual)
-          })
-        }
+        let linhasAdicionais = []
+        let categoriaAtual = null
+        this.arrayCategoriasLinhasAdicionais.forEach((nomeCategoria) => {
+          linhasAdicionais = this.inventario[nomeCategoria].linhas_adicionais
+          if (linhasAdicionais) {
+            categoriaAtual = getCategoriaByNomeImpressao(this.categorias, nomeCategoria)
+            Object.entries(linhasAdicionais).forEach((linha) => {
+              this.adicionarLinha(categoriaAtual)
+            })
+          }
+        })
       },
       immediate: true
     }
@@ -134,6 +142,7 @@ export default {
         const elemento = elementos[i]
         this.salvarElemento(elemento, inventario)
       }
+      this.prepararInventarioSave(inventario)
       if (typeof this.id !== 'undefined') {
         this.$store.dispatch('inventarios/updateInventario', { inventario, index: this.id })
       } else {
@@ -141,6 +150,26 @@ export default {
       }
       this.chamarToast('sucesso')
       setTimeout(() => this.$router.push('/#salvo'), 500)
+    },
+    prepararInventarioSave (inventario) {
+      let templateCategoriaTitularesDados = null
+      let linhasAdicionais = null
+      let indiceAdicional = null
+      let templateLinhaAdicional = null
+      this.arrayCategoriasLinhasAdicionais.forEach((nomeCategoria) => {
+        console.log('inventario[nomeCategoria]', inventario[nomeCategoria])
+        if (inventario[nomeCategoria].linhas_adicionais) {
+          templateCategoriaTitularesDados = getCategoriaByNomeImpressao(this.categorias, nomeCategoria)
+          indiceAdicional = templateCategoriaTitularesDados.primeiro_indice_adicionavel
+          linhasAdicionais = {}
+          templateLinhaAdicional = templateCategoriaTitularesDados.linha_adicional
+          Object.entries(inventario[nomeCategoria].linhas_adicionais).forEach((linhaAdicional) => {
+            const nomeImpressao = templateLinhaAdicional.nome_impressao.replaceAll('%indiceAdicionavel%', indiceAdicional++)
+            linhasAdicionais[nomeImpressao] = linhaAdicional[1]
+          })
+          inventario[nomeCategoria].linhas_adicionais = linhasAdicionais
+        }
+      })
     },
     salvarElemento: function (elemento, inventarioSalvar) {
       let caminhos = []
@@ -184,13 +213,17 @@ export default {
     },
     adicionarLinha: function (categoria) {
       const novaLinha = JSON.parse(JSON.stringify(categoria.linha_adicional))
-      const indiceGeral = parseInt(categoria.indice_geral) + 1
-      const indiceAdicionavel = parseInt(categoria.indice_adicionavel) + 1
+      categoria.indice_geral = parseInt(categoria.indice_geral) + 1
+      categoria.indice_adicionavel = parseInt(categoria.indice_adicionavel) + 1
+      const indiceGeral = categoria.indice_geral
+      const indiceAdicionavel = categoria.indice_adicionavel
       novaLinha.nome = novaLinha.nome.replaceAll('%indiceGeral%', indiceGeral).replaceAll('%indiceAdicionavel%', indiceAdicionavel)
       novaLinha.nome_impressao = novaLinha.nome_impressao.replaceAll('%indiceAdicionavel%', indiceAdicionavel)
-      categoria.indice_geral = indiceGeral
-      categoria.indice_adicionavel = indiceAdicionavel
+      novaLinha.id = categoria.indice_geral
       categoria.linhas.push(novaLinha)
+    },
+    removerLinha: function (categoria, linha) {
+      categoria.linhas = categoria.linhas.filter((linhaFiltrada) => linhaFiltrada.id !== linha.id)
     }
   }
 }
