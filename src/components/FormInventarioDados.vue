@@ -109,15 +109,17 @@ export default {
         this.categorias = JSON.parse(JSON.stringify(this.dadosTemplate.categorias))
         let linhasAdicionais = []
         let categoriaAtual = null
-        this.arrayCategoriasLinhasAdicionais.forEach((nomeCategoria) => {
-          linhasAdicionais = this.inventario[nomeCategoria].linhas_adicionais
-          if (linhasAdicionais) {
-            categoriaAtual = getCategoriaByNomeImpressao(this.categorias, nomeCategoria)
-            Object.entries(linhasAdicionais).forEach((linha) => {
-              this.adicionarLinha(categoriaAtual)
-            })
-          }
-        })
+        if (this.inventario) {
+          this.arrayCategoriasLinhasAdicionais.forEach((nomeCategoria) => {
+            linhasAdicionais = this.inventario[nomeCategoria].linhas_adicionais
+            if (linhasAdicionais) {
+              categoriaAtual = getCategoriaByNomeImpressao(this.categorias, nomeCategoria)
+              Object.entries(linhasAdicionais).forEach((linha) => {
+                this.adicionarLinha(categoriaAtual)
+              })
+            }
+          })
+        }
       },
       immediate: true
     }
