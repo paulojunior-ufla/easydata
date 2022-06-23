@@ -115,7 +115,7 @@ export default {
   color: #b8b7ad;
   margin-left: 0;
   margin-top: 10px;
-  font-size: initial;
+  font-size: .8rem;
   padding: 10px;
 }
 .bm-item-list > * {
@@ -136,7 +136,7 @@ div[isopen="true"] .bm-burger-button {
   display: none;
 }
 .toggleAll{
-  font-size:12px;
+  font-size: .7rem;
   color: #999;
   margin-top: -15px;
 }

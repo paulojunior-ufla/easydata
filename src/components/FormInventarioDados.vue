@@ -231,6 +231,11 @@ export default {
 }
 </script>
 
+<style>
+body {
+  font-size: .8rem;
+}
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
@@ -258,8 +263,17 @@ li {
 .table td {
   padding-left: 1.2rem;
   padding-right: 1.2rem;
+  font-size: .8rem;
 }
 .card-body.titulo {
   padding: 1.2rem;
+}
+
+.m-2 {
+  font-size: 0.9rem;
+}
+
+.form-control {
+  font-size: .8rem;
 }
 </style>
