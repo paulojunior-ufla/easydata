@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CadastrarInventarioView from '../views/CadastrarInventarioView.vue'
+import PdfInventarioView from '../views/PdfInventarioView.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,11 @@ const routes = [
     path: '/editarInventario/:id',
     name: 'editarInventario',
     component: CadastrarInventarioView
+  },
+  {
+    path: '/baixarPdfInventario/:id',
+    name: 'baixarPdfInventario',
+    component: PdfInventarioView
   },
   {
     path: '/about',
