@@ -1,8 +1,8 @@
 <template>
-  <span>
+  <div id="visualizacaoPdf">
     <div>
-      <h5 block class="m-2">Título</h5>
-      <p data-caminho="titulo">{{inventario.titulo}}</p>
+      <h5 block class="titulo">Título</h5>
+      <p data-caminho="titulo" class="valorTitulo">{{inventario.titulo}}</p>
     </div>
     <section v-for="categoria in categorias" :key="categoria.id">
       <h5 block class="m-2">{{categoria.nome}}</h5>
@@ -17,14 +17,9 @@
         </b-thead>
         <b-tbody>
           <b-tr v-for="linha in categoria.linhas" :key="linha.id">
-            <b-td>
-              {{linha.nome}} <b-icon role="button" alt="Ajuda" icon="question-circle" v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/>
-              <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
-            </b-td>
+            <b-td>{{linha.nome}}</b-td>
             <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-              <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                :data-caminho="getCaminho(categoria, linha, coluna)"/>
-              <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
+              <b-form-input :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                 :data-caminho="getCaminho(categoria, linha, coluna)"/>
             </b-td>
           </b-tr>
@@ -40,11 +35,9 @@
           </b-thead>
           <b-tbody :key="secao.id">
             <b-tr v-for="linha in secao.linhas" :key="linha.id">
-              <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle"  v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
+              <b-td>{{linha.nome}}</b-td>
               <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
-                <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                  :data-caminho="getCaminho(categoria, linha, coluna)"/>
-                <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
+                <b-form-input :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                   :data-caminho="getCaminho(categoria, linha, coluna)"/>
               </b-td>
             </b-tr>
@@ -52,7 +45,7 @@
           </template>
       </b-table-simple>
     </section>
-  </span>
+  </div>
 </template>
 
 <script>
@@ -234,15 +227,41 @@ li {
 .table {
   margin: 0;
 }
-
-.table tr {
+h5 {
+  break-inside: avoid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.table tr, .table td {
   break-inside: avoid;
 }
 .table td {
   padding-left: 1.2rem;
   padding-right: 1.2rem;
+  border-right: 1px solid #eee;
+}
+.table td:last-child {
+  border-right: 0;
+}
+.table tr:last-child {
+  border-bottom: 1px solid #eee;
+}
+.table {
+  margin-bottom: 10px;
 }
 .card-body.titulo {
   padding: 1.2rem;
+}
+h5.titulo {
+  border-bottom: 1px solid #dee2e6;
+  padding: 8px;
+}
+.valorTitulo {
+  padding: 0 1.2rem;
+}
+#visualizacaoPdf {
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
 }
 </style>

@@ -11,12 +11,10 @@
         :manual-pagination="false"
         pdf-format="a4"
         pdf-orientation="landscape"
-        pdf-content-width="800px"
+        pdf-content-width="100%"
         ref="html2Pdf"
     >
-        <section slot="pdf-content">
-          <secoes-inventario-pdf v-bind:template="template" v-model="menuAberto" :class="menuAberto? 'formRestrito' : 'formExpandido'"/>
-        </section>
+      <secoes-inventario-pdf v-bind:template="template" v-model="menuAberto" :class="menuAberto? 'formRestrito' : 'formExpandido'" slot="pdf-content"/>
     </VueHtml2pdf>
    </div>
 </template>
