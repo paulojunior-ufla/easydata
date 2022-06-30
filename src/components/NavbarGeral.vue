@@ -14,8 +14,8 @@
           <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario' || this.$route.name == 'editarInventario'">
 
             <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
-            <b-link @click="baixarPdf()" v-if="this.inventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
-            <b-link @click="baixarPdf2()" class="nav-link"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-link>
+            <b-link @click="baixarJson()" v-if="this.inventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
+            <b-link @click="baixarPdf()" class="nav-link"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-link>
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto" v-else>
@@ -24,7 +24,7 @@
           </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <PdfInventario ref="teste"></PdfInventario>
+    <PdfInventario ref="inventPdf"></PdfInventario>
   </div>
 </template>
 
@@ -49,12 +49,11 @@ export default {
     }
   },
   methods: {
-    baixarPdf () {
+    baixarJson () {
       download(JSON.stringify(this.inventario), 'inventario_' + this.id + '.json', 'text/plain')
     },
-    baixarPdf2 () {
-      console.log('this.$refs.teste', this.$refs.teste.generateReport())
-      // PdfInventario.generateReport()
+    baixarPdf () {
+      this.$refs.inventPdf.generateReport()
     }
   },
   components: { PdfInventario }
