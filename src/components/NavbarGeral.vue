@@ -15,7 +15,7 @@
 
             <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
             <b-link @click="baixarPdf()" v-if="this.inventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
-            <!-- <b-nav-item href="#"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-nav-item> -->
+            <b-link @click="baixarPdf2()" class="nav-link"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-link>
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto" v-else>
@@ -24,12 +24,14 @@
           </b-navbar-nav>
       </b-collapse>
     </b-navbar>
+    <PdfInventario ref="teste"></PdfInventario>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
 import download from 'downloadjs'
+import PdfInventario from './PdfInventario.vue'
 export default {
   name: 'NavbarGeral',
   props: {
@@ -49,8 +51,13 @@ export default {
   methods: {
     baixarPdf () {
       download(JSON.stringify(this.inventario), 'inventario_' + this.id + '.json', 'text/plain')
+    },
+    baixarPdf2 () {
+      console.log('this.$refs.teste', this.$refs.teste.generateReport())
+      // PdfInventario.generateReport()
     }
-  }
+  },
+  components: { PdfInventario }
 }
 </script>
 

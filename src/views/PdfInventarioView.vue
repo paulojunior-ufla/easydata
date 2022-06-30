@@ -2,9 +2,9 @@
    <div>
      <VueHtml2pdf
         :show-layout="false"
-        :float-layout="true"
-        :enable-download="false"
-        :preview-modal="true"
+        :float-layout="false"
+        :enable-download="true"
+        :preview-modal="false"
         :paginate-elements-by-height="1400"
         filename="myPDF"
         :pdf-quality="2"
@@ -14,7 +14,7 @@
         pdf-content-width="100%"
         ref="html2Pdf"
     >
-      <secoes-inventario-pdf v-bind:template="template" v-model="menuAberto" :class="menuAberto? 'formRestrito' : 'formExpandido'" slot="pdf-content"/>
+      <secoes-inventario-pdf v-bind:template="template" slot="pdf-content"/>
     </VueHtml2pdf>
    </div>
 </template>
@@ -31,18 +31,6 @@ export default {
     return {
       template,
       menuAberto: true
-    }
-  },
-  beforeRouteLeave (to, from, next) {
-    if (to.hash === '#salvo') {
-      next()
-    } else {
-      const answer = window.confirm('Você realmente deseja sair? Todas as alterações serão perdidas!')
-      if (answer) {
-        next()
-      } else {
-        next(false)
-      }
     }
   },
   components: {
