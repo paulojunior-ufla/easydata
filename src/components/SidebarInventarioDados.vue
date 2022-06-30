@@ -6,6 +6,7 @@
       @closeMenu="handleCloseMenu"
       width="300"
       disableOutsideClick
+      fixed
     >
       <b-navbar toggleable="lg" variant="light" class="p-1 py-2 ms-2">
         <b-nav vertical class="w-100 text-start">
@@ -98,14 +99,30 @@ export default {
 .bm-menu {
   height: auto;
   width: auto; /* 0 width - change this with JavaScript */
-  position: relative; /* Stay in place */
+  position: fixed; /* Stay in place */
+  max-height: calc(100% - 60px);
+  overflow: auto;
   z-index: 1000; /* Stay on top */
-  top: 0;
+  top: 60px;
   left: 0;
   background-color: #f8f9fa;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 0;
   transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
+}
+.bm-menu .nav-link {
+  text-overflow: unset;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-height: 1.8rem;
+  padding: 5px;
+}
+
+.nav-item {
+  margin: 0
 }
 
 .bm-overlay {

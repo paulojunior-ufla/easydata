@@ -56,11 +56,4 @@ export default {
 .home {
   display: flex;
 }
-.formExpandido {
-  margin-left: 70px;
-  width: 100%;
-}
-.formRestrito {
-  width: 100%;
-}
 </style>

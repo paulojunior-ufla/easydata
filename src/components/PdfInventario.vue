@@ -4,7 +4,7 @@
       :show-layout="false"
       :float-layout="true"
       :enable-download="true"
-      :preview-modal="true"
+      :preview-modal="false"
       :paginate-elements-by-height="1400"
       filename="myPDF"
       :pdf-quality="2"

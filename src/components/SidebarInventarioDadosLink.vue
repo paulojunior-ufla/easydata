@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-nav-item active>
+    <b-nav-item active :title="texto">
       <b-icon style="height: 16px" :icon=" completo ? 'check-lg' : 'x-lg' "/> {{texto}}
     </b-nav-item>
   </div>

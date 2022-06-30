@@ -49,9 +49,10 @@ export default {
 }
 .formExpandido {
   margin-left: 70px;
-  width: 100%;
+  width: calc(100% - 80px);
 }
 .formRestrito {
-  width: 100%;
+  margin-left: 310px;
+  width: calc(100% - 320px);
 }
 </style>
