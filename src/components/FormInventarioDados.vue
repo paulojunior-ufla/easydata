@@ -34,10 +34,12 @@
                       <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
                     </b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-                      <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)"/>
+                      <input-mask v-if="['telefone', 'cep'].indexOf(getClasses(categoria, index)) > -1" :tipo="getClasses(categoria, index)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
+                      <b-form-input v-else-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                       <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)"/>
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                     </b-td>
                   </b-tr>
                 </b-tbody>
@@ -55,9 +57,9 @@
                       <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle"  v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
                       <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
                         <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                          :data-caminho="getCaminho(categoria, linha, coluna)"/>
+                          :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                         <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
-                          :data-caminho="getCaminho(categoria, linha, coluna)"/>
+                          :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                       </b-td>
                     </b-tr>
                   </b-tbody>
@@ -79,6 +81,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import { getCategoriaByNomeImpressao } from '../util/template'
+import InputMask from './InputMask.vue'
+
 export default {
   name: 'FormInventarioDados',
   props: {
@@ -93,7 +97,8 @@ export default {
       titulo: 'teste',
       tituloModal: '',
       textoModal: '',
-      arrayCategoriasLinhasAdicionais: ['categoria_titulares_dados', 'compartilhamento_dados_pessoais', 'medidas_seguranca_privacidade', 'transferencia_internacional_dados_pessoais', 'contratos_servicos_tratam_dados_processo']
+      arrayCategoriasLinhasAdicionais: ['categoria_titulares_dados', 'compartilhamento_dados_pessoais', 'medidas_seguranca_privacidade', 'transferencia_internacional_dados_pessoais', 'contratos_servicos_tratam_dados_processo'],
+      obrigatoriedadeCampos: false
     }
   },
   computed: {
@@ -105,7 +110,9 @@ export default {
   watch: {
     inventario: {
       handler () {
-        if (typeof this.inventario === 'undefined') { this.$router.push('/') }
+        if (typeof this.inventario === 'undefined') {
+          this.$router.push('/')
+        }
         this.categorias = JSON.parse(JSON.stringify(this.dadosTemplate.categorias))
         let linhasAdicionais = []
         let categoriaAtual = null
@@ -211,7 +218,11 @@ export default {
       }
     },
     getCaminho: function (categoria, linha, coluna) {
-      if (linha.isAdicional) { return [categoria.nome_impressao, 'linhas_adicionais', linha.nome_impressao, coluna.nome_impressao] } else { return [categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao] }
+      if (linha.isAdicional) {
+        return [categoria.nome_impressao, 'linhas_adicionais', linha.nome_impressao, coluna.nome_impressao]
+      } else {
+        return [categoria.nome_impressao, linha.nome_impressao, coluna.nome_impressao]
+      }
     },
     adicionarLinha: function (categoria) {
       const novaLinha = JSON.parse(JSON.stringify(categoria.linha_adicional))
@@ -227,7 +238,8 @@ export default {
     removerLinha: function (categoria, linha) {
       categoria.linhas = categoria.linhas.filter((linhaFiltrada) => linhaFiltrada.id !== linha.id)
     }
-  }
+  },
+  components: { InputMask }
 }
 </script>
 

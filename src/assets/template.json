@@ -570,6 +570,11 @@
                 {"id": 2, "nome": "Objeto do Contrato", "nome_impressao": "objeto_contrato"},
                 {"id": 3, "nome": "E-mail do Gestor do Contrato", "nome_impressao": "email_gestor_contrato"}
             ],
+            "classes": [
+                "",
+                "",
+                "email"
+            ],
             "linhas": [
                 {"id": 1, "nome": "14.2 - Contrato nº 1", "nome_impressao": "contrato_n1"}
             ],
