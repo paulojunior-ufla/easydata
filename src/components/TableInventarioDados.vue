@@ -129,6 +129,7 @@ li {
 }
 .dropdown .dropdown-menu {
   min-width: auto;
+  font-size: .8rem;
 }
 .dropdown li {
   display: block;
@@ -136,5 +137,8 @@ li {
 .row {
   margin-left: 0!important;
   margin-right: 0!important;
+}
+.table {
+  font-size: .85rem;
 }
 </style>
