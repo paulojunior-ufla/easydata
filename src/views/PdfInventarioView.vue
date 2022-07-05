@@ -39,7 +39,6 @@ export default {
   },
   methods: {
     toggleMenu () {
-      console.log('Toggle')
       this.menuAberto = !this.menuAberto
     },
     generateReport () {

@@ -131,7 +131,6 @@ export default {
       let indiceAdicional = null
       let templateLinhaAdicional = null
       this.arrayCategoriasLinhasAdicionais.forEach((nomeCategoria) => {
-        console.log('inventario[nomeCategoria]', inventario[nomeCategoria])
         if (inventario[nomeCategoria].linhas_adicionais) {
           templateCategoriaTitularesDados = getCategoriaByNomeImpressao(this.categorias, nomeCategoria)
           indiceAdicional = templateCategoriaTitularesDados.primeiro_indice_adicionavel

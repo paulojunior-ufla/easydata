@@ -5,7 +5,7 @@
       <div class="accordion text-start" role="tablist">
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
-            <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/>Título</h5>
+            <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/> Título</h5>
           </b-card-header>
             <b-card-body class="titulo">
               <b-input name="titulo" data-caminho="titulo" :value="inventario ? inventario.titulo : ''" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
@@ -166,7 +166,6 @@ export default {
       let indiceAdicional = null
       let templateLinhaAdicional = null
       this.arrayCategoriasLinhasAdicionais.forEach((nomeCategoria) => {
-        console.log('inventario[nomeCategoria]', inventario[nomeCategoria])
         if (inventario[nomeCategoria].linhas_adicionais) {
           templateCategoriaTitularesDados = getCategoriaByNomeImpressao(this.categorias, nomeCategoria)
           indiceAdicional = templateCategoriaTitularesDados.primeiro_indice_adicionavel

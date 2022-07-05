@@ -15,16 +15,16 @@
 
             <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
             <b-link @click="baixarJson()" v-if="this.inventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
-            <b-link @click="baixarPdf()" class="nav-link"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-link>
+            <b-link @click="baixarPdf()" class="nav-link" v-if="this.inventario"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-link>
           </b-navbar-nav>
 
           <b-navbar-nav class="ml-auto" v-else>
             <b-link to="/cadastrarInventario" class="nav-link"><b-icon style="height: 18px" icon="plus-circle"/> Novo</b-link>
-            <b-nav-item href="#"><b-icon style="height: 18px" icon="cloud-download"/> Importar</b-nav-item>
+            <b-link to="/importarInventario" class="nav-link"><b-icon style="height: 18px" icon="cloud-download"/> Importar</b-link>
           </b-navbar-nav>
       </b-collapse>
     </b-navbar>
-    <PdfInventario ref="inventPdf"></PdfInventario>
+    <PdfInventario ref="inventPdf" v-if="this.inventario"></PdfInventario>
   </div>
 </template>
 

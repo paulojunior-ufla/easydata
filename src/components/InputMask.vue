@@ -42,9 +42,6 @@ export default {
       }
       return minLength
     }
-  },
-  mounted () {
-    console.log('this.$props', this.$props)
   }
 }
 

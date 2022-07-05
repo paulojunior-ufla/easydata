@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CadastrarInventarioView from '../views/CadastrarInventarioView.vue'
 import PdfInventarioView from '../views/PdfInventarioView.vue'
+import ImportarInventarioView from '../views/ImportarInventarioView.vue'
 
 Vue.use(VueRouter)
 
@@ -26,6 +27,11 @@ const routes = [
     path: '/baixarPdfInventario/:id',
     name: 'baixarPdfInventario',
     component: PdfInventarioView
+  },
+  {
+    path: '/importarInventario',
+    name: 'importarInventario',
+    component: ImportarInventarioView
   },
   {
     path: '/about',

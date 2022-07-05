@@ -20,7 +20,6 @@ export default {
   watch: {
     $route: {
       handler (route) {
-        console.log('ttesteeee', route)
         if (route.hash === '#salvo') {
           this.$router.push({
             hash: ''
