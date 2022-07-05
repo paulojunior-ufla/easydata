@@ -37,4 +37,7 @@ export default {
   color: initial;
   padding: 5px;
 }
+.footer p {
+  margin-bottom: 0;
+}
 </style>
