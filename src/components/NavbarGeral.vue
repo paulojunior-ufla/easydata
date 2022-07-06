@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
 import download from 'downloadjs'
 import PdfInventario from './PdfInventario.vue'
 export default {
@@ -37,20 +37,16 @@ export default {
   props: {
     msg: String
   },
-  data () {
-    return {
-      id: this.$route.params.id
-    }
-  },
   computed: {
     ...mapGetters({ getInventarioByIndex: 'inventarios/getInventarioByIndex' }),
+    ...mapState(['inventarios']),
     inventario () {
-      return this.getInventarioByIndex(this.id)
+      return this.getInventarioByIndex(this.$route.params.id)
     }
   },
   methods: {
     baixarJson () {
-      download(JSON.stringify(this.inventario), 'inventario_' + this.id + '.json', 'text/plain')
+      download(JSON.stringify(this.inventario), 'inventario_' + this.$route.params.id + '.json', 'text/plain')
     },
     baixarPdf () {
       this.$refs.inventPdf.generateReport()
