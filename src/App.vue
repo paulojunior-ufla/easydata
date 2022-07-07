@@ -3,6 +3,7 @@
     <div id="container">
       <navbar-geral/>
       <div style="margin-top: 60px;">
+        <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide></b-toast>
         <router-view/>
       </div>
     </div>

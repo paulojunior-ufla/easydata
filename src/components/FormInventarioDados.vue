@@ -1,6 +1,5 @@
 <template>
   <div>
-    <b-toast id="example-toast" title="BootstrapVue" static no-auto-hide></b-toast>
     <form @submit.prevent="salvar" id="cadastrar_inventario">
       <div class="accordion text-start" role="tablist">
         <b-card no-body class="mb-1">
@@ -137,9 +136,9 @@ export default {
       this.tituloModal = titulo
       this.textoModal = texto
     },
-    chamarToast (variant = null) {
-      this.$bvToast.toast('Salvo com sucesso', {
-        title: 'Sucesso',
+    chamarToast (variant = 'success') {
+      this.$root.$bvToast.toast(variant === 'success' ? 'Realizado com sucesso.' : 'Erro ao realizar ação.', {
+        title: variant === 'success' ? 'Sucesso' : 'Erro',
         variant: variant,
         solid: true
       })
@@ -157,8 +156,8 @@ export default {
       } else {
         this.$store.dispatch('inventarios/addInventario', inventario)
       }
-      this.chamarToast('sucesso')
-      setTimeout(() => this.$router.push('/#salvo'), 500)
+      this.chamarToast('success')
+      this.$router.push('/#salvo')
     },
     prepararInventarioSave (inventario) {
       let templateCategoriaTitularesDados = null
