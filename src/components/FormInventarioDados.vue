@@ -7,7 +7,7 @@
             <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/> Título</h5>
           </b-card-header>
             <b-card-body class="titulo">
-              <b-input name="titulo" data-caminho="titulo" :value="inventario ? inventario.titulo : ''" placeholder="Ex: Cadastramento de usuários externos no SIG"/>
+              <b-input name="titulo" data-caminho="titulo" :value="inventario ? inventario.titulo : ''" placeholder="Ex: Cadastramento de usuários externos no SIG" required/>
             </b-card-body>
         </b-card>
 
