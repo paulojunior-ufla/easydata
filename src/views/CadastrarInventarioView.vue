@@ -45,6 +45,7 @@ export default {
 <style>
 .home {
   display: flex;
+  margin-bottom: 10px;
 }
 .formExpandido {
   margin-left: 70px;

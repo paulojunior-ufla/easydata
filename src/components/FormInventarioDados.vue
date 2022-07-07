@@ -37,7 +37,7 @@
                       <input-mask v-if="['telefone', 'cep'].indexOf(getClasses(categoria, index)) > -1" :tipo="getClasses(categoria, index)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                       <b-form-input v-else-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, index))"/>
                       <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                     </b-td>
@@ -201,6 +201,9 @@ export default {
     },
     getClasses: function (categoria, index) {
       return categoria.classes && typeof categoria.classes[index] !== 'undefined' ? categoria.classes[index] : ''
+    },
+    getTipo: function (classes) {
+      return ['email'].indexOf(classes) > -1 ? 'email' : 'text'
     },
     getOpcoes: function (coluna, linha) {
       return typeof coluna.campoOpcoes !== 'undefined' ? this.dadosTemplate[coluna.campoOpcoes] : this.dadosTemplate[linha.campoOpcoes]

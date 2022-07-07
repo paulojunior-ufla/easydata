@@ -17,13 +17,18 @@
         </b-dropdown>
       </template>
     </b-table>
+    <footer-geral/>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import FooterGeral from './FooterGeral.vue'
 export default {
   name: 'TableInventarioDados',
+  components: {
+    FooterGeral
+  },
   props: {
     msg: String
   },
