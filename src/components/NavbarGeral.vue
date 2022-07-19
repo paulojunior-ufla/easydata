@@ -14,7 +14,7 @@
           <b-navbar-nav class="ml-auto" v-if="this.$route.name == 'cadastrarInventario' || this.$route.name == 'editarInventario'">
 
             <button class="nav-link" form="cadastrar_inventario" type="submit"><b-icon style="height: 18px" icon="save"/> Salvar</button>
-            <b-link @click="baixarJson()" v-if="this.inventario" class="nav-link"><b-icon style="height: 18px" icon="download"/> Baixar</b-link>
+            <b-link @click="baixarJson()" v-if="this.inventario" class="nav-link"><font-awesome-icon icon="fa-solid fa-floppy-disk" style="height: 18px"/> Baixar</b-link>
             <b-link @click="baixarPdf()" class="nav-link" v-if="this.inventario"><b-icon style="height: 18px" icon="file-pdf"/> Gerar PDF</b-link>
           </b-navbar-nav>
 
@@ -49,6 +49,12 @@ export default {
       download(JSON.stringify(this.inventario), 'inventario_' + this.$route.params.id + '.json', 'text/plain')
     },
     baixarPdf () {
+      this.$root.$bvToast.toast('Gerando PDF. Por favor, aguarde um instante...', {
+        title: 'Sucesso',
+        variant: 'success',
+        solid: true,
+        autoHideDelay: 3000
+      })
       this.$refs.inventPdf.generateReport()
     }
   },

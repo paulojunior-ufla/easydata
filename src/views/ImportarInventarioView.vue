@@ -7,12 +7,13 @@
           <b-form-file
             v-model="inventario"
             :state="Boolean(inventario)"
-            placeholder="Clique ou arraste um arquivo JSON aqui..."
+            placeholder="Selecione ou arraste um inventário de dados pessoais aqui..."
             drop-placeholder="Arraste o arquivo..."
             name="json_inventario"
             accept="application/json"
+            browse-text="Selecione"
           ></b-form-file>
-          <b-button type="submit" squared variant="primary" class="mt-2">Enviar</b-button>
+          <b-button type="submit" squared variant="primary" class="mt-2">Importar</b-button>
         </form>
       </div>
     </b-row>
