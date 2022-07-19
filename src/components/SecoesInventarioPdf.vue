@@ -106,7 +106,8 @@ export default {
       this.$bvToast.toast('Salvo com sucesso', {
         title: 'Sucesso',
         variant: variant,
-        solid: true
+        solid: true,
+        autoHideDelay: 1000
       })
     },
     salvar: function (event) {

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <form @submit.prevent="salvar" id="cadastrar_inventario">
+    <form @submit="salvar" id="cadastrar_inventario">
       <div class="accordion text-start" role="tablist">
         <b-card no-body class="mb-1">
           <b-card-header header-tag="header" class="p-1" role="tab">
             <h5 block class="m-2"><b-icon style="height: 16px" icon="check-lg"/> Título</h5>
           </b-card-header>
             <b-card-body class="titulo">
-              <b-input name="titulo" data-caminho="titulo" :value="inventario ? inventario.titulo : ''" placeholder="Ex: Cadastramento de usuários externos no SIG" required/>
+              <b-input name="titulo" data-caminho="titulo" :value="inventario ? inventario.titulo : ''" placeholder="Ex: Cadastramento de usuários externos no SIG" ref="titulo"/>
             </b-card-body>
         </b-card>
 
@@ -140,10 +140,21 @@ export default {
       this.$root.$bvToast.toast(variant === 'success' ? 'Realizado com sucesso.' : 'Erro ao realizar ação.', {
         title: variant === 'success' ? 'Sucesso' : 'Erro',
         variant: variant,
+        autoHideDelay: 1000,
         solid: true
       })
     },
+    validaForm () {
+      const titulo = this.$refs.titulo.$el.value
+      if (!titulo) {
+        this.chamarToast('danger')
+        return false
+      }
+      return true
+    },
     salvar: function (event) {
+      event.preventDefault()
+      if (!this.validaForm()) { return false }
       const inventario = {}
       const elementos = event.target.elements
       for (let i = 0; i < elementos.length; i++) {

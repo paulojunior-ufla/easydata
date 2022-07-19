@@ -66,7 +66,8 @@ export default {
       this.$bvToast.toast(mensagem, {
         title: titulo,
         variant: variant,
-        solid: true
+        solid: true,
+        autoHideDelay: 1000
       })
     },
     salvarInventario (objInventario) {

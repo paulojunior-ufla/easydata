@@ -61,7 +61,8 @@ export default {
       this.$bvToast.toast(variant === 'success' ? 'Realizado com sucesso.' : 'Erro ao realizar ação.', {
         title: variant === 'success' ? 'Sucesso' : 'Erro',
         variant: variant,
-        solid: true
+        solid: true,
+        autoHideDelay: 1000
       })
     },
     showConfirmacaoDelete (index) {
