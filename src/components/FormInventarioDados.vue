@@ -136,8 +136,9 @@ export default {
       this.tituloModal = titulo
       this.textoModal = texto
     },
-    chamarToast (variant = 'success') {
-      this.$root.$bvToast.toast(variant === 'success' ? 'Realizado com sucesso.' : 'Erro ao realizar ação.', {
+    chamarToast (variant = 'success', mensagem = null) {
+      if (!mensagem) { mensagem = variant === 'success' ? 'Realizado com sucesso.' : 'Erro ao realizar ação.' }
+      this.$root.$bvToast.toast(mensagem, {
         title: variant === 'success' ? 'Sucesso' : 'Erro',
         variant: variant,
         autoHideDelay: 1000,
@@ -147,7 +148,7 @@ export default {
     validaForm () {
       const titulo = this.$refs.titulo.$el.value
       if (!titulo) {
-        this.chamarToast('danger')
+        this.chamarToast('danger', 'Erro. O campo título é obrigatório')
         return false
       }
       return true

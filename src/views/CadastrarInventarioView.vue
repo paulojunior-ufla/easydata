@@ -23,12 +23,28 @@ export default {
     if (to.hash === '#salvo') {
       next()
     } else {
-      const answer = window.confirm('Você realmente deseja sair? Todas as alterações serão perdidas!')
-      if (answer) {
-        next()
-      } else {
-        next(false)
-      }
+      const h = this.$createElement
+      const msg = h('div', { domProps: { innerHTML: 'Você realmente deseja sair? Todas as alterações serão perdidas!' } })
+      this.$bvModal.msgBoxConfirm([msg], {
+        title: 'Atenção!',
+        size: 'sm',
+        buttonSize: 'sm',
+        okVariant: 'danger',
+        okTitle: 'Sim',
+        cancelTitle: 'Não',
+        footerClass: 'p-2',
+        // hideHeaderClose: false,
+        centered: true
+      })
+        .then(confirmado => {
+          if (confirmado) {
+            next()
+          }
+          next(false)
+        })
+        .catch(err => {
+          console.log('err', err)
+        })
     }
   },
   components: {
