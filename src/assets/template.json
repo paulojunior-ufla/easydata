@@ -1,10 +1,4 @@
 {
-    "bancoDados": [
-        "Banco de dados do Campus Virtual",
-        "Nome da Base de Dados 2",
-        "Nome da Base de Dados 3",
-        "Nome da Base de Dados 4"
-    ],
     "simNao": [
         "Sim",
         "Não",
@@ -74,6 +68,18 @@
         "Proteção da vida ou da incolumidade física do titular ou de terceiro",
         "Selo regularmente emitido",
         "Transferência autorizada pela ANPD"
+    ],
+    "hipotesesDeTratamento": [
+        "Cumprimento de obrigação legal ou regulatória pelo controlador.",
+        "Execução de políticas públicas.",
+        "Alguma espécie de estudo realizado por órgão de pesquisa.",
+        "Execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados.",
+        "Exercício regular de direitos em processo judicial, administrativo ou arbitral.",
+        "Proteção da vida ou da incolumidade física do titular ou de terceiro.",
+        "Tutela da saúde.",
+        "Atender aos interesses legítimos do controlador ou de terceiro.",
+        "Proteção do crédito.",
+        "Garantia da prevenção à fraude e à segurança do titular."
     ],
     "categorias": [
         {
@@ -175,18 +181,7 @@
                     "id": 1,
                     "nome": "6.1 - Hipótese de Tratamento",
                     "nome_impressao": "hipotese_tratamento",
-                    "opcoes":[
-                        "Cumprimento de obrigação legal ou regulatória pelo controlador.",
-                        "Execução de políticas públicas.",
-                        "Alguma espécie de estudo realizado por órgão de pesquisa.",
-                        "Execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados.",
-                        "Exercício regular de direitos em processo judicial, administrativo ou arbitral.",
-                        "Proteção da vida ou da incolumidade física do titular ou de terceiro.",
-                        "Tutela da saúde.",
-                        "Atender aos interesses legítimos do controlador ou de terceiro.",
-                        "Proteção do crédito.",
-                        "Garantia da prevenção à fraude e à segurança do titular."
-                    ],
+                    "campoOpcoes": "hipotesesDeTratamento",
                     "ajuda": "As hipóteses de tratamento estão descritas nos arts. 7º e 11 da LGPD.<br>Os órgãos e entidades da administração pública tem a prerrogativa de tratar os dados pessoais para o exercício de suas competências legais ou execução de políticas públicas sem a necessidade de obter consentimento do titular dos dados pessoais."
                 },
                 {"id": 2, "nome": "6.2 - Finalidade", "nome_impressao": "finalidade", "ajuda": "Razão ou motivo pela qual se deseja tratar os dados pessoais. É importantíssimo estabelecer claramente a finalidade, pois é ela que justifica o tratamento de dados pessoais e fornece os elementos para informar o titular dos dados."},
@@ -209,7 +204,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.1.1 - Informações de identificação pessoal", "nome_impressao": "info_identificacao", "ajuda": "Descrever se são tratados dados: Nome, endereço residencia, histórico de endereços anteriores, número de telefone fixo residencial, número celular pessoal, e-mail pessoal, etc)"},
@@ -226,7 +221,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.2.1 - Dados de identificação financeira", "nome_impressao": "dados_id_financeira", "ajuda": "Descrever se são tratados dados: Números de identificação, números de contas bancárias, números de cartões de crédito ou débito, códigos secretos."},
@@ -252,7 +247,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.3.1 - Detalhes pessoais", "nome_impressao": "detalhes_pessoais", "ajuda": "Descrever se são tratados dados: Idade, sexo, data de nascimento, local de nascimento, estado civil, nacionalidade."},
@@ -269,7 +264,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.4.1 - Hábitos", "nome_impressao": "habitos", "ajuda": "Descrever se são tratados dados: Uso de tabaco, uso de álcool , hábito alimentar, dieta alimentar etc."},
@@ -290,7 +285,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.5.1 - Descrição Psicológica", "nome_impressao": "descricao_psicologica", "ajuda": "Descrever se são tratados dados sobre personalidade ou caráter."}
@@ -304,7 +299,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.6.1 - Casamento ou forma atual de coabitação", "nome_impressao": "casamento_coabitacao", "ajuda": "Descrever se são tratados dados: Nome do cônjuge ou companheiro(a), nome de solteira do cônjuge ou companheira, data do casamento, data do contrato de coabitação, número de filhos, etc."},
@@ -320,7 +315,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.7.1 - Atividades e interesses de lazer", "nome_impressao": "atividades_lazer", "ajuda": "Descrever se são tratados dados sobre hobbies, esportes, outros interesses."}
@@ -334,7 +329,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.8.1 Associações (exceto profissionais, políticas, em sindicatos ou qualquer outra associação que se enquadre em dados pessoais sensíveis)", "nome_impressao": "associacoes", "ajuda": "Descrever se são tratados dados sobre participação em organizações de caridade ou benevolentes, clubes, parcerias, organizações, grupos, etc."}
@@ -348,7 +343,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.9.1 - Suspeitas", "nome_impressao": "suspeitas", "ajuda": "Descrever se são tratados dados sobre suspeitas de violações, conexões conspiratórias com criminosos conhecidos. Inquéritos ou ações judiciais (civis ou criminais) empreendidas por ou contra o titular dos dados, etc."},
@@ -365,7 +360,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.10.1 - Dados de bens e serviços", "nome_impressao": "dados_bens_servicos", "ajuda": "Descrever se são tratados dados sobre bens e serviços vendidos, alugados ou emprestados ao titular dos dados."}
@@ -379,7 +374,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.11.1 - Residência", "nome_impressao": "residencia", "ajuda": "Descrever se são tratados dados sobre natureza da residência, propriedade própria ou alugada, duração da residência nesse endereço, aluguel, custos, classificação da residência, detalhes sobre a avaliação, nomes das pessoas que possuem as chaves."}
@@ -393,7 +388,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.12.1 - Dados acadêmicos/escolares", "nome_impressao": "dados_academicos", "ajuda": "Descrever se são tratados dados sobre diplomas, certificados obtidos, resultados de exames, avaliação do progresso dos estudos, histórico escolar, grau de formação, etc."},
@@ -409,7 +404,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.13.1 - Emprego atual", "nome_impressao": "emprego", "ajuda": "Descrever se são tratados dados sobre empregador, descrição do cargo e função, antiguidade, data de recrutamento, local de trabalho, especialização ou tipo de empresa, modos e condições de trabalho, cargos anteriores e experiência anterior de trabalho no mesmo empregador, etc."},
@@ -428,7 +423,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.14.1 - Vídeo e imagem", "nome_impressao": "video_imagem", "ajuda": "Descrever se são tratados arquivos de vídeos, fotos digitais, fitas de vídeo, etc."},
@@ -444,7 +439,7 @@
                         {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                         {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                         {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                        {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                        {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
                     ],
                     "linhas": [
                         {"id": 1, "nome": "7.15.1 - Outros (Especificar)", "nome_impressao": "outros"}
@@ -460,7 +455,7 @@
                 {"id": 1, "nome": "Descrição", "nome_impressao": "descricao"},
                 {"id": 2, "nome": "Tempo Retenção dos Dados", "nome_impressao": "tempo_retencao"},
                 {"id": 3, "nome": "Fonte Retenção", "campoOpcoes": "fonteRetencao", "nome_impressao": "fonte_retencao"},
-                {"id": 4, "nome": "Nome Base de Dados", "campoOpcoes": "bancoDados", "nome_impressao": "nome_base"}
+                {"id": 4, "nome": "Nome Base de Dados", "nome_impressao": "nome_base"}
             ],
             "linhas": [
                 {"id": 1, "nome": "8.1 - Dados que revelam origem racial ou ética", "nome_impressao": "racial_etica"},
