@@ -23,7 +23,7 @@
                     <b-th v-if="categoria.linhas" style="text-align:left">
                       <b-icon role="button" class="text-primary" alt="Adicionar linha" icon="plus-lg" v-if="categoria.linha_adicional" @click="adicionarLinha(categoria)"></b-icon>
                     </b-th>
-                    <b-th v-for="coluna in categoria.colunas" :key="coluna.id" width="270">{{coluna.nome}}</b-th>
+                    <b-th v-for="coluna in categoria.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
                   </b-tr>
                 </b-thead>
                 <b-tbody>
@@ -32,7 +32,7 @@
                       {{linha.nome}} <b-icon role="button" alt="Ajuda" icon="question-circle" v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/>
                       <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
                     </b-td>
-                    <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
+                    <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id" :width="categoria.colunas && categoria.colunas.length > 1 ? 270 : '50%'">
                       <input-mask :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, linha, index))" :options="getOpcoes(coluna, linha)"/>
                     </b-td>
@@ -44,17 +44,15 @@
                   <b-thead :key="'header-' + secao.id">
                     <b-tr class="text-center" v-if="!secao.esconderColunas">
                       <b-th>{{secao.nome}}</b-th>
-                      <b-th v-for="coluna in secao.colunas" :key="coluna.id" width="270">{{coluna.nome}}</b-th>
+                      <b-th v-for="coluna in secao.colunas" :key="coluna.id">{{coluna.nome}}</b-th>
                     </b-tr>
                   </b-thead>
                   <b-tbody :key="secao.id">
                     <b-tr v-for="linha in secao.linhas" :key="linha.id">
                       <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle"  v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
-                      <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
-                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
-                          :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
-                        <b-form-select v-else :class="getClasses(categoria, linha, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
-                          :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
+                      <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id" :width="secao.colunas && secao.colunas.length > 1 ? 270 : '50%'">
+                        <input-mask :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, linha, index))" :options="getOpcoes(coluna, linha)"/>
                       </b-td>
                     </b-tr>
                   </b-tbody>
@@ -207,7 +205,8 @@ export default {
       return (typeof coluna.campoOpcoes === 'undefined' && typeof linha.campoOpcoes === 'undefined') || coluna.ignorarOpcoes
     },
     getClasses: function (categoria, linha, index) {
-      if (categoria.colunas && typeof categoria.colunas[index] !== 'undefined' && !this.mostrarInput(categoria.colunas[index], linha)) return 'select'
+      const colunas = categoria.secoes && typeof categoria.secoes[index] !== 'undefined' ? categoria.secoes[index].colunas : categoria.colunas
+      if (colunas && typeof colunas[index] !== 'undefined' && !this.mostrarInput(colunas[index], linha)) return 'select'
       else if (linha.classes) { return linha.classes } else if (categoria.classes && typeof categoria.classes[index] !== 'undefined') { return categoria.classes[index] }
       return ''
     },
@@ -282,6 +281,9 @@ li {
 }
 .table {
   margin: 0;
+}
+.table th {
+  text-align: left;
 }
 .table td {
   padding-left: 1.2rem;
