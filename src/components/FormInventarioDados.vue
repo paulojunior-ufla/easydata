@@ -33,12 +33,8 @@
                       <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
                     </b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-                      <input-mask v-if="['telefone', 'cep', 'textarea'].indexOf(getClasses(categoria, linha, index)) > -1" :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
-                      <b-form-input v-else-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, linha, index))"/>
-                      <b-form-select v-else :class="getClasses(categoria, linha, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
+                      <input-mask :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, linha, index))" :options="getOpcoes(coluna, linha)"/>
                     </b-td>
                   </b-tr>
                 </b-tbody>
@@ -211,11 +207,12 @@ export default {
       return (typeof coluna.campoOpcoes === 'undefined' && typeof linha.campoOpcoes === 'undefined') || coluna.ignorarOpcoes
     },
     getClasses: function (categoria, linha, index) {
-      if (linha.classes) { return linha.classes } else if (categoria.classes && typeof categoria.classes[index] !== 'undefined') { return categoria.classes[index] }
+      if (categoria.colunas && typeof categoria.colunas[index] !== 'undefined' && !this.mostrarInput(categoria.colunas[index], linha)) return 'select'
+      else if (linha.classes) { return linha.classes } else if (categoria.classes && typeof categoria.classes[index] !== 'undefined') { return categoria.classes[index] }
       return ''
     },
     getTipo: function (classes) {
-      if (['email'].indexOf(classes) > -1) { return 'email' } else if (['data'].indexOf(classes) > -1) { return 'date' } else return 'text'
+      if (['email'].indexOf(classes) > -1) { return 'email' } else if (['data'].indexOf(classes) > -1) { return 'date' } else if (['select'].indexOf(classes) > -1) { return 'select' } else return 'text'
     },
     getOpcoes: function (coluna, linha) {
       return typeof coluna.campoOpcoes !== 'undefined' ? this.dadosTemplate[coluna.campoOpcoes] : this.dadosTemplate[linha.campoOpcoes]

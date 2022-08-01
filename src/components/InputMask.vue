@@ -1,7 +1,8 @@
 
 <template>
-    <b-form-textarea v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" required v-if="tipo == 'textarea'"/>
-    <b-form-input v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" required v-else/>
+  <b-form-textarea v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" v-if="tipo == 'textarea'"/>
+  <b-form-select v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" v-else-if="tipo == 'select'"/>
+  <b-form-input v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" v-else/>
 </template>
 
 <script>
@@ -10,7 +11,7 @@ import { VueMaskDirective } from 'v-mask'
 Vue.directive('mask', VueMaskDirective)
 
 export default {
-  props: ['value', 'tipo'],
+  props: ['value', 'tipo', 'options'],
   data () {
     return {
       maskTelefone: '(##) ####-####',
