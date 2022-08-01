@@ -33,7 +33,7 @@
                       <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
                     </b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-                      <input-mask v-if="['telefone', 'cep'].indexOf(getClasses(categoria, linha, index)) > -1" :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
+                      <input-mask v-if="['telefone', 'cep', 'textarea'].indexOf(getClasses(categoria, linha, index)) > -1" :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                       <b-form-input v-else-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, linha, index))"/>
@@ -211,7 +211,7 @@ export default {
       return (typeof coluna.campoOpcoes === 'undefined' && typeof linha.campoOpcoes === 'undefined') || coluna.ignorarOpcoes
     },
     getClasses: function (categoria, linha, index) {
-      if (categoria.classes && typeof categoria.classes[index] !== 'undefined') { return categoria.classes[index] } else if (linha.classes) { return linha.classes }
+      if (linha.classes) { return linha.classes } else if (categoria.classes && typeof categoria.classes[index] !== 'undefined') { return categoria.classes[index] }
       return ''
     },
     getTipo: function (classes) {

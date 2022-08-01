@@ -145,15 +145,8 @@
             "colunas": [
                 {"id": 1, "nome": "Valor", "nome_impressao": "valor"}
             ],
-            "classes": [
-                "",
-                "",
-                "",
-                "",
-                ""
-            ],
             "linhas": [
-                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais", "nome_impressao": "descricao_fluxo", "ajuda": "Descrever como (de que forma) os dados pessoais são coletados, retidos/armazenados, processados/ usados e eliminados.<br>Nessa seção, pode até ser colocado um desenho com um fluxo de dados. Abaixo, segue exemplo de descrição do fluxo de dados.<br>Exemplo descrição do fluxo de tratamento de dados pessoais do programa fictício de localização de desaparecidos do Departamento de Segurança Púbica - DSP.<br>1. Os dados pessoais são coletados mediante preenchimento formulário eletrônico do Sistema Nacional pelo titular dos dados pessoais.<br>2. Os dados são transferidos armazenados nas instalações físicas da Empresa de Processamento e Tecnologia Fictum.<br>3. A empresa Fictum realiza processamento sobre os dados pessoais e disponibiliza para uso do DSP. O DSP disponibiliza os dados pessoais para utilização e consumo do comunicante.<br>4. O DSP transfere dados de comunicantes e pessoas desaparecidas para a SDH desenvolver as ações de apoio psicológico para as famílias do desaparecidos.<br>5. Os dados pessoais podem ser eliminados à pedido do titular. Nesse caso, o DSP encaminha essa solicitação para a empresa Fictum executar a eliminação dos dados pessoais da base de dados do SND."}
+                {"id": 1, "nome": "4.1 - Descrição do Fluxo do tratamento dos dados pessoais", "nome_impressao": "descricao_fluxo", "ajuda": "Descrever como (de que forma) os dados pessoais são coletados, retidos/armazenados, processados/ usados e eliminados.<br>Nessa seção, pode até ser colocado um desenho com um fluxo de dados. Abaixo, segue exemplo de descrição do fluxo de dados.<br>Exemplo descrição do fluxo de tratamento de dados pessoais do programa fictício de localização de desaparecidos do Departamento de Segurança Púbica - DSP.<br>1. Os dados pessoais são coletados mediante preenchimento formulário eletrônico do Sistema Nacional pelo titular dos dados pessoais.<br>2. Os dados são transferidos armazenados nas instalações físicas da Empresa de Processamento e Tecnologia Fictum.<br>3. A empresa Fictum realiza processamento sobre os dados pessoais e disponibiliza para uso do DSP. O DSP disponibiliza os dados pessoais para utilização e consumo do comunicante.<br>4. O DSP transfere dados de comunicantes e pessoas desaparecidas para a SDH desenvolver as ações de apoio psicológico para as famílias do desaparecidos.<br>5. Os dados pessoais podem ser eliminados à pedido do titular. Nesse caso, o DSP encaminha essa solicitação para a empresa Fictum executar a eliminação dos dados pessoais da base de dados do SND.", "classes": "textarea"}
             ]
         },
         {

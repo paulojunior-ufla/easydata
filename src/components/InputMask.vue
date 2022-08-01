@@ -1,6 +1,7 @@
 
 <template>
-  <b-form-input v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" required/>
+    <b-form-textarea v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" required v-if="tipo == 'textarea'"/>
+    <b-form-input v-bind="$props" v-mask="vMask" v-model="valor" :minlength="minLength" required v-else/>
 </template>
 
 <script>
