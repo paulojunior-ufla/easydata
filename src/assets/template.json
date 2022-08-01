@@ -85,10 +85,10 @@
                 {"id": 2, "nome": "Valor", "nome_impressao": "valor"}
             ],
             "linhas": [
-                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio", "nome_impressao": "nome_servico", "ajuda": "Informar se a abrangência do dados tratados é nacional, estadual, distrital, municipal ou regional."},
+                {"id": 1, "nome": "1.1 - Nome do serviço / Processo de negócio", "nome_impressao": "nome_servico", "ajuda": "Informar nome do serviço ofertado à sociedade ou nome do processo de negócio que realiza tratamento dos dados pessoais. Exemplo: Avaliações de Alimentos; Cancelamento e Renovação de Registros de Alimentos; e etc. A partir do documento importado"},
                 {"id": 2, "nome": "1.2 - Nº Referência  / ID", "nome_impressao": "n_referencia", "ajuda": "Digite o Número ou um ID para identificação da atividade de tratamento de dados pessoais relacionada ao serviço / processo de negócio.<br>Exemplo de Número de Referência: 0001. 0002 e etc.<br>Exemplo de ID adotando Sigla do Serviço informado no campo 'Nome do serviço/ Processo de Negócio': AVA, CRRA e etc."},
-                {"id": 3, "nome": "1.3 - Data de Criação do Inventário", "nome_impressao": "data_criacao", "ajuda": "Informar data de criação do inventário de dados pessoais."},
-                {"id": 4, "nome": "1.4 - Data Atualização do Inventário", "nome_impressao": "data_atualizacao", "ajuda": "Informar data da última atualização do inventário."}
+                {"id": 3, "nome": "1.3 - Data de Criação do Inventário", "nome_impressao": "data_criacao", "ajuda": "Informar data de criação do inventário de dados pessoais.", "classes": "data"},
+                {"id": 4, "nome": "1.4 - Data Atualização do Inventário", "nome_impressao": "data_atualizacao", "ajuda": "Informar data da última atualização do inventário.", "classes": "data"}
             ]
         },
         {

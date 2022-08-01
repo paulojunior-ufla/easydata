@@ -33,11 +33,11 @@
                       <b-icon role="button" class="text-danger" alt="Remover linha" icon="trash" v-if="linha.isAdicional" @click="removerLinha(categoria, linha)"/>
                     </b-td>
                     <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-                      <input-mask v-if="['telefone', 'cep'].indexOf(getClasses(categoria, index)) > -1" :tipo="getClasses(categoria, index)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
+                      <input-mask v-if="['telefone', 'cep'].indexOf(getClasses(categoria, linha, index)) > -1" :tipo="getClasses(categoria, linha, index)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
-                      <b-form-input v-else-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, index))"/>
-                      <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
+                      <b-form-input v-else-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
+                        :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional" :type="getTipo(getClasses(categoria, linha, index))"/>
+                      <b-form-select v-else :class="getClasses(categoria, linha, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
                         :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                     </b-td>
                   </b-tr>
@@ -55,9 +55,9 @@
                     <b-tr v-for="linha in secao.linhas" :key="linha.id">
                       <b-td>{{linha.nome}} <b-icon role="button" icon="question-circle"  v-if="linha.ajuda" @click="chamarModal(linha.nome, linha.ajuda)"/></b-td>
                       <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
-                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
+                        <b-form-input v-if="mostrarInput(coluna, linha)" :class="getClasses(categoria, linha, index)" :value="getValor(categoria, linha, coluna, index)"
                           :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
-                        <b-form-select v-else :class="getClasses(categoria, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
+                        <b-form-select v-else :class="getClasses(categoria, linha, index)" :options="getOpcoes(coluna, linha)" :value="getValor(categoria, linha, coluna, index)"
                           :data-caminho="getCaminho(categoria, linha, coluna)" :required="obrigatoriedadeCampos && !linha.isAdicional"/>
                       </b-td>
                     </b-tr>
@@ -210,11 +210,12 @@ export default {
     mostrarInput: function (coluna, linha) {
       return (typeof coluna.campoOpcoes === 'undefined' && typeof linha.campoOpcoes === 'undefined') || coluna.ignorarOpcoes
     },
-    getClasses: function (categoria, index) {
-      return categoria.classes && typeof categoria.classes[index] !== 'undefined' ? categoria.classes[index] : ''
+    getClasses: function (categoria, linha, index) {
+      if (categoria.classes && typeof categoria.classes[index] !== 'undefined') { return categoria.classes[index] } else if (linha.classes) { return linha.classes }
+      return ''
     },
     getTipo: function (classes) {
-      return ['email'].indexOf(classes) > -1 ? 'email' : 'text'
+      if (['email'].indexOf(classes) > -1) { return 'email' } else if (['data'].indexOf(classes) > -1) { return 'date' } else return 'text'
     },
     getOpcoes: function (coluna, linha) {
       return typeof coluna.campoOpcoes !== 'undefined' ? this.dadosTemplate[coluna.campoOpcoes] : this.dadosTemplate[linha.campoOpcoes]
