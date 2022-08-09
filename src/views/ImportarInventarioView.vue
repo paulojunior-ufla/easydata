@@ -49,7 +49,7 @@ export default {
         json = JSON.parse(e.target.result)
         this.salvarInventario(json)
       }
-      reader.readAsText(file)
+      reader.readAsText(file, 'ISO-8859-1')
     },
     chamarToast (variant = null) {
       let titulo = ''
