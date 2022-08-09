@@ -18,9 +18,8 @@
         <b-tbody>
           <b-tr v-for="linha in categoria.linhas" :key="linha.id">
             <b-td>{{linha.nome}}</b-td>
-            <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id">
-              <b-form-input :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                :data-caminho="getCaminho(categoria, linha, coluna)"/>
+            <b-td v-for="(coluna, index) in categoria.colunas" :key="coluna.id" :width="categoria.colunas && categoria.colunas.length > 1 ? 270 : '50%'">
+              {{getValor(categoria, linha, coluna, index)}}
             </b-td>
           </b-tr>
         </b-tbody>
@@ -37,8 +36,7 @@
             <b-tr v-for="linha in secao.linhas" :key="linha.id">
               <b-td>{{linha.nome}}</b-td>
               <b-td v-for="(coluna, index) in secao.colunas" :key="coluna.id">
-                <b-form-input :class="getClasses(categoria, index)" :value="getValor(categoria, linha, coluna, index)"
-                  :data-caminho="getCaminho(categoria, linha, coluna)"/>
+                {{getValor(categoria, linha, coluna, index)}}
               </b-td>
             </b-tr>
           </b-tbody>
