@@ -107,7 +107,7 @@ export default {
   left: 0;
   background-color: #f8f9fa;
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 0;
+  padding-top: 0!important;
   transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
 }
 .bm-menu .nav-link {
@@ -126,7 +126,7 @@ export default {
 }
 
 .bm-overlay {
-  background: initial;
+  background: initial!important;
 }
 .bm-item-list {
   color: #b8b7ad;
