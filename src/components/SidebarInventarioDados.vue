@@ -103,9 +103,9 @@ export default {
   max-height: calc(100% - 60px);
   overflow: auto;
   z-index: 1000; /* Stay on top */
-  top: 60px;
+  top: 60px!important;
   left: 0;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa!important;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 0!important;
   transition: 0.5s; /*0.5 second transition effect to slide in the sidenav*/
@@ -130,9 +130,9 @@ export default {
 }
 .bm-item-list {
   color: #b8b7ad;
-  margin-left: 0;
+  margin-left: 0!important;
   margin-top: 10px;
-  font-size: .8rem;
+  font-size: .8rem!important;
   padding: 10px;
 }
 .bm-item-list > * {
